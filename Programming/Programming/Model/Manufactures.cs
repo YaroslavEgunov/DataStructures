@@ -2,7 +2,7 @@
 {
     public enum Manufactures
     {
-        Samsung,
+        Samsung = 1,
         Apple,
         Honor,
         Oppo,
