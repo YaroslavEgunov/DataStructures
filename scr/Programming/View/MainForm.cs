@@ -28,7 +28,7 @@ namespace Programming.View
             ValuesListBox.Items.Clear();
             var item = EnumsListBox.SelectedItem;
             var itemType = (Enums)item;
-            Array values;
+            Array values  = null;
 
             switch (itemType)
             {
@@ -85,6 +85,11 @@ namespace Programming.View
         {
             var item = ChooseSeasonComboBox.SelectedItem;
 
+            if (ChooseSeasonComboBox.SelectedItem == null)
+            {
+                return;
+            }
+                
             switch (item)
             {
                 case Seasons.Winter:

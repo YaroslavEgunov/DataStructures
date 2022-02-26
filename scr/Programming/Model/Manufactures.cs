@@ -6,6 +6,6 @@
         Apple,
         Honor,
         Oppo,
-        Aloephone
+        Pearphone
     }
 }
