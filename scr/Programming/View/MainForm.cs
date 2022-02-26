@@ -73,7 +73,7 @@ namespace Programming.View
 
             if (Enum.TryParse(text, out day))
             {
-                OutLabel.Text = $"Это день недели ({day} = {(int)day})";
+                OutLabel.Text = $"Это день недели ({ParseInput.Text} = {(int)day})";
             }
             else
             {
@@ -129,6 +129,16 @@ namespace Programming.View
         private void ParseInput_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void SeasonHandleGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

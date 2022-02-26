@@ -77,6 +77,7 @@
             this.SeasonHandleGroupBox.TabIndex = 2;
             this.SeasonHandleGroupBox.TabStop = false;
             this.SeasonHandleGroupBox.Text = "Season Handle";
+            this.SeasonHandleGroupBox.Enter += new System.EventHandler(this.SeasonHandleGroupBox_Enter);
             // 
             // GoButton
             // 
@@ -104,6 +105,7 @@
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Choose season:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // WeekdayParsingGroupBox
             // 
@@ -247,7 +249,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
-            this.Text = "Programming demo";
+            this.Text = "Programming";
             this.EnumPage.ResumeLayout(false);
             this.SeasonHandleGroupBox.ResumeLayout(false);
             this.SeasonHandleGroupBox.PerformLayout();
