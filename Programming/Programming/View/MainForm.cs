@@ -88,18 +88,18 @@ namespace Programming.View
             switch (item)
             {
                 case Seasons.Winter:
-                    EnumPage.BackColor = ColorTranslator.FromHtml("#ffffff");
+                    MainForm.ActiveForm.BackColor = ColorTranslator.FromHtml("#ffffff");
                     MessageBox.Show(@"Бррр! Холодно!");
                     break;
                 case Seasons.Summer:
-                    EnumPage.BackColor = ColorTranslator.FromHtml("#ffffff");
+                    MainForm.ActiveForm.BackColor = ColorTranslator.FromHtml("#ffffff");
                     MessageBox.Show(@"Ура! Солнце!");
                     break;
                 case Seasons.Autumn:
-                    EnumPage.BackColor = ColorTranslator.FromHtml("#e29c45");
+                    MainForm.ActiveForm.BackColor = ColorTranslator.FromHtml("#e29c45");
                     break;
                 case Seasons.Spring:
-                    EnumPage.BackColor = ColorTranslator.FromHtml("#559c45");
+                    MainForm.ActiveForm.BackColor = ColorTranslator.FromHtml("#559c45");
                     break;
                 default:
                     throw new NotImplementedException();
