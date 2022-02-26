@@ -128,7 +128,7 @@
             // 
             // ParseButton
             // 
-            this.ParseButton.Location = new System.Drawing.Point(182, 63);
+            this.ParseButton.Location = new System.Drawing.Point(179, 63);
             this.ParseButton.Name = "ParseButton";
             this.ParseButton.Size = new System.Drawing.Size(70, 20);
             this.ParseButton.TabIndex = 2;
@@ -139,15 +139,16 @@
             // ParseInput
             // 
             this.ParseInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ParseInput.Location = new System.Drawing.Point(9, 63);
+            this.ParseInput.Location = new System.Drawing.Point(6, 63);
             this.ParseInput.Name = "ParseInput";
             this.ParseInput.Size = new System.Drawing.Size(167, 20);
             this.ParseInput.TabIndex = 1;
+            this.ParseInput.TextChanged += new System.EventHandler(this.ParseInput_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 47);
+            this.label4.Location = new System.Drawing.Point(3, 47);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 13);
             this.label4.TabIndex = 0;

@@ -125,5 +125,10 @@ namespace Programming.View
         {
 
         }
+
+        private void ParseInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
