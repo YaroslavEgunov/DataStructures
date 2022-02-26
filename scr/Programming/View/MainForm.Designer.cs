@@ -175,7 +175,7 @@
             // 
             this.IntBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IntBox.Enabled = false;
-            this.IntBox.Location = new System.Drawing.Point(364, 52);
+            this.IntBox.Location = new System.Drawing.Point(351, 52);
             this.IntBox.Name = "IntBox";
             this.IntBox.Size = new System.Drawing.Size(122, 20);
             this.IntBox.TabIndex = 5;
@@ -184,7 +184,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(361, 35);
+            this.label3.Location = new System.Drawing.Point(348, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 4;
@@ -194,7 +194,7 @@
             // ValuesListBox
             // 
             this.ValuesListBox.FormattingEnabled = true;
-            this.ValuesListBox.Location = new System.Drawing.Point(192, 52);
+            this.ValuesListBox.Location = new System.Drawing.Point(179, 52);
             this.ValuesListBox.Name = "ValuesListBox";
             this.ValuesListBox.Size = new System.Drawing.Size(141, 264);
             this.ValuesListBox.TabIndex = 3;
@@ -203,7 +203,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(189, 35);
+            this.label2.Location = new System.Drawing.Point(176, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 2;
