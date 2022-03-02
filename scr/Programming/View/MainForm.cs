@@ -95,7 +95,7 @@ namespace Programming.View
             switch (item)
             {
                 case Seasons.Winter:
-                   BackColor = ColorTranslator.FromHtml("#ffffff");
+                    BackColor = ColorTranslator.FromHtml("#ffffff");
                     MessageBox.Show(@"Бррр! Холодно!");
                     break;
                 case Seasons.Summer:
