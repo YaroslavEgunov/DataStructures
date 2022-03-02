@@ -78,7 +78,6 @@
             this.SeasonHandleGroupBox.TabIndex = 2;
             this.SeasonHandleGroupBox.TabStop = false;
             this.SeasonHandleGroupBox.Text = "Season Handle";
-            this.SeasonHandleGroupBox.Enter += new System.EventHandler(this.SeasonHandleGroupBox_Enter);
             // 
             // GoButton
             // 
@@ -106,7 +105,6 @@
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Choose season:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // WeekdayParsingGroupBox
             // 
@@ -146,7 +144,6 @@
             this.ParseInput.Name = "ParseInput";
             this.ParseInput.Size = new System.Drawing.Size(167, 20);
             this.ParseInput.TabIndex = 1;
-            this.ParseInput.TextChanged += new System.EventHandler(this.ParseInput_TextChanged);
             // 
             // label4
             // 
@@ -180,7 +177,6 @@
             this.IntBox.Name = "IntBox";
             this.IntBox.Size = new System.Drawing.Size(122, 20);
             this.IntBox.TabIndex = 5;
-            this.IntBox.TextChanged += new System.EventHandler(this.IntBox_TextChanged);
             // 
             // label3
             // 
@@ -190,7 +186,6 @@
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Int value:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // ValuesListBox
             // 
@@ -209,7 +204,6 @@
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Choose value:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // EnumsListBox
             // 
@@ -228,7 +222,6 @@
             this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Choose enumerations:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // TabEnums
             // 

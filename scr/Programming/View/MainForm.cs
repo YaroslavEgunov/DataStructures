@@ -95,57 +95,23 @@ namespace Programming.View
             switch (item)
             {
                 case Seasons.Winter:
-                    MainForm.ActiveForm.BackColor = ColorTranslator.FromHtml("#ffffff");
+                   BackColor = ColorTranslator.FromHtml("#ffffff");
                     MessageBox.Show(@"Бррр! Холодно!");
                     break;
                 case Seasons.Summer:
-                    MainForm.ActiveForm.BackColor = ColorTranslator.FromHtml("#ffffff");
+                    BackColor = ColorTranslator.FromHtml("#ffffff");
                     MessageBox.Show(@"Ура! Солнце!");
                     break;
                 case Seasons.Autumn:
-                    MainForm.ActiveForm.BackColor = ColorTranslator.FromHtml("#e29c45");
+                    BackColor = ColorTranslator.FromHtml("#e29c45");
                     break;
                 case Seasons.Spring:
-                    MainForm.ActiveForm.BackColor = ColorTranslator.FromHtml("#559c45");
+                    BackColor = ColorTranslator.FromHtml("#559c45");
                     break;
                 default:
                     throw new NotImplementedException();
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void IntBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ParseInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SeasonHandleGroupBox_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
