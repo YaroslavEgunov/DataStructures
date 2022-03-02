@@ -251,7 +251,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
-            this.Text = "Programming";
+            this.Text = "Programming Demo";
             this.EnumPage.ResumeLayout(false);
             this.SeasonHandleGroupBox.ResumeLayout(false);
             this.SeasonHandleGroupBox.PerformLayout();
