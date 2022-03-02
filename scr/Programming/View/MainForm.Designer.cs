@@ -62,7 +62,7 @@
             this.EnumPage.Location = new System.Drawing.Point(4, 22);
             this.EnumPage.Name = "EnumPage";
             this.EnumPage.Padding = new System.Windows.Forms.Padding(3);
-            this.EnumPage.Size = new System.Drawing.Size(628, 583);
+            this.EnumPage.Size = new System.Drawing.Size(628, 471);
             this.EnumPage.TabIndex = 0;
             this.EnumPage.Text = "Enums";
             this.EnumPage.UseVisualStyleBackColor = true;
@@ -72,9 +72,9 @@
             this.SeasonHandleGroupBox.Controls.Add(this.GoButton);
             this.SeasonHandleGroupBox.Controls.Add(this.ChooseSeasonComboBox);
             this.SeasonHandleGroupBox.Controls.Add(this.label5);
-            this.SeasonHandleGroupBox.Location = new System.Drawing.Point(318, 360);
+            this.SeasonHandleGroupBox.Location = new System.Drawing.Point(318, 329);
             this.SeasonHandleGroupBox.Name = "SeasonHandleGroupBox";
-            this.SeasonHandleGroupBox.Size = new System.Drawing.Size(302, 215);
+            this.SeasonHandleGroupBox.Size = new System.Drawing.Size(302, 133);
             this.SeasonHandleGroupBox.TabIndex = 2;
             this.SeasonHandleGroupBox.TabStop = false;
             this.SeasonHandleGroupBox.Text = "Season Handle";
@@ -82,7 +82,7 @@
             // 
             // GoButton
             // 
-            this.GoButton.Location = new System.Drawing.Point(182, 63);
+            this.GoButton.Location = new System.Drawing.Point(182, 43);
             this.GoButton.Name = "GoButton";
             this.GoButton.Size = new System.Drawing.Size(76, 21);
             this.GoButton.TabIndex = 2;
@@ -93,7 +93,7 @@
             // ChooseSeasonComboBox
             // 
             this.ChooseSeasonComboBox.FormattingEnabled = true;
-            this.ChooseSeasonComboBox.Location = new System.Drawing.Point(9, 63);
+            this.ChooseSeasonComboBox.Location = new System.Drawing.Point(6, 42);
             this.ChooseSeasonComboBox.Name = "ChooseSeasonComboBox";
             this.ChooseSeasonComboBox.Size = new System.Drawing.Size(167, 21);
             this.ChooseSeasonComboBox.TabIndex = 1;
@@ -101,7 +101,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 47);
+            this.label5.Location = new System.Drawing.Point(6, 27);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 0;
@@ -114,9 +114,9 @@
             this.WeekdayParsingGroupBox.Controls.Add(this.ParseButton);
             this.WeekdayParsingGroupBox.Controls.Add(this.ParseInput);
             this.WeekdayParsingGroupBox.Controls.Add(this.label4);
-            this.WeekdayParsingGroupBox.Location = new System.Drawing.Point(8, 360);
+            this.WeekdayParsingGroupBox.Location = new System.Drawing.Point(8, 329);
             this.WeekdayParsingGroupBox.Name = "WeekdayParsingGroupBox";
-            this.WeekdayParsingGroupBox.Size = new System.Drawing.Size(304, 215);
+            this.WeekdayParsingGroupBox.Size = new System.Drawing.Size(304, 133);
             this.WeekdayParsingGroupBox.TabIndex = 1;
             this.WeekdayParsingGroupBox.TabStop = false;
             this.WeekdayParsingGroupBox.Text = "Weekday Parsing";
@@ -131,7 +131,7 @@
             // 
             // ParseButton
             // 
-            this.ParseButton.Location = new System.Drawing.Point(179, 63);
+            this.ParseButton.Location = new System.Drawing.Point(179, 43);
             this.ParseButton.Name = "ParseButton";
             this.ParseButton.Size = new System.Drawing.Size(70, 20);
             this.ParseButton.TabIndex = 2;
@@ -142,7 +142,7 @@
             // ParseInput
             // 
             this.ParseInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ParseInput.Location = new System.Drawing.Point(6, 63);
+            this.ParseInput.Location = new System.Drawing.Point(6, 43);
             this.ParseInput.Name = "ParseInput";
             this.ParseInput.Size = new System.Drawing.Size(167, 20);
             this.ParseInput.TabIndex = 1;
@@ -151,7 +151,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 47);
+            this.label4.Location = new System.Drawing.Point(3, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 13);
             this.label4.TabIndex = 0;
@@ -167,7 +167,7 @@
             this.EnumerationsGroupBox.Controls.Add(this.label1);
             this.EnumerationsGroupBox.Location = new System.Drawing.Point(8, 6);
             this.EnumerationsGroupBox.Name = "EnumerationsGroupBox";
-            this.EnumerationsGroupBox.Size = new System.Drawing.Size(612, 337);
+            this.EnumerationsGroupBox.Size = new System.Drawing.Size(612, 317);
             this.EnumerationsGroupBox.TabIndex = 0;
             this.EnumerationsGroupBox.TabStop = false;
             this.EnumerationsGroupBox.Text = "Enumerations";
@@ -176,7 +176,7 @@
             // 
             this.IntBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IntBox.Enabled = false;
-            this.IntBox.Location = new System.Drawing.Point(351, 52);
+            this.IntBox.Location = new System.Drawing.Point(351, 36);
             this.IntBox.Name = "IntBox";
             this.IntBox.Size = new System.Drawing.Size(122, 20);
             this.IntBox.TabIndex = 5;
@@ -185,7 +185,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(348, 35);
+            this.label3.Location = new System.Drawing.Point(348, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 4;
@@ -195,7 +195,7 @@
             // ValuesListBox
             // 
             this.ValuesListBox.FormattingEnabled = true;
-            this.ValuesListBox.Location = new System.Drawing.Point(179, 52);
+            this.ValuesListBox.Location = new System.Drawing.Point(179, 36);
             this.ValuesListBox.Name = "ValuesListBox";
             this.ValuesListBox.Size = new System.Drawing.Size(141, 264);
             this.ValuesListBox.TabIndex = 3;
@@ -204,7 +204,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(176, 35);
+            this.label2.Location = new System.Drawing.Point(176, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 2;
@@ -214,7 +214,7 @@
             // EnumsListBox
             // 
             this.EnumsListBox.FormattingEnabled = true;
-            this.EnumsListBox.Location = new System.Drawing.Point(6, 52);
+            this.EnumsListBox.Location = new System.Drawing.Point(6, 36);
             this.EnumsListBox.Name = "EnumsListBox";
             this.EnumsListBox.Size = new System.Drawing.Size(141, 264);
             this.EnumsListBox.TabIndex = 1;
@@ -223,7 +223,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 35);
+            this.label1.Location = new System.Drawing.Point(3, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 0;
@@ -237,14 +237,14 @@
             this.TabEnums.Location = new System.Drawing.Point(0, 0);
             this.TabEnums.Name = "TabEnums";
             this.TabEnums.SelectedIndex = 0;
-            this.TabEnums.Size = new System.Drawing.Size(636, 609);
+            this.TabEnums.Size = new System.Drawing.Size(636, 497);
             this.TabEnums.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 609);
+            this.ClientSize = new System.Drawing.Size(636, 497);
             this.Controls.Add(this.TabEnums);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
