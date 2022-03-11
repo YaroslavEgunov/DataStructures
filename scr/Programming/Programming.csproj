@@ -64,13 +64,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Color.cs" />
-    <Compile Include="Model\EducationForm.cs" />
+    <Compile Include="Model\Enums\Color.cs" />
+    <Compile Include="Model\Enums\EducationForm.cs" />
     <Compile Include="View\Enums.cs" />
-    <Compile Include="Model\Genre.cs" />
-    <Compile Include="Model\Manufactures.cs" />
-    <Compile Include="Model\Seasons.cs" />
-    <Compile Include="Model\Weekday.cs" />
+    <Compile Include="Model\Enums\Genre.cs" />
+    <Compile Include="Model\Enums\Manufactures.cs" />
+    <Compile Include="Model\Enums\Seasons.cs" />
+    <Compile Include="Model\Enums\Weekday.cs" />
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
