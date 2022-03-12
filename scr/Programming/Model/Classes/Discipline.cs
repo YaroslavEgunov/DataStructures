@@ -6,7 +6,7 @@ namespace Programming.Model.Classes
     {
         private string Subject { get; set; }
         private int Grade;
-        private string Teacher_name { get; set; }
+        private string TeachersName { get; set; }
 
         void SetGrade(Discipline discipline, int grade)
         {

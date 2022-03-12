@@ -128,5 +128,10 @@ namespace Programming.View
         {
 
         }
+
+        private void Find_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

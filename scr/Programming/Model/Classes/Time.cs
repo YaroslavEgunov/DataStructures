@@ -35,15 +35,19 @@ namespace Programming.Model.Classes
             time.Seconds = seconds;
         }
 
-        public Time(int Hours,int Minutes,int Seconds)
+        public Time ()
         {
-            
+          
         }
 
-        public Time()
+        public Time (int hours, int minutes, int seconds)
         {
-
+            SetHours(this, hours);
+            SetMinutes(this, minutes);
+            SetSeconds(this, seconds);
         }
 
-    }  
+    }
+
+   
 }
