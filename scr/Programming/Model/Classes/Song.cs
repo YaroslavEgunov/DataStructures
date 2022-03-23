@@ -4,19 +4,19 @@ namespace Programming.Model.Classes
 {
     public class Song 
     {
-        private string SongName { get; set; }
-        private string SongGenre { get; set; }
-        private string Artist { get; set; }
+        private string _songName { get; set; }
+        private string _songGenre { get; set; }
+        private string _artist { get; set; }
 
-        public Song MakeClearSong()
+        public Song()
         {
-            return new Song();
         }
 
-        public Song MakeSong(string songName, string songGenre, string artist)
+        public Song(string artist, string songGenre, string songName)
         {
-            Song song = new Song();
-            return song;
+            _artist = artist;
+            _songName = songName;
+            _songGenre = songGenre;
         }
     }
 

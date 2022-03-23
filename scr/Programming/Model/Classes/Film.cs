@@ -4,11 +4,25 @@ namespace Programming.Model.Classes
 {
     public class Film
     {
-        private string Title { get; set; }
-        private int Duration;
-        private int Year;
-        private string Genre { get; set; }
-        private int Rating;
+        private string _title { get; set; }
+        private int _duration;
+        private int _year;
+        private string _genre { get; set; }
+        private int _rating;
+
+        public Film()
+        {
+        }
+
+        public Film(int duration, int yearOfRelease, int rating, string title, string genre)
+        {
+            _duration = duration;
+            _year = yearOfRelease;
+            _rating = rating;
+            _title = title;
+            _genre = genre;
+        }
+
 
         void SetRating(Film film, int rating)
         {
@@ -16,7 +30,7 @@ namespace Programming.Model.Classes
             {
                 throw new ArgumentException("Рейтинг от 0 до 10");
             }
-            film.Rating = rating;
+            film._rating = rating;
         }
 
         void SetDuration(Film film, int duration)
@@ -25,7 +39,7 @@ namespace Programming.Model.Classes
             {
                 throw new ArgumentException("Длительность фильма не может быть отрицательной");
             }
-            film.Duration = duration;
+            film._duration = duration;
         }
 
         void SetYear(Film film, int year)
@@ -34,9 +48,7 @@ namespace Programming.Model.Classes
             {
                 throw new ArgumentException("Год фильма должен быть от 1900 до текущего");
             }
-            film.Year = year;
+            film._year = year;
         }
-
-
     }
 }

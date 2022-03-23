@@ -4,9 +4,20 @@ namespace Programming.Model.Classes
 {
     public class Flight
     {
-        private string Destination { get; set; }
-        private string DeparturePoint { get; set; }
-        private int FlightTime;
+        private string _destination { get; set; }
+        private string _departurePoint { get; set; }
+        private int _flightTime;
+
+        public Flight()
+        {
+        }
+
+        public Flight(int flightTime, string departurePoint, string destination)
+        {
+            _flightTime = flightTime;
+            _departurePoint = departurePoint;
+            _destination = destination;
+        }
 
         void SetFlight_time(Flight flight, int flightTime)
         {
@@ -18,7 +29,7 @@ namespace Programming.Model.Classes
             {
                 throw new ArgumentException("Длительность полёта не может быть отрицательной");
             }
-            flight.FlightTime = flightTime;
+            flight._flightTime = flightTime;
         }
 
     }
