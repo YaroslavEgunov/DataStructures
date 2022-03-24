@@ -4,10 +4,10 @@ namespace Programming.Model.Classes
 {
     public class Film
     {
-        private string _title { get; set; }
+        public string Title { get; set; }
         private int _duration;
         private int _year;
-        private string _genre { get; set; }
+        public string Genre { get; set; }
         private int _rating;
 
         public Film()
@@ -19,36 +19,56 @@ namespace Programming.Model.Classes
             _duration = duration;
             _year = yearOfRelease;
             _rating = rating;
-            _title = title;
-            _genre = genre;
+            Title = title;
+            Genre = genre;
         }
 
-
-        void SetRating(Film film, int rating)
+        public int Rating
         {
-            if (rating > 10 || rating < 0)
+            get
             {
-                throw new ArgumentException("Рейтинг от 0 до 10");
+                return _rating;
             }
-            film._rating = rating;
+            set
+            {
+                if (value > 10 || value < 0)
+                {
+                    throw new ArgumentException("Рейтинг от 0 до 10");
+                }
+                _rating = value;
+            }
         }
 
-        void SetDuration(Film film, int duration)
+        public int Duration
         {
-            if (duration < 0)
+            get
             {
-                throw new ArgumentException("Длительность фильма не может быть отрицательной");
+                return _duration;
             }
-            film._duration = duration;
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Длительность фильма не может быть отрицательной");
+                }
+                _duration = value;
+            }
         }
 
-        void SetYear(Film film, int year)
+        public int Year
         {
-            if (year < 1900 || year > 2022)
+            get
             {
-                throw new ArgumentException("Год фильма должен быть от 1900 до текущего");
+                return _year;
             }
-            film._year = year;
+            set
+            {
+                if (value < 1900 || value > 2022)
+                {
+                    throw new ArgumentException("Год фильма должен быть от 1900 до текущего");
+                }
+                _year = value;
+            }
         }
     }
 }

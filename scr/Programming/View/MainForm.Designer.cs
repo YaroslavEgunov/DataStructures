@@ -50,7 +50,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Rectangles_groupBox1 = new System.Windows.Forms.GroupBox();
             this.Find_button = new System.Windows.Forms.Button();
-            this.ColortextBox3 = new System.Windows.Forms.TextBox();
+            this.ColortextBox = new System.Windows.Forms.TextBox();
             this.LenghttextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.WidthtextBox = new System.Windows.Forms.TextBox();
@@ -260,7 +260,7 @@
             // Rectangles_groupBox1
             // 
             this.Rectangles_groupBox1.Controls.Add(this.Find_button);
-            this.Rectangles_groupBox1.Controls.Add(this.ColortextBox3);
+            this.Rectangles_groupBox1.Controls.Add(this.ColortextBox);
             this.Rectangles_groupBox1.Controls.Add(this.LenghttextBox);
             this.Rectangles_groupBox1.Controls.Add(this.label8);
             this.Rectangles_groupBox1.Controls.Add(this.WidthtextBox);
@@ -284,12 +284,13 @@
             this.Find_button.UseVisualStyleBackColor = true;
             this.Find_button.Click += new System.EventHandler(this.Find_button_Click);
             // 
-            // ColortextBox3
+            // ColortextBox
             // 
-            this.ColortextBox3.Location = new System.Drawing.Point(19, 358);
-            this.ColortextBox3.Name = "ColortextBox3";
-            this.ColortextBox3.Size = new System.Drawing.Size(274, 20);
-            this.ColortextBox3.TabIndex = 2;
+            this.ColortextBox.Location = new System.Drawing.Point(19, 358);
+            this.ColortextBox.Name = "ColortextBox";
+            this.ColortextBox.Size = new System.Drawing.Size(274, 20);
+            this.ColortextBox.TabIndex = 2;
+            this.ColortextBox.TextChanged += new System.EventHandler(this.ColortextBox3_TextChanged);
             // 
             // LenghttextBox
             // 
@@ -297,6 +298,7 @@
             this.LenghttextBox.Name = "LenghttextBox";
             this.LenghttextBox.Size = new System.Drawing.Size(274, 20);
             this.LenghttextBox.TabIndex = 1;
+            this.LenghttextBox.TextChanged += new System.EventHandler(this.LenghttextBox_TextChanged);
             // 
             // label8
             // 
@@ -313,7 +315,7 @@
             this.WidthtextBox.Name = "WidthtextBox";
             this.WidthtextBox.Size = new System.Drawing.Size(274, 20);
             this.WidthtextBox.TabIndex = 0;
-            
+            this.WidthtextBox.TextChanged += new System.EventHandler(this.WidthtextBox_TextChanged);
             // 
             // RectangleslistBox1
             // 
@@ -391,7 +393,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox WidthtextBox;
         private System.Windows.Forms.TextBox LenghttextBox;
-        private System.Windows.Forms.TextBox ColortextBox3;
+        private System.Windows.Forms.TextBox ColortextBox;
         private System.Windows.Forms.Label Lenght_label;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Find_button;

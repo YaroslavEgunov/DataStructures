@@ -7,7 +7,7 @@ namespace Programming.Model.Classes
     {
         private double _width;
         private double _heigth;
-        private string _color { get; set; }
+        public string Color { get; set; }
 
         public Rectangle()
         {
@@ -15,28 +15,43 @@ namespace Programming.Model.Classes
 
         public Rectangle(double heigth, double width, string color)
         {
-            _color = color;
+            Color = color;
             _width = width;
             _heigth = heigth;
         }
 
-        void SetWigth (Rectangle rectangle, int width)
+        public double Width
         {
-            if (width<=0)
+            get
             {
-                throw new ArgumentException("Ширина не может быть отрицательной");
+                return _width;
             }
-            rectangle._width = width;
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Ширина не может быть отрицательной");
+                }
+
+                _width = value;
+            }
         }
 
-        void SetHeight(Rectangle rectangle, int height)
+        public double Height
         {
-            if (height <= 0)
+            get
             {
-                throw new ArgumentException("Длина не может быть отрицательной");
+                return _heigth;
             }
-            rectangle._heigth = height;
-        }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Длина не может быть отрицательной");
+                }
 
+                _heigth = value;
+            }
+        }
     }
 }

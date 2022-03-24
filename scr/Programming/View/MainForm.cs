@@ -3,13 +3,20 @@ using System.Drawing;
 using System.Windows.Forms;
 using Programming.Model;
 using Programming.Model.Enums;
+using Color = Programming.Model.Enums.Color;
+
 
 namespace Programming.View
 {
     public partial class MainForm : Form
     {
+        private Model.Classes.Rectangle[] _rectangles;
+
+        private Model.Classes.Rectangle _currentRectangle = new Model.Classes.Rectangle();
+
         public MainForm()
         {
+
             InitializeComponent();
 
             foreach (Enums enumsValues in Enum.GetValues(typeof(Enums)))
@@ -24,7 +31,18 @@ namespace Programming.View
             {
                 ChooseSeasonComboBox.Items.Add(value);
             }
+
+            _rectangles = new Model.Classes.Rectangle[5];
+            Random random = new Random();
+            for (var i = 0; i < 5; i++)
+            {
+                _rectangles[i] = new Model.Classes.Rectangle(random.Next(1, 100), random.Next(1, 100), "White");
+                RectangleslistBox1.Items.Add($"Rectangle {i + 1}");
+            }
+            RectangleslistBox1.SelectedIndex = 0;
         }
+
+        
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -36,7 +54,7 @@ namespace Programming.View
             switch (itemType)
             {
                 case Enums.Color:
-                    values = Enum.GetValues(typeof(Seasons));
+                    values = Enum.GetValues(typeof(Color));
                     break;
                 case Enums.Genre:
                     values = Enum.GetValues(typeof(Genre));
@@ -114,7 +132,8 @@ namespace Programming.View
             }
         }
 
-      
+
+
 
 
         private void Find_button_Click(object sender, EventArgs e)
@@ -123,6 +142,25 @@ namespace Programming.View
         }
 
         private void RectangleslistBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _currentRectangle = _rectangles[RectangleslistBox1.SelectedIndex];
+            LenghttextBox.Text = _currentRectangle.Height.ToString();
+            WidthtextBox.Text = _currentRectangle.Width.ToString();
+            ColortextBox.Text = _currentRectangle.Color;
+
+        }
+
+        private void LenghttextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WidthtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ColortextBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

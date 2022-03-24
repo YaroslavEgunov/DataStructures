@@ -7,36 +7,9 @@ namespace Programming.Model.Classes
         private int _hours;
         private int _minutes;
         private int _seconds;
-
-        void SetHours(Time time, int hours)
-        {
-            if (hours > 24 || hours <= 0)
-            {
-                throw new ArgumentException("В сутках не более 24-ёх и не менее 1-ого часа");
-            }
-            time._hours = hours;
-        }
-
-        void SetMinutes(Time time, int minutes)
-        {
-            if (minutes > 60 || minutes <= 0 )
-            {
-                throw new ArgumentException("В часе не более 60-ти и не менее 1-ой минуты");
-            }
-            time._minutes = minutes;
-        }
-
-        void SetSeconds(Time time, int seconds)
-        {
-            if (seconds > 60 || seconds <= 0)
-            {
-                throw new ArgumentException("В минуте не более 60-ти и не менее 1-ой секунды");
-            }
-            time._seconds = seconds;
-        }
-
         public Time()
         {
+
         }
 
         public Time(int hours, int minutes, int seconds)
@@ -45,6 +18,58 @@ namespace Programming.Model.Classes
             _minutes = minutes;
             _seconds = seconds;
         }
+
+
+
+        public int Hours
+        {
+            get
+            {
+                return _hours;
+            }
+            set
+            {
+                if (value > 24 || value <= 0)
+                {
+                    throw new ArgumentException("В сутках не более 24-ёх и не отрицательное значение");
+                }
+                _hours = value;
+            }
+        }
+
+        public int Minutes
+        {
+            get
+            {
+                return _minutes;
+            }
+            set
+            {
+                if (value > 60 || value <= 0)
+                {
+                    throw new ArgumentException("В часе не более 60-ти и не отрицательное значение");
+                }
+                _minutes = value;
+            }
+        }
+
+        public int Seconds
+        {
+            get
+            {
+                return _seconds;
+            }
+            set
+            {
+                if (value > 60 || value <= 0)
+                {
+                    throw new ArgumentException("В минуте не более 60-ти и не отрицательное значение");
+                }
+                _seconds = value;
+            }
+        }
+
+       
 
     }
 

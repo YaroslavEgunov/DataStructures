@@ -4,9 +4,9 @@ namespace Programming.Model.Classes
 {
     public class Discipline
     {
-        private string _subject { get; set; }
+        public string Subject { get; set; }
         private int _grade;
-        private string _teachersName { get; set; }
+        public string TeachersName { get; set; }
 
         public Discipline()
         {
@@ -14,18 +14,26 @@ namespace Programming.Model.Classes
 
         public Discipline(string subject, string teachersname, int grade)
         {
-            _subject = subject;
-            _teachersName = teachersname;
+            Subject = subject;
+            TeachersName = teachersname;
             _grade = grade;
         }
 
-        void SetGrade(Discipline discipline, int grade)
+        public int Grade
         {
-            if (grade <= 1 || grade > 5)
+            get
             {
-                throw new ArgumentException("Оценка не может быть отрицательной или больше 5");
+                return _grade;
             }
-            discipline._grade = grade;
+            set
+            {
+                if (value <= 1 || value > 5)
+                {
+                    throw new ArgumentException("Оценка не может быть отрицательной или больше 5");
+                }
+                _grade = value;
+            }
         }
+        
     }
 }

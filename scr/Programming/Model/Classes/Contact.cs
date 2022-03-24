@@ -8,9 +8,9 @@ namespace Programming.Model.Classes
 {
     public class Contact
     {
-        private string _name { get; set; }
+        public string Name { get; set; }
         private string _phoneNumber;
-        private string _email { get; set; }
+        public string Email { get; set; }
 
         public Contact()
         {
@@ -19,23 +19,31 @@ namespace Programming.Model.Classes
 
         public Contact(string name, string email, string number)
         {
-            _name = name;
-            _email = email;
+            Name = name;
+            Email = email;
             _phoneNumber = number;
         }
 
-        void SetPhone_number(Contact сontact, string phoneNumber)
+        public string PhoneNumber
         {
-            if (phoneNumber.Length != 11)
+            get
             {
-                throw new ArgumentException("Номер телефона должен состоять из 11 цифр");
+                return _phoneNumber;
             }
-            else if (int.TryParse(phoneNumber, out var x) == false)
+            set
             {
-                throw new ArgumentException("Номер должен состоять только из цифр");
+                if (value.Length != 11)
+                {
+                    throw new ArgumentException("Номер телефона должен состоять из 11 цифр");
+                }
+                else if (long.TryParse(value, out var x) == false)
+                {
+                    throw new ArgumentException("Номер должен состоять только из цифр");
+                }
+                _phoneNumber = value;
             }
-            сontact._phoneNumber = phoneNumber;
-        }
+        }    
+        
 
     }
 }   
