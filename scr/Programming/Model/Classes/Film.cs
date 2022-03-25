@@ -4,21 +4,23 @@ namespace Programming.Model.Classes
 {
     public class Film
     {
-        public string Title { get; set; }
+        
         private int _duration;
         private int _year;
-        public string Genre { get; set; }
         private int _rating;
+        public string Genre { get; set; }
+        public string Title { get; set; }
+        
 
         public Film()
         {
 
         }
 
-        public Film(int duration, int yearOfRelease, int rating, string title, string genre)
+        public Film(int duration, int year, int rating, string title, string genre)
         {
             _duration = duration;
-            _year = yearOfRelease;
+            _year = year;
             _rating = rating;
             Title = title;
             Genre = genre;
