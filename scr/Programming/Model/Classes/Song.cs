@@ -10,6 +10,7 @@ namespace Programming.Model.Classes
 
         public Song()
         {
+
         }
 
         public Song(string artist, string songGenre, string songName)

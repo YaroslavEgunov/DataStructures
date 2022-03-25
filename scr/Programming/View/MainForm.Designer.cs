@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.EnumPage = new System.Windows.Forms.TabPage();
             this.SeasonHandleGroupBox = new System.Windows.Forms.GroupBox();
@@ -48,22 +49,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TabEnums = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.Rectangles_groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Rectangles_groupBox = new System.Windows.Forms.GroupBox();
             this.Find_button = new System.Windows.Forms.Button();
-            this.ColortextBox = new System.Windows.Forms.TextBox();
-            this.LenghttextBox = new System.Windows.Forms.TextBox();
+            this.ColorTextBox = new System.Windows.Forms.TextBox();
+            this.LenghtTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.WidthtextBox = new System.Windows.Forms.TextBox();
-            this.RectangleslistBox1 = new System.Windows.Forms.ListBox();
+            this.WidthTextBox = new System.Windows.Forms.TextBox();
+            this.RectangleslistBox = new System.Windows.Forms.ListBox();
             this.Width_label = new System.Windows.Forms.Label();
             this.Lenght_label = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.EnumPage.SuspendLayout();
             this.SeasonHandleGroupBox.SuspendLayout();
             this.WeekdayParsingGroupBox.SuspendLayout();
             this.EnumerationsGroupBox.SuspendLayout();
             this.TabEnums.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.Rectangles_groupBox1.SuspendLayout();
+            this.Rectangles_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // EnumPage
@@ -248,7 +250,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.Rectangles_groupBox1);
+            this.tabPage1.Controls.Add(this.Rectangles_groupBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -257,22 +259,22 @@
             this.tabPage1.Text = "Classes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // Rectangles_groupBox1
+            // Rectangles_groupBox
             // 
-            this.Rectangles_groupBox1.Controls.Add(this.Find_button);
-            this.Rectangles_groupBox1.Controls.Add(this.ColortextBox);
-            this.Rectangles_groupBox1.Controls.Add(this.LenghttextBox);
-            this.Rectangles_groupBox1.Controls.Add(this.label8);
-            this.Rectangles_groupBox1.Controls.Add(this.WidthtextBox);
-            this.Rectangles_groupBox1.Controls.Add(this.RectangleslistBox1);
-            this.Rectangles_groupBox1.Controls.Add(this.Width_label);
-            this.Rectangles_groupBox1.Controls.Add(this.Lenght_label);
-            this.Rectangles_groupBox1.Location = new System.Drawing.Point(8, 6);
-            this.Rectangles_groupBox1.Name = "Rectangles_groupBox1";
-            this.Rectangles_groupBox1.Size = new System.Drawing.Size(314, 457);
-            this.Rectangles_groupBox1.TabIndex = 1;
-            this.Rectangles_groupBox1.TabStop = false;
-            this.Rectangles_groupBox1.Text = "Rectangles";
+            this.Rectangles_groupBox.Controls.Add(this.Find_button);
+            this.Rectangles_groupBox.Controls.Add(this.ColorTextBox);
+            this.Rectangles_groupBox.Controls.Add(this.LenghtTextBox);
+            this.Rectangles_groupBox.Controls.Add(this.label8);
+            this.Rectangles_groupBox.Controls.Add(this.WidthTextBox);
+            this.Rectangles_groupBox.Controls.Add(this.RectangleslistBox);
+            this.Rectangles_groupBox.Controls.Add(this.Width_label);
+            this.Rectangles_groupBox.Controls.Add(this.Lenght_label);
+            this.Rectangles_groupBox.Location = new System.Drawing.Point(8, 6);
+            this.Rectangles_groupBox.Name = "Rectangles_groupBox";
+            this.Rectangles_groupBox.Size = new System.Drawing.Size(314, 457);
+            this.Rectangles_groupBox.TabIndex = 1;
+            this.Rectangles_groupBox.TabStop = false;
+            this.Rectangles_groupBox.Text = "Rectangles";
             // 
             // Find_button
             // 
@@ -282,23 +284,23 @@
             this.Find_button.TabIndex = 6;
             this.Find_button.Text = "Find";
             this.Find_button.UseVisualStyleBackColor = true;
-            this.Find_button.Click += new System.EventHandler(this.Find_button_Click);
+            this.Find_button.Click += new System.EventHandler(this.FindButton_Click);
             // 
-            // ColortextBox
+            // ColorTextBox
             // 
-            this.ColortextBox.Location = new System.Drawing.Point(19, 358);
-            this.ColortextBox.Name = "ColortextBox";
-            this.ColortextBox.Size = new System.Drawing.Size(274, 20);
-            this.ColortextBox.TabIndex = 2;
-            this.ColortextBox.TextChanged += new System.EventHandler(this.ColortextBox3_TextChanged);
+            this.ColorTextBox.Location = new System.Drawing.Point(19, 358);
+            this.ColorTextBox.Name = "ColorTextBox";
+            this.ColorTextBox.Size = new System.Drawing.Size(274, 20);
+            this.ColorTextBox.TabIndex = 2;
+            this.ColorTextBox.TextChanged += new System.EventHandler(this.ColorTextBox_TextChanged);
             // 
-            // LenghttextBox
+            // LenghtTextBox
             // 
-            this.LenghttextBox.Location = new System.Drawing.Point(19, 257);
-            this.LenghttextBox.Name = "LenghttextBox";
-            this.LenghttextBox.Size = new System.Drawing.Size(274, 20);
-            this.LenghttextBox.TabIndex = 1;
-            this.LenghttextBox.TextChanged += new System.EventHandler(this.LenghttextBox_TextChanged);
+            this.LenghtTextBox.Location = new System.Drawing.Point(19, 257);
+            this.LenghtTextBox.Name = "LenghtTextBox";
+            this.LenghtTextBox.Size = new System.Drawing.Size(274, 20);
+            this.LenghtTextBox.TabIndex = 1;
+            this.LenghtTextBox.TextChanged += new System.EventHandler(this.LenghtTextBox_TextChanged);
             // 
             // label8
             // 
@@ -309,22 +311,22 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Color: ";
             // 
-            // WidthtextBox
+            // WidthTextBox
             // 
-            this.WidthtextBox.Location = new System.Drawing.Point(19, 307);
-            this.WidthtextBox.Name = "WidthtextBox";
-            this.WidthtextBox.Size = new System.Drawing.Size(274, 20);
-            this.WidthtextBox.TabIndex = 0;
-            this.WidthtextBox.TextChanged += new System.EventHandler(this.WidthtextBox_TextChanged);
+            this.WidthTextBox.Location = new System.Drawing.Point(19, 307);
+            this.WidthTextBox.Name = "WidthTextBox";
+            this.WidthTextBox.Size = new System.Drawing.Size(274, 20);
+            this.WidthTextBox.TabIndex = 0;
+            this.WidthTextBox.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged);
             // 
-            // RectangleslistBox1
+            // RectangleslistBox
             // 
-            this.RectangleslistBox1.FormattingEnabled = true;
-            this.RectangleslistBox1.Location = new System.Drawing.Point(19, 19);
-            this.RectangleslistBox1.Name = "RectangleslistBox1";
-            this.RectangleslistBox1.Size = new System.Drawing.Size(274, 186);
-            this.RectangleslistBox1.TabIndex = 0;
-            this.RectangleslistBox1.SelectedIndexChanged += new System.EventHandler(this.RectangleslistBox1_SelectedIndexChanged);
+            this.RectangleslistBox.FormattingEnabled = true;
+            this.RectangleslistBox.Location = new System.Drawing.Point(19, 19);
+            this.RectangleslistBox.Name = "RectangleslistBox";
+            this.RectangleslistBox.Size = new System.Drawing.Size(274, 186);
+            this.RectangleslistBox.TabIndex = 0;
+            this.RectangleslistBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
             // 
             // Width_label
             // 
@@ -365,8 +367,8 @@
             this.EnumerationsGroupBox.PerformLayout();
             this.TabEnums.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.Rectangles_groupBox1.ResumeLayout(false);
-            this.Rectangles_groupBox1.PerformLayout();
+            this.Rectangles_groupBox.ResumeLayout(false);
+            this.Rectangles_groupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -391,15 +393,16 @@
         private System.Windows.Forms.Button GoButton;
         private System.Windows.Forms.ComboBox ChooseSeasonComboBox;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox WidthtextBox;
-        private System.Windows.Forms.TextBox LenghttextBox;
-        private System.Windows.Forms.TextBox ColortextBox;
+        private System.Windows.Forms.TextBox WidthTextBox;
+        private System.Windows.Forms.TextBox LenghtTextBox;
+        private System.Windows.Forms.TextBox ColorTextBox;
         private System.Windows.Forms.Label Lenght_label;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Find_button;
         private System.Windows.Forms.Label Width_label;
-        private System.Windows.Forms.GroupBox Rectangles_groupBox1;
-        private System.Windows.Forms.ListBox RectangleslistBox1;
+        private System.Windows.Forms.GroupBox Rectangles_groupBox;
+        private System.Windows.Forms.ListBox RectangleslistBox;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 

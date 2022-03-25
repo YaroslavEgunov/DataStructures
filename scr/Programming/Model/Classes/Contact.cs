@@ -36,7 +36,7 @@ namespace Programming.Model.Classes
                 {
                     throw new ArgumentException("Номер телефона должен состоять из 11 цифр");
                 }
-                else if (long.TryParse(value, out var x) == false)
+                if (long.TryParse(value, out var x) == false)
                 {
                     throw new ArgumentException("Номер должен состоять только из цифр");
                 }

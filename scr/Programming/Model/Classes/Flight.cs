@@ -10,6 +10,7 @@ namespace Programming.Model.Classes
 
         public Flight()
         {
+
         }
 
         public Flight(int flightTime, string departurePoint, string destination)

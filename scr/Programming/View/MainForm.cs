@@ -1,9 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Programming.Model;
+using Programming.Model.Classes;
 using Programming.Model.Enums;
-using Color = Programming.Model.Enums.Color;
 
 
 namespace Programming.View
@@ -37,9 +42,9 @@ namespace Programming.View
             for (var i = 0; i < 5; i++)
             {
                 _rectangles[i] = new Model.Classes.Rectangle(random.Next(1, 100), random.Next(1, 100), "White");
-                RectangleslistBox1.Items.Add($"Rectangle {i + 1}");
+                RectangleslistBox.Items.Add($"Rectangle {i + 1}");
             }
-            RectangleslistBox1.SelectedIndex = 0;
+            RectangleslistBox.SelectedIndex = 0;
         }
 
         
@@ -54,7 +59,7 @@ namespace Programming.View
             switch (itemType)
             {
                 case Enums.Color:
-                    values = Enum.GetValues(typeof(Color));
+                    values = Enum.GetValues(typeof(Model.Enums.Color));
                     break;
                 case Enums.Genre:
                     values = Enum.GetValues(typeof(Genre));
@@ -136,33 +141,57 @@ namespace Programming.View
 
 
 
-        private void Find_button_Click(object sender, EventArgs e)
+        private void FindButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void RectangleslistBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _currentRectangle = _rectangles[RectangleslistBox1.SelectedIndex];
-            LenghttextBox.Text = _currentRectangle.Height.ToString();
-            WidthtextBox.Text = _currentRectangle.Width.ToString();
-            ColortextBox.Text = _currentRectangle.Color;
+            _currentRectangle = _rectangles[RectangleslistBox.SelectedIndex];
+            LenghtTextBox.Text = _currentRectangle.Lenght.ToString();
+            WidthTextBox.Text = _currentRectangle.Width.ToString();
+            ColorTextBox.Text = _currentRectangle.Color;
 
         }
 
-        private void LenghttextBox_TextChanged(object sender, EventArgs e)
+        private void LenghtTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                _currentRectangle.Lenght = Convert.ToDouble(LenghtTextBox.Text);
+                LenghtTextBox.BackColor = System.Drawing.Color.White;
+                toolTip.SetToolTip(LenghtTextBox, "");
+            }
+            catch (Exception exception)
+            {
+                toolTip.SetToolTip(LenghtTextBox, exception.Message);
+                LenghtTextBox.BackColor = System.Drawing.Color.LightPink;
+                return;
+            }
         }
 
-        private void WidthtextBox_TextChanged(object sender, EventArgs e)
+        private void WidthTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                _currentRectangle.Width = Convert.ToDouble(WidthTextBox.Text);
+                WidthTextBox.BackColor = System.Drawing.Color.White;
+                toolTip.SetToolTip(WidthTextBox, "");
+            }
+            catch (Exception exception)
+            {
+                toolTip.SetToolTip(WidthTextBox, exception.Message);
+                WidthTextBox.BackColor = System.Drawing.Color.LightPink;
+                return;
+            }
         }
 
-        private void ColortextBox3_TextChanged(object sender, EventArgs e)
+        private void ColorTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            _currentRectangle.Color = ColorTextBox.Text;
         }
+
+
     }
 }

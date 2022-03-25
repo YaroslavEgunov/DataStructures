@@ -12,6 +12,7 @@ namespace Programming.Model.Classes
 
         public Film()
         {
+
         }
 
         public Film(int duration, int yearOfRelease, int rating, string title, string genre)

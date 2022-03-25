@@ -20,7 +20,6 @@ namespace Programming.Model.Classes
         }
 
 
-
         public int Hours
         {
             get
@@ -68,9 +67,6 @@ namespace Programming.Model.Classes
                 _seconds = value;
             }
         }
-
-       
-
     }
 
    

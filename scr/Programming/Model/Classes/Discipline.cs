@@ -10,6 +10,7 @@ namespace Programming.Model.Classes
 
         public Discipline()
         {
+
         }
 
         public Discipline(string subject, string teachersname, int grade)

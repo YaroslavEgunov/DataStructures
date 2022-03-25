@@ -6,18 +6,19 @@ namespace Programming.Model.Classes
     public class Rectangle
     {
         private double _width;
-        private double _heigth;
+        private double _lenght;
         public string Color { get; set; }
 
         public Rectangle()
         {
+
         }
 
-        public Rectangle(double heigth, double width, string color)
+        public Rectangle(double lenght, double width, string color)
         {
             Color = color;
             _width = width;
-            _heigth = heigth;
+            _lenght = lenght;
         }
 
         public double Width
@@ -30,28 +31,29 @@ namespace Programming.Model.Classes
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentException("Ширина не может быть отрицательной");
+                    throw new ArgumentException("Ширина не может быть отрицательной или равной 0");
                 }
 
                 _width = value;
             }
         }
 
-        public double Height
+        public double Lenght
         {
             get
             {
-                return _heigth;
+                return _lenght;
             }
             set
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentException("Длина не может быть отрицательной");
+                    throw new ArgumentException("Длина не может быть отрицательной или равной 0");
                 }
 
-                _heigth = value;
+                _lenght = value;
             }
         }
+
     }
 }
