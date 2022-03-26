@@ -5,6 +5,7 @@ namespace Programming.Model.Classes
     public class Discipline
     {
         public string Subject { get; set; }
+
         private int _grade;
         public string TeachersName { get; set; }
 
@@ -28,7 +29,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value <= 1 || value > 5)
+                if (value < 0 || value > 5)
                 {
                     throw new ArgumentException("Оценка не может быть отрицательной или больше 5");
                 }

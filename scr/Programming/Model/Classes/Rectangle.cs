@@ -6,6 +6,7 @@ namespace Programming.Model.Classes
     public class Rectangle
     {
         private double _width;
+
         private double _lenght;
         public string Color { get; set; }
 

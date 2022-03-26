@@ -8,13 +8,14 @@ namespace Programming.Model.Classes
 {
     public class Contact
     {
-        public string Name { get; set; }
         private string _phoneNumber;
+
+        public string Name { get; set; }
+
         public string Email { get; set; }
 
         public Contact()
         {
-
         }
 
         public Contact(string name, string email, string number)
@@ -36,7 +37,7 @@ namespace Programming.Model.Classes
                 {
                     throw new ArgumentException("Номер телефона должен состоять из 11 цифр");
                 }
-                if (long.TryParse(value, out var x) == false)
+                if (!long.TryParse(value, out var x))
                 {
                     throw new ArgumentException("Номер должен состоять только из цифр");
                 }

@@ -53,8 +53,8 @@
             this.Genre = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.GenreTextBox = new System.Windows.Forms.TextBox();
-            this.TitleTextBox = new System.Windows.Forms.TextBox();
             this.FindFilmButton = new System.Windows.Forms.Button();
+            this.TitleTextBox = new System.Windows.Forms.TextBox();
             this.FilmslistBox = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -293,7 +293,7 @@
             this.FilmsGroupBox.Size = new System.Drawing.Size(303, 457);
             this.FilmsGroupBox.TabIndex = 2;
             this.FilmsGroupBox.TabStop = false;
-            this.FilmsGroupBox.Text = "Films";
+            this.FilmsGroupBox.Text = "Movies";
             // 
             // Genre
             // 
@@ -321,14 +321,6 @@
             this.GenreTextBox.TabIndex = 16;
             this.GenreTextBox.TextChanged += new System.EventHandler(this.GenreTextBox_TextChanged);
             // 
-            // TitleTextBox
-            // 
-            this.TitleTextBox.Location = new System.Drawing.Point(15, 155);
-            this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(274, 20);
-            this.TitleTextBox.TabIndex = 15;
-            this.TitleTextBox.TextChanged += new System.EventHandler(this.TitleTextBox_TextChanged);
-            // 
             // FindFilmButton
             // 
             this.FindFilmButton.Location = new System.Drawing.Point(101, 400);
@@ -338,6 +330,14 @@
             this.FindFilmButton.Text = "Find";
             this.FindFilmButton.UseVisualStyleBackColor = true;
             this.FindFilmButton.Click += new System.EventHandler(this.FindFilmButton_Click);
+            // 
+            // TitleTextBox
+            // 
+            this.TitleTextBox.Location = new System.Drawing.Point(15, 155);
+            this.TitleTextBox.Name = "TitleTextBox";
+            this.TitleTextBox.Size = new System.Drawing.Size(274, 20);
+            this.TitleTextBox.TabIndex = 15;
+            this.TitleTextBox.TextChanged += new System.EventHandler(this.TitleTextBox_TextChanged);
             // 
             // FilmslistBox
             // 
@@ -462,9 +462,10 @@
             // RectangleslistBox
             // 
             this.RectangleslistBox.FormattingEnabled = true;
-            this.RectangleslistBox.Location = new System.Drawing.Point(14, 18);
+            this.RectangleslistBox.IntegralHeight = false;
+            this.RectangleslistBox.Location = new System.Drawing.Point(14, 20);
             this.RectangleslistBox.Name = "RectangleslistBox";
-            this.RectangleslistBox.Size = new System.Drawing.Size(274, 199);
+            this.RectangleslistBox.Size = new System.Drawing.Size(274, 205);
             this.RectangleslistBox.TabIndex = 0;
             this.RectangleslistBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
             // 

@@ -2,22 +2,22 @@
 
 namespace Programming.Model.Classes
 {
-    public class Film
+    public class Movie
     {
-        
         private int _duration;
+
         private int _year;
-        private int _rating;
+        private double _rating;
         public string Genre { get; set; }
         public string Title { get; set; }
         
 
-        public Film()
+        public Movie()
         {
 
         }
 
-        public Film(int duration, int year, int rating, string title, string genre)
+        public Movie(int duration, int year, double rating, string title, string genre)
         {
             _duration = duration;
             _year = year;
@@ -26,7 +26,7 @@ namespace Programming.Model.Classes
             Genre = genre;
         }
 
-        public int Rating
+        public double Rating
         {
             get
             {
@@ -66,7 +66,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 1900 || value > 2022)
+                if (value < 1900 || value > DateTime.Now.Year)
                 {
                     throw new ArgumentException("Год фильма должен быть от 1900 до текущего");
                 }

@@ -14,16 +14,17 @@ using Programming.Model.Enums;
 namespace Programming.View
 {
     public partial class MainForm : Form
+
     {
         private Model.Classes.Rectangle[] _rectangles;
 
         private Model.Classes.Rectangle _currentRectangle = new Model.Classes.Rectangle();
 
-        private Model.Classes.Film[] _films;
+        private Model.Classes.Movie[] _films;
 
-        private Model.Classes.Film _currentFilm = new Model.Classes.Film();
+        private Model.Classes.Movie _currentFilm = new Movie();
 
-
+        
 
         public MainForm()
         {
@@ -42,17 +43,20 @@ namespace Programming.View
                 ChooseSeasonComboBox.Items.Add(value);
             }
 
-            string[] FilmsTitle = {"Holk", "Iren Man", "Captain Latviya", "White window", "Gold Man",
-                                   "Pink Panther", "Tor son of the Pluto", "Recruit Marvel", "Peter-man", 
-                                   "Vatman", "Flash energy", "Wonder NotHuman", "Super-Monkey" };
+            string[] FilmsTitle = {"Holk","Iren Man","Captain Latvia","White window", "Gold Man",
+                                   "Pink Panther", "Thor son of the Pluto", "Recruit Marvel", 
+                                    "Peter-man", "Vatman", "Flash energy", 
+                                    "Wonder NotHuman", "Super-Monkey" };
 
-            string[] RectangleColors = { "White", "Black", "Yellow", "Brown", "Green", "Red", "Blue", "Purple" };
+            string[] RectangleColors = { "White", "Black", "Yellow", "Brown", 
+                                        "Green", "Red", "Blue", "Purple" };
 
-            string[] FilmsGenre = { "Horror", "Action", "Comedy", "Fantasy", "Mystery", "Romance", "Thriller", "Drama" };
+            string[] FilmsGenre = { "Horror", "Action", "Comedy", "Fantasy", 
+                                    "Mystery", "Romance", "Thriller", "Drama" };
 
 
             _rectangles = new Model.Classes.Rectangle[5];
-            _films = new Film[5];
+            _films = new Movie[5];
             Random random = new Random();
             for (var i = 0; i < 5; i++)
             {
@@ -60,10 +64,16 @@ namespace Programming.View
                 var Colors = random.Next(RectangleColors.Length);
                 var Genre = random.Next(FilmsGenre.Length);
 
-                _rectangles[i] = new Model.Classes.Rectangle(random.Next(1, 100), random.Next(1, 100), RectangleColors[Colors]);
+                _rectangles[i] = new Model.Classes.Rectangle(random.Next(1, 100), 
+                                                             random.Next(1, 100), 
+                                                             RectangleColors[Colors]);
                 RectangleslistBox.Items.Add($"Rectangle {i + 1}");
-                _films[i] = new Film(random.Next(0, 180), random.Next(1900, 2022), random.Next(0,10),FilmsTitle[Title], FilmsGenre[Genre]);
-                FilmslistBox.Items.Add($"Film {i + 1}");
+                _films[i] = new Movie(random.Next(60, 180), 
+                                      random.Next(1900, DateTime.Now.Year),
+                                      Math.Round(random.NextDouble()*10, 1),
+                                      FilmsTitle[Title], 
+                                      FilmsGenre[Genre]);
+                FilmslistBox.Items.Add($"Movie {i + 1}");
             }
             RectangleslistBox.SelectedIndex = 0;
             FilmslistBox.SelectedIndex = 0;
@@ -190,6 +200,7 @@ namespace Programming.View
             }
         }
 
+        
         private void WidthTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -224,10 +235,6 @@ namespace Programming.View
             }
             return Index;
         }
-
-
-
-
 
         private void FilmslistBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -276,7 +283,7 @@ namespace Programming.View
         {
             try
             {
-                _currentFilm.Rating = Convert.ToInt32(RatingTextBox.Text);
+                _currentFilm.Rating = Convert.ToDouble(RatingTextBox.Text);
                 RatingTextBox.BackColor = System.Drawing.Color.White;
                 toolTip.SetToolTip(RatingTextBox, "");
             }
@@ -297,7 +304,7 @@ namespace Programming.View
             _currentFilm.Title = Convert.ToString(TitleTextBox.Text);
         }
 
-        private int FindFilmWithMaxRating(Film[] films)
+        private int FindFilmWithMaxRating(Movie[] films)
         {
             int Index = 0;
             double maxValues = 0;
