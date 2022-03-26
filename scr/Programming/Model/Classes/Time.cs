@@ -9,7 +9,6 @@ namespace Programming.Model.Classes
         private int _seconds;
         public Time()
         {
-
         }
 
         public Time(int hours, int minutes, int seconds)
@@ -18,7 +17,6 @@ namespace Programming.Model.Classes
             _minutes = minutes;
             _seconds = seconds;
         }
-
 
         public int Hours
         {
@@ -68,6 +66,4 @@ namespace Programming.Model.Classes
             }
         }
     }
-
-   
 }

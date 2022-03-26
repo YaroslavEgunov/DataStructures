@@ -4,31 +4,30 @@ namespace Programming.Model.Classes
 {
     public class Flight
     {
+        private int _flightTimeInMinutes;
         public string Destination { get; set; }
-        public string DeparturePoint { get; set; }
-        private int _flightTime;
+        public string Departure { get; set; }
 
         public Flight()
         {
-
         }
 
-        public Flight(int flightTime, string departurePoint, string destination)
+        public Flight(int flightTimeInMinutes, string departure, string destination)
         {
-            _flightTime = flightTime;
-            DeparturePoint = departurePoint;
+            _flightTimeInMinutes = flightTimeInMinutes;
+            Departure = departure;
             Destination = destination;
         }
 
-        public int FlightTime
+        public int FlightTimeInMinutes
         {
             get
             {
-                return _flightTime;
+                return _flightTimeInMinutes;
             }
             set
             {
-                if (value > 24)
+                if (value > 1440)
                 {
                     throw new ArgumentException("Полёты не длятся более 24 часов");
                 }
@@ -36,7 +35,7 @@ namespace Programming.Model.Classes
                 {
                     throw new ArgumentException("Длительность полёта не может быть отрицательной");
                 }
-                _flightTime = value;
+                _flightTimeInMinutes = value;
             }
         }
     }

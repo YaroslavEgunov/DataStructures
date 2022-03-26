@@ -4,25 +4,24 @@ namespace Programming.Model.Classes
 {
     public class Movie
     {
-        private int _duration;
+        private int _durationInMinutes;
 
         private int _year;
+
         private double _rating;
         public string Genre { get; set; }
         public string Title { get; set; }
-        
 
         public Movie()
         {
-
         }
 
-        public Movie(int duration, int year, double rating, string title, string genre)
+        public Movie(string title, int year, double rating, int durationInMinutes, string genre)
         {
-            _duration = duration;
+            Title = title;
+            _durationInMinutes = durationInMinutes;
             _year = year;
             _rating = rating;
-            Title = title;
             Genre = genre;
         }
 
@@ -42,11 +41,11 @@ namespace Programming.Model.Classes
             }
         }
 
-        public int Duration
+        public int DurationInMinutes
         {
             get
             {
-                return _duration;
+                return _durationInMinutes;
             }
             set
             {
@@ -54,7 +53,7 @@ namespace Programming.Model.Classes
                 {
                     throw new ArgumentException("Длительность фильма не может быть отрицательной");
                 }
-                _duration = value;
+                _durationInMinutes = value;
             }
         }
 

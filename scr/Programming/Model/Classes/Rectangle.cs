@@ -12,7 +12,6 @@ namespace Programming.Model.Classes
 
         public Rectangle()
         {
-
         }
 
         public Rectangle(double lenght, double width, string color)
@@ -55,6 +54,5 @@ namespace Programming.Model.Classes
                 _lenght = value;
             }
         }
-
     }
 }

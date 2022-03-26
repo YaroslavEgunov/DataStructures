@@ -18,11 +18,12 @@ namespace Programming.Model.Classes
         {
         }
 
-        public Contact(string name, string email, string number)
+        public Contact(string name, string number , string email)
         {
             Name = name;
-            Email = email;
             _phoneNumber = number;
+            Email = email;
+            
         }
 
         public string PhoneNumber
@@ -43,8 +44,6 @@ namespace Programming.Model.Classes
                 }
                 _phoneNumber = value;
             }
-        }    
-        
-
+        }
     }
 }   
