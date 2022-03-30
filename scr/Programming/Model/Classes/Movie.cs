@@ -33,7 +33,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value > 10 || value < 0)
+                if (value < 0  || value > 10)
                 {
                     throw new ArgumentException("Рейтинг от 0 до 10");
                 }

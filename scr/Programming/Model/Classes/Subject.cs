@@ -5,6 +5,7 @@ namespace Programming.Model.Classes
     public class Subject
     {
         private int _mark;
+
         public string Name { get; set; }
 
         public string TeacherName { get; set; }

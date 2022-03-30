@@ -7,18 +7,18 @@ namespace Programming.Model.Classes
     {
         private double _width;
 
-        private double _lenght;
+        private double _length;
         public string Color { get; set; }
 
         public Rectangle()
         {
         }
 
-        public Rectangle(double lenght, double width, string color)
+        public Rectangle(double length, double width, string color)
         {
             Color = color;
             _width = width;
-            _lenght = lenght;
+            _length = length;
         }
 
         public double Width
@@ -38,11 +38,11 @@ namespace Programming.Model.Classes
             }
         }
 
-        public double Lenght
+        public double Length
         {
             get
             {
-                return _lenght;
+                return _length;
             }
             set
             {
@@ -51,7 +51,7 @@ namespace Programming.Model.Classes
                     throw new ArgumentException("Длина не может быть отрицательной или равной 0");
                 }
 
-                _lenght = value;
+                _length = value;
             }
         }
     }

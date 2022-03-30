@@ -5,8 +5,11 @@ namespace Programming.Model.Classes
     public class Time
     {
         private int _hours;
+
         private int _minutes;
+
         private int _seconds;
+
         public Time()
         {
         }
@@ -26,7 +29,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value > 24 || value <= 0)
+                if (value <= 0  || value > 24)
                 {
                     throw new ArgumentException("В сутках не более 24-ёх и не отрицательное значение");
                 }
@@ -42,7 +45,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value > 60 || value <= 0)
+                if (value <= 0  || value > 60)
                 {
                     throw new ArgumentException("В часе не более 60-ти и не отрицательное значение");
                 }
@@ -58,7 +61,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value > 60 || value <= 0)
+                if (value <= 0 || value > 60)
                 {
                     throw new ArgumentException("В минуте не более 60-ти и не отрицательное значение");
                 }
