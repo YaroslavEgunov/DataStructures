@@ -9,25 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Programming.Model.Classes;
 using Programming.Model.Enums;
-
+using Rectangle = Programming.Model.Classes.Rectangle;
 
 namespace Programming.View
 {
     public partial class MainForm : Form
     {
-        private Model.Classes.Rectangle[] _rectangles;
+        private Rectangle[] _rectangles;
 
-        private Model.Classes.Rectangle _currentRectangle = new Model.Classes.Rectangle();
+        private Rectangle _currentRectangle = new Rectangle();
 
-        private Model.Classes.Movie[] _movies;
+        private Movie[] _movies;
 
-        private Model.Classes.Movie _currentMovie = new Movie();
+        private Movie _currentMovie = new Movie();
 
         private readonly System.Drawing.Color ExceptionColor = System.Drawing.Color.LightPink;
 
         private readonly System.Drawing.Color CorrectColor = System.Drawing.Color.White;
 
-        private int FindRectangleWithMaxWidth(Model.Classes.Rectangle[] rectangles)
+        private int FindRectangleWithMaxWidth(Rectangle[] rectangles)
         {
             int Index = 0;
             double maxValues = 0;
@@ -59,7 +59,7 @@ namespace Programming.View
 
         private void InitRectangles() 
         {
-            _rectangles = new Model.Classes.Rectangle[5];
+            _rectangles = new Rectangle[5];
             Random random = new Random();
             string[] RectangleColors = { "White", "Black", "Yellow", "Brown",
                                         "Green", "Red", "Blue", "Purple" };
@@ -67,7 +67,7 @@ namespace Programming.View
             for (var i = 0; i < 5; i++)
             {
                 var Colors = random.Next(RectangleColors.Length);
-                _rectangles[i] = new Model.Classes.Rectangle(random.Next(1, 100),
+                _rectangles[i] = new Rectangle(random.Next(1, 100),
                                                              random.Next(1, 100),
                                                              RectangleColors[Colors]);
                 RectanglesListBox.Items.Add($"Rectangle {i + 1}");
@@ -281,7 +281,6 @@ namespace Programming.View
                 toolTip.SetToolTip(DurationInMinutesTextBox, exception.Message);
                 DurationInMinutesTextBox.BackColor = ExceptionColor;
             }
-
         }
 
         private void YearTextBox_TextChanged(object sender, EventArgs e)
@@ -328,7 +327,5 @@ namespace Programming.View
         {
             MoviesListBox.SelectedIndex = FindMovieWithMaxRating(_movies);
         }
-
-        
     }
 }

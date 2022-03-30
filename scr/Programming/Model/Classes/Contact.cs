@@ -23,7 +23,6 @@ namespace Programming.Model.Classes
             Name = name;
             _phoneNumber = number;
             Email = email;
-            
         }
 
         public string PhoneNumber
