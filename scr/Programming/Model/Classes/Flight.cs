@@ -5,7 +5,9 @@ namespace Programming.Model.Classes
     public class Flight
     {
         private int _flightTimeInMinutes;
+
         public string Destination { get; set; }
+
         public string Departure { get; set; }
 
         public Flight()

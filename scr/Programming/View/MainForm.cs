@@ -185,6 +185,7 @@ namespace Programming.View
             ColorTextBox.Text = _currentRectangle.Color;
             PointXTextBox.Text = _currentRectangle.Center.PointX.ToString();
             PointYTextBox.Text = _currentRectangle.Center.PointY.ToString();
+            IDTextBox.Text = _currentRectangle.Id.ToString();
         }
 
         private void LenghtTextBox_TextChanged(object sender, EventArgs e)
@@ -324,6 +325,11 @@ namespace Programming.View
         }
 
         private void PointXTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

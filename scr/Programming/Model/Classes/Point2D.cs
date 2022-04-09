@@ -16,7 +16,7 @@ namespace Programming.Model.Classes
         {
         }
 
-        public Point2D(double PointY, double PointX)
+        public Point2D(double PointX, double PointY)
         {
             _pointY = PointY;
             _pointX = PointX;

@@ -16,16 +16,18 @@ namespace Programming.Model.Classes
 
         public Point2D Center { get; set; }
 
+        public Ring(double inRadius, double outRadius, double PointX, double PointY)
+        {
+            OutRadius = outRadius;
+            InRadius = inRadius;
+            Center = new Point2D(PointX, PointY);
+        }
+
         public double Area
         {
             get
             {
-                return _area;
-            }
-            private set
-            {   
-                Validator.AssertOnPositiveValue(value, nameof(Area));
-                _area = value;
+                return (Math.Pow(OutRadius,2) * Math.PI) - (Math.Pow(InRadius, 2) * Math.PI);
             }
         }
 

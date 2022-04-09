@@ -5,6 +5,7 @@ namespace Programming.Model.Classes
     public class Subject
     {
         private int _mark;
+
         public string Name { get; set; }
 
         public string TeacherName { get; set; }
@@ -13,10 +14,10 @@ namespace Programming.Model.Classes
         {
         }
 
-        public Subject(string name, string teachersname, int mark)
+        public Subject(string name, string teachesname, int mark)
         {
             Name = name;
-            TeacherName = teachersname;
+            TeacherName = teachesname;
             _mark = mark;
         }
 

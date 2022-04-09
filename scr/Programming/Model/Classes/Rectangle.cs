@@ -8,6 +8,11 @@ namespace Programming.Model.Classes
         private double _width;
 
         private double _lenght;
+
+        private int _id;
+
+        private static int _allRectanglesCount;
+
         public string Color { get; set; }
 
         public Point2D Center { get; set; }
@@ -22,6 +27,8 @@ namespace Programming.Model.Classes
             _width = width;
             _lenght = lenght;
             Center = new Point2D(PointX, PointY);
+            AllRectanglesCount++;
+            Id = AllRectanglesCount;
         }
 
         public double Width
@@ -36,6 +43,10 @@ namespace Programming.Model.Classes
                 _width = value;
             }
         }
+
+        public static int AllRectanglesCount { get; set; }
+
+        public int Id { get; set; }
 
         public double Lenght
         {

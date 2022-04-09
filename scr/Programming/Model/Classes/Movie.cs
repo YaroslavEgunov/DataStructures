@@ -9,7 +9,9 @@ namespace Programming.Model.Classes
         private int _year;
 
         private double _rating;
+
         public string Genre { get; set; }
+
         public string Title { get; set; }
 
         public Movie()
