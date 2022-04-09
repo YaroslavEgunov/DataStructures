@@ -27,14 +27,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value > 1440)
-                {
-                    throw new ArgumentException("Полёты не длятся более 24 часов");
-                }
-                if (value < 0)
-                {
-                    throw new ArgumentException("Длительность полёта не может быть отрицательной");
-                }
+                Validator.AssertValueInRange(value,1,1440, nameof(FlightTimeInMinutes));
                 _flightTimeInMinutes = value;
             }
         }

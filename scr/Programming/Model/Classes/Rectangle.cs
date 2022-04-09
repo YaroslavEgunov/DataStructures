@@ -7,18 +7,18 @@ namespace Programming.Model.Classes
     {
         private double _width;
 
-        private double _length;
+        private double _lenght;
         public string Color { get; set; }
 
         public Rectangle()
         {
         }
 
-        public Rectangle(double length, double width, string color)
+        public Rectangle(double lenght, double width, string color)
         {
             Color = color;
             _width = width;
-            _length = length;
+            _lenght = lenght;
         }
 
         public double Width
@@ -29,29 +29,21 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("Ширина не может быть отрицательной или равной 0");
-                }
-
+                Validator.AssertOnPositiveValue(value, nameof(Width));
                 _width = value;
             }
         }
 
-        public double Length
+        public double Lenght
         {
             get
             {
-                return _length;
+                return _lenght;
             }
             set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("Длина не может быть отрицательной или равной 0");
-                }
-
-                _length = value;
+                Validator.AssertOnPositiveValue(value, nameof(Lenght));
+                _lenght = value;
             }
         }
     }

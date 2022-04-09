@@ -5,11 +5,8 @@ namespace Programming.Model.Classes
     public class Time
     {
         private int _hours;
-
         private int _minutes;
-
         private int _seconds;
-
         public Time()
         {
         }
@@ -29,10 +26,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value <= 0  || value > 24)
-                {
-                    throw new ArgumentException("В сутках не более 24-ёх и не отрицательное значение");
-                }
+                Validator.AssertValueInRange(value, 0, 24, nameof(Hours));
                 _hours = value;
             }
         }
@@ -45,10 +39,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value <= 0  || value > 60)
-                {
-                    throw new ArgumentException("В часе не более 60-ти и не отрицательное значение");
-                }
+                Validator.AssertValueInRange(value, 0, 60, nameof(Minutes));
                 _minutes = value;
             }
         }
@@ -61,10 +52,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value <= 0 || value > 60)
-                {
-                    throw new ArgumentException("В минуте не более 60-ти и не отрицательное значение");
-                }
+                Validator.AssertValueInRange(value, 0, 60, nameof(Seconds));
                 _seconds = value;
             }
         }

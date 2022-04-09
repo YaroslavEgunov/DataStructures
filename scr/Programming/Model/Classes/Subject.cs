@@ -5,7 +5,6 @@ namespace Programming.Model.Classes
     public class Subject
     {
         private int _mark;
-
         public string Name { get; set; }
 
         public string TeacherName { get; set; }
@@ -29,10 +28,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0 || value > 5)
-                {
-                    throw new ArgumentException("Оценка не может быть отрицательной или больше 5");
-                }
+                Validator.AssertValueInRange(value, 0, 5, nameof(Mark));
                 _mark = value;
             }
         }

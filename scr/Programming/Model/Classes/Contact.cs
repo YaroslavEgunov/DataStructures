@@ -10,9 +10,37 @@ namespace Programming.Model.Classes
     {
         private string _phoneNumber;
 
-        public string Name { get; set; }
+        private string _surname;
+
+        private string _name;
 
         public string Email { get; set; }
+
+        public string Surname
+        {
+            get
+            {
+                return _surname;
+            }
+            set
+            {
+                AssertStringContainsOnlyLetters(value, nameof(Surname));
+                _surname = value;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                AssertStringContainsOnlyLetters(value, nameof(Name));
+                _name = value;
+            }
+        }
 
         public Contact()
         {
@@ -20,9 +48,21 @@ namespace Programming.Model.Classes
 
         public Contact(string name, string number , string email)
         {
-            Name = name;
+            _name = name;
             _phoneNumber = number;
             Email = email;
+            
+        }
+
+        private void AssertStringContainsOnlyLetters(string value, string fieldName)
+        {
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (Char.IsLetter(value[i]) != true)
+                {
+                    throw new ArgumentException($"Необходимы только английские буквы в {fieldName}");
+                }
+            }
         }
 
         public string PhoneNumber
