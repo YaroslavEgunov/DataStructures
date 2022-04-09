@@ -180,7 +180,7 @@ namespace Programming.View
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _currentRectangle = _rectangles[RectanglesListBox.SelectedIndex];
-            LenghtTextBox.Text = _currentRectangle.Lenght.ToString();
+            LenghtTextBox.Text = _currentRectangle.Length.ToString();
             WidthTextBox.Text = _currentRectangle.Width.ToString();
             ColorTextBox.Text = _currentRectangle.Color;
             PointXTextBox.Text = _currentRectangle.Center.PointX.ToString();
@@ -192,7 +192,7 @@ namespace Programming.View
         {
             try
             {
-                _currentRectangle.Lenght = Convert.ToDouble(LenghtTextBox.Text);
+                _currentRectangle.Length = Convert.ToDouble(LenghtTextBox.Text);
                 LenghtTextBox.BackColor = CorrectColor;
                 toolTip.SetToolTip(LenghtTextBox, "");
             }
@@ -201,6 +201,7 @@ namespace Programming.View
                 toolTip.SetToolTip(LenghtTextBox, exception.Message);
                 LenghtTextBox.BackColor = ExceptionColor;
             }
+            CollisionLabel.Text = $"Rectangles 1 and 2 intersect?: {CollisionManager.IsCollision(_rectangles[0], _rectangles[1])}";
         }
 
         private void WidthTextBox_TextChanged(object sender, EventArgs e)
@@ -216,6 +217,7 @@ namespace Programming.View
                 toolTip.SetToolTip(WidthTextBox, exception.Message);
                 WidthTextBox.BackColor = ExceptionColor;
             }
+            CollisionLabel.Text = $"Rectangles 1 and 2 intersect?: {CollisionManager.IsCollision(_rectangles[0], _rectangles[1])}";
         }
 
         private void ColorTextBox_TextChanged(object sender, EventArgs e)

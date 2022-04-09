@@ -63,6 +63,8 @@
             this.YearTextBox = new System.Windows.Forms.TextBox();
             this.RatingTextBox = new System.Windows.Forms.TextBox();
             this.RectanglesGroupBox = new System.Windows.Forms.GroupBox();
+            this.Label13 = new System.Windows.Forms.Label();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.PointYTextBox = new System.Windows.Forms.TextBox();
@@ -76,8 +78,7 @@
             this.WidthLabel = new System.Windows.Forms.Label();
             this.LenghtLabel = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.IDTextBox = new System.Windows.Forms.TextBox();
-            this.Label13 = new System.Windows.Forms.Label();
+            this.CollisionLabel = new System.Windows.Forms.Label();
             this.EnumTabPage.SuspendLayout();
             this.SeasonHandleGroupBox.SuspendLayout();
             this.WeekdayParsingGroupBox.SuspendLayout();
@@ -96,7 +97,7 @@
             this.EnumTabPage.Location = new System.Drawing.Point(4, 22);
             this.EnumTabPage.Name = "EnumTabPage";
             this.EnumTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.EnumTabPage.Size = new System.Drawing.Size(628, 327);
+            this.EnumTabPage.Size = new System.Drawing.Size(628, 350);
             this.EnumTabPage.TabIndex = 0;
             this.EnumTabPage.Text = "Enums";
             this.EnumTabPage.UseVisualStyleBackColor = true;
@@ -108,7 +109,7 @@
             this.SeasonHandleGroupBox.Controls.Add(this.label5);
             this.SeasonHandleGroupBox.Location = new System.Drawing.Point(318, 190);
             this.SeasonHandleGroupBox.Name = "SeasonHandleGroupBox";
-            this.SeasonHandleGroupBox.Size = new System.Drawing.Size(302, 131);
+            this.SeasonHandleGroupBox.Size = new System.Drawing.Size(302, 154);
             this.SeasonHandleGroupBox.TabIndex = 2;
             this.SeasonHandleGroupBox.TabStop = false;
             this.SeasonHandleGroupBox.Text = "Season Handle";
@@ -148,7 +149,7 @@
             this.WeekdayParsingGroupBox.Controls.Add(this.label4);
             this.WeekdayParsingGroupBox.Location = new System.Drawing.Point(8, 190);
             this.WeekdayParsingGroupBox.Name = "WeekdayParsingGroupBox";
-            this.WeekdayParsingGroupBox.Size = new System.Drawing.Size(304, 131);
+            this.WeekdayParsingGroupBox.Size = new System.Drawing.Size(304, 154);
             this.WeekdayParsingGroupBox.TabIndex = 1;
             this.WeekdayParsingGroupBox.TabStop = false;
             this.WeekdayParsingGroupBox.Text = "Weekday Parsing";
@@ -267,7 +268,7 @@
             this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(636, 353);
+            this.TabControl.Size = new System.Drawing.Size(636, 376);
             this.TabControl.TabIndex = 0;
             // 
             // ClassesTabPage
@@ -277,7 +278,7 @@
             this.ClassesTabPage.Location = new System.Drawing.Point(4, 22);
             this.ClassesTabPage.Name = "ClassesTabPage";
             this.ClassesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ClassesTabPage.Size = new System.Drawing.Size(628, 327);
+            this.ClassesTabPage.Size = new System.Drawing.Size(628, 350);
             this.ClassesTabPage.TabIndex = 1;
             this.ClassesTabPage.Text = "Classes";
             this.ClassesTabPage.UseVisualStyleBackColor = true;
@@ -298,7 +299,7 @@
             this.FilmsGroupBox.Controls.Add(this.RatingTextBox);
             this.FilmsGroupBox.Location = new System.Drawing.Point(317, 6);
             this.FilmsGroupBox.Name = "FilmsGroupBox";
-            this.FilmsGroupBox.Size = new System.Drawing.Size(303, 315);
+            this.FilmsGroupBox.Size = new System.Drawing.Size(303, 338);
             this.FilmsGroupBox.TabIndex = 2;
             this.FilmsGroupBox.TabStop = false;
             this.FilmsGroupBox.Text = "Movies";
@@ -331,7 +332,7 @@
             // 
             // FindFilmButton
             // 
-            this.FindFilmButton.Location = new System.Drawing.Point(6, 278);
+            this.FindFilmButton.Location = new System.Drawing.Point(6, 280);
             this.FindFilmButton.Name = "FindFilmButton";
             this.FindFilmButton.Size = new System.Drawing.Size(123, 23);
             this.FindFilmButton.TabIndex = 14;
@@ -411,6 +412,7 @@
             // 
             // RectanglesGroupBox
             // 
+            this.RectanglesGroupBox.Controls.Add(this.CollisionLabel);
             this.RectanglesGroupBox.Controls.Add(this.Label13);
             this.RectanglesGroupBox.Controls.Add(this.IDTextBox);
             this.RectanglesGroupBox.Controls.Add(this.label12);
@@ -427,10 +429,27 @@
             this.RectanglesGroupBox.Controls.Add(this.LenghtLabel);
             this.RectanglesGroupBox.Location = new System.Drawing.Point(8, 6);
             this.RectanglesGroupBox.Name = "RectanglesGroupBox";
-            this.RectanglesGroupBox.Size = new System.Drawing.Size(303, 315);
+            this.RectanglesGroupBox.Size = new System.Drawing.Size(303, 338);
             this.RectanglesGroupBox.TabIndex = 1;
             this.RectanglesGroupBox.TabStop = false;
             this.RectanglesGroupBox.Text = "Rectangles";
+            // 
+            // Label13
+            // 
+            this.Label13.AutoSize = true;
+            this.Label13.Location = new System.Drawing.Point(154, 265);
+            this.Label13.Name = "Label13";
+            this.Label13.Size = new System.Drawing.Size(23, 13);
+            this.Label13.TabIndex = 12;
+            this.Label13.Text = "lD: ";
+            // 
+            // IDTextBox
+            // 
+            this.IDTextBox.Location = new System.Drawing.Point(157, 280);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.ReadOnly = true;
+            this.IDTextBox.Size = new System.Drawing.Size(120, 20);
+            this.IDTextBox.TabIndex = 11;
             // 
             // label12
             // 
@@ -516,7 +535,7 @@
             this.RectanglesListBox.IntegralHeight = false;
             this.RectanglesListBox.Location = new System.Drawing.Point(6, 20);
             this.RectanglesListBox.Name = "RectanglesListBox";
-            this.RectanglesListBox.Size = new System.Drawing.Size(123, 252);
+            this.RectanglesListBox.Size = new System.Drawing.Size(123, 231);
             this.RectanglesListBox.TabIndex = 0;
             this.RectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
             // 
@@ -536,30 +555,22 @@
             this.LenghtLabel.Name = "LenghtLabel";
             this.LenghtLabel.Size = new System.Drawing.Size(46, 13);
             this.LenghtLabel.TabIndex = 3;
-            this.LenghtLabel.Text = "Lenght: ";
+            this.LenghtLabel.Text = "Length: ";
             // 
-            // IDTextBox
+            // CollisionLabel
             // 
-            this.IDTextBox.Location = new System.Drawing.Point(157, 280);
-            this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.ReadOnly = true;
-            this.IDTextBox.Size = new System.Drawing.Size(120, 20);
-            this.IDTextBox.TabIndex = 11;
-            // 
-            // Label13
-            // 
-            this.Label13.AutoSize = true;
-            this.Label13.Location = new System.Drawing.Point(154, 265);
-            this.Label13.Name = "Label13";
-            this.Label13.Size = new System.Drawing.Size(23, 13);
-            this.Label13.TabIndex = 12;
-            this.Label13.Text = "lD: ";
+            this.CollisionLabel.AutoSize = true;
+            this.CollisionLabel.Location = new System.Drawing.Point(6, 313);
+            this.CollisionLabel.Name = "CollisionLabel";
+            this.CollisionLabel.Size = new System.Drawing.Size(41, 13);
+            this.CollisionLabel.TabIndex = 13;
+            this.CollisionLabel.Text = "label14";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 353);
+            this.ClientSize = new System.Drawing.Size(636, 376);
             this.Controls.Add(this.TabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -633,6 +644,7 @@
         private System.Windows.Forms.TextBox PointXTextBox;
         private System.Windows.Forms.Label Label13;
         private System.Windows.Forms.TextBox IDTextBox;
+        private System.Windows.Forms.Label CollisionLabel;
     }
 }
 

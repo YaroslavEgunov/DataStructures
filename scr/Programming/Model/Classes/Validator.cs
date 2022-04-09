@@ -12,7 +12,7 @@ namespace Programming.Model.Classes
         {
             if (value <= 0)
             {
-                throw new ArgumentException($"Введите положительное значение в {fieldName}");
+                throw new ArgumentException($"Enter a positive value in {fieldName}");
             }
         }
 
@@ -20,7 +20,7 @@ namespace Programming.Model.Classes
         {
             if (value <= 0)
             {
-                throw new ArgumentException($"Введите положительное значение в {fieldName}");
+                throw new ArgumentException($"Enter a positive value in {fieldName}");
             }
         }
 
@@ -29,7 +29,7 @@ namespace Programming.Model.Classes
             if (!(value >= min) || !(value <= max))
             {
                 throw new ArgumentException(
-                    $" Введите значение в {fieldName} в корректном диапазоне");
+                    $"Enter a value  in {fieldName} within the valid range");
             }
         }
 
@@ -38,7 +38,7 @@ namespace Programming.Model.Classes
             if (!(value >= min) || !(value <= max))
             {
                 throw new ArgumentException(
-                    $"Введите значение в {fieldName} в корректном диапазоне");
+                    $"Enter a value  in {fieldName} within the valid range");
             }
         }
 
@@ -48,7 +48,8 @@ namespace Programming.Model.Classes
             {
                 if (Char.IsLetter(value[i]) != true)
                 {
-                    throw new ArgumentException($"Необходимы только английские буквы в {fieldName}");
+                    throw new ArgumentException($"Only English letters are required in " +
+                                                $"{fieldName}");
                 }
             }
         }
@@ -57,7 +58,8 @@ namespace Programming.Model.Classes
         {
             if (value > outRadius)
             {
-                throw new ArgumentException("Внутренний радиус не может быть больше внешнего");
+                throw new ArgumentException("The inner radius cannot be greater " +
+                                            "than the outer one");
             }
         }
 
@@ -65,7 +67,8 @@ namespace Programming.Model.Classes
         {
             if (value < inRadius)
             {
-                throw new ArgumentException("Внешний радиус не может быть меньше внуреннего");
+                throw new ArgumentException("The outer radius cannot be less " +
+                                            "than the inner one.");
             }
         }
     }
