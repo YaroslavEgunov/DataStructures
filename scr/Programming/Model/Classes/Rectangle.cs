@@ -10,6 +10,8 @@ namespace Programming.Model.Classes
         private double _lenght;
         public string Color { get; set; }
 
+        public
+
         public Rectangle()
         {
         }

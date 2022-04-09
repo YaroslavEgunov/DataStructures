@@ -46,12 +46,12 @@ namespace Programming.Model.Classes
         {
         }
 
-        public Contact(string name, string number , string email)
+        public Contact(string name, string number , string email, string surname)
         {
             _name = name;
             _phoneNumber = number;
             Email = email;
-            
+            _surname = surname;
         }
 
         private void AssertStringContainsOnlyLetters(string value, string fieldName)
