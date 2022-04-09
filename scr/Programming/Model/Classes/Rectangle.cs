@@ -10,17 +10,18 @@ namespace Programming.Model.Classes
         private double _lenght;
         public string Color { get; set; }
 
-        public
+        public Point2D Center { get; set; }
 
         public Rectangle()
         {
         }
 
-        public Rectangle(double lenght, double width, string color)
+        public Rectangle(double lenght, double width, string color, double PointX, double PointY)
         {
             Color = color;
             _width = width;
             _lenght = lenght;
+            Center = new Point2D(PointX, PointY);
         }
 
         public double Width

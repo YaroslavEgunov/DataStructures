@@ -24,7 +24,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                AssertStringContainsOnlyLetters(value, nameof(Surname));
+                Validator.AssertStringContainsOnlyLetters(value, nameof(Surname));
                 _surname = value;
             }
         }
@@ -37,7 +37,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                AssertStringContainsOnlyLetters(value, nameof(Name));
+                Validator.AssertStringContainsOnlyLetters(value, nameof(Name));
                 _name = value;
             }
         }
@@ -52,17 +52,6 @@ namespace Programming.Model.Classes
             _phoneNumber = number;
             Email = email;
             _surname = surname;
-        }
-
-        private void AssertStringContainsOnlyLetters(string value, string fieldName)
-        {
-            for (int i = 0; i < value.Length; i++)
-            {
-                if (Char.IsLetter(value[i]) != true)
-                {
-                    throw new ArgumentException($"Необходимы только английские буквы в {fieldName}");
-                }
-            }
         }
 
         public string PhoneNumber

@@ -33,7 +33,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                Validator.AssertValueInRange(value, 1, 10, nameof(Rating));
+                Validator.AssertValueInRange(value, 0, 10, nameof(Rating));
                 _rating = value;
             }
         }

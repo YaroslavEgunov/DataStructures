@@ -62,7 +62,9 @@ namespace Programming.View
                 var Colors = random.Next(RectangleColors.Length);
                 _rectangles[i] = new Model.Classes.Rectangle(random.Next(1, 100),
                                                              random.Next(1, 100),
-                                                             RectangleColors[Colors]);
+                                                             RectangleColors[Colors],
+                                                             random.Next(1, 100),
+                                                             random.Next(1, 100));
                 RectanglesListBox.Items.Add($"Rectangle {i + 1}");
             }
 
@@ -181,6 +183,8 @@ namespace Programming.View
             LenghtTextBox.Text = _currentRectangle.Lenght.ToString();
             WidthTextBox.Text = _currentRectangle.Width.ToString();
             ColorTextBox.Text = _currentRectangle.Color;
+            PointXTextBox.Text = _currentRectangle.Center.PointX.ToString();
+            PointYTextBox.Text = _currentRectangle.Center.PointY.ToString();
         }
 
         private void LenghtTextBox_TextChanged(object sender, EventArgs e)
@@ -319,12 +323,7 @@ namespace Programming.View
             MoviesListBox.SelectedIndex = FindMovieWithMaxRating(_movies);
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
+        private void PointXTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -41,6 +41,33 @@ namespace Programming.Model.Classes
                     $"Введите значение в {fieldName} в корректном диапазоне");
             }
         }
+
+        public static void AssertStringContainsOnlyLetters(string value, string fieldName)
+        {
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (Char.IsLetter(value[i]) != true)
+                {
+                    throw new ArgumentException($"Необходимы только английские буквы в {fieldName}");
+                }
+            }
+        }
+
+        public static void AssertInRadius(double value, double outRadius)
+        {
+            if (value > outRadius)
+            {
+                throw new ArgumentException("Внутренний радиус не может быть больше внешнего");
+            }
+        }
+
+        public static void AssertOutRadius(double value, double inRadius)
+        {
+            if (value < inRadius)
+            {
+                throw new ArgumentException("Внешний радиус не может быть меньше внуреннего");
+            }
+        }
     }
 }
 
