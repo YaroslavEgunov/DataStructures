@@ -8,54 +8,52 @@ namespace Programming.Model.Classes
 {
     public class Ring
     {
-        private double _inRadius;
+        private double _innerRadius;
 
-        private double _outRadius;
-
-        private double _area;
+        private double _outerRadius;
 
         public Point2D Center { get; set; }
 
-        public Ring(double inRadius, double outRadius, double PointX, double PointY)
+        public Ring(double innerRadius, double outerRadius, double x, double y)
         {
-            OutRadius = outRadius;
-            InRadius = inRadius;
-            Center = new Point2D(PointX, PointY);
+            OuterRadius = outerRadius;
+            InnerRadius = innerRadius;
+            Center = new Point2D(x, y);
         }
 
         public double Area
         {
             get
             {
-                return (Math.Pow(OutRadius,2) * Math.PI) - (Math.Pow(InRadius, 2) * Math.PI);
+                return (Math.PI*(OuterRadius * OuterRadius) - (InnerRadius * InnerRadius));
             }
         }
 
-        public double OutRadius
+        public double OuterRadius
         {
             get
             {
-                return _outRadius;
+                return _outerRadius;
             }
             set
             {
-                Validator.AssertOnPositiveValue(value, nameof(OutRadius));
-                Validator.AssertOutRadius(value, OutRadius);
-                _outRadius = value;
+                Validator.AssertOnPositiveValue(value, nameof(OuterRadius));
+                Validator.AssertValueInRange(value, InnerRadius, double.MaxValue, nameof(OuterRadius));
+                _outerRadius = value;
             }
         }
 
-        public double InRadius
+        public double InnerRadius
         {
             get
             {
-                return _inRadius;
+                return _innerRadius;
             }
             set
             {
-                Validator.AssertOnPositiveValue(value, nameof(InRadius));
-                Validator.AssertInRadius(value, InRadius);
-                _inRadius = value;
+                Validator.AssertOnPositiveValue(value, nameof(InnerRadius));
+                Validator.AssertValueInRange(value, 0d ,OuterRadius , nameof(InnerRadius));
+                _innerRadius = value;
             }
         }
     }

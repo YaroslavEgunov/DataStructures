@@ -63,22 +63,22 @@
             this.YearTextBox = new System.Windows.Forms.TextBox();
             this.RatingTextBox = new System.Windows.Forms.TextBox();
             this.RectanglesGroupBox = new System.Windows.Forms.GroupBox();
+            this.CollisionLabel = new System.Windows.Forms.Label();
             this.Label13 = new System.Windows.Forms.Label();
             this.IDTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.PointYTextBox = new System.Windows.Forms.TextBox();
-            this.PointXTextBox = new System.Windows.Forms.TextBox();
+            this.CoordinateYTextBox = new System.Windows.Forms.TextBox();
+            this.CoordinateXTextBox = new System.Windows.Forms.TextBox();
             this.FindRectangleButton = new System.Windows.Forms.Button();
             this.ColorTextBox = new System.Windows.Forms.TextBox();
-            this.LenghtTextBox = new System.Windows.Forms.TextBox();
+            this.LengthTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.WidthTextBox = new System.Windows.Forms.TextBox();
             this.RectanglesListBox = new System.Windows.Forms.ListBox();
             this.WidthLabel = new System.Windows.Forms.Label();
             this.LenghtLabel = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.CollisionLabel = new System.Windows.Forms.Label();
             this.EnumTabPage.SuspendLayout();
             this.SeasonHandleGroupBox.SuspendLayout();
             this.WeekdayParsingGroupBox.SuspendLayout();
@@ -354,7 +354,7 @@
             this.MoviesListBox.IntegralHeight = false;
             this.MoviesListBox.Location = new System.Drawing.Point(6, 24);
             this.MoviesListBox.Name = "MoviesListBox";
-            this.MoviesListBox.Size = new System.Drawing.Size(123, 248);
+            this.MoviesListBox.Size = new System.Drawing.Size(123, 227);
             this.MoviesListBox.TabIndex = 0;
             this.MoviesListBox.SelectedIndexChanged += new System.EventHandler(this.MoviesListBox_SelectedIndexChanged);
             // 
@@ -375,7 +375,6 @@
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 12;
             this.label7.Text = "Year: ";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // DurationInMinutesTextBox
             // 
@@ -417,11 +416,11 @@
             this.RectanglesGroupBox.Controls.Add(this.IDTextBox);
             this.RectanglesGroupBox.Controls.Add(this.label12);
             this.RectanglesGroupBox.Controls.Add(this.label11);
-            this.RectanglesGroupBox.Controls.Add(this.PointYTextBox);
-            this.RectanglesGroupBox.Controls.Add(this.PointXTextBox);
+            this.RectanglesGroupBox.Controls.Add(this.CoordinateYTextBox);
+            this.RectanglesGroupBox.Controls.Add(this.CoordinateXTextBox);
             this.RectanglesGroupBox.Controls.Add(this.FindRectangleButton);
             this.RectanglesGroupBox.Controls.Add(this.ColorTextBox);
-            this.RectanglesGroupBox.Controls.Add(this.LenghtTextBox);
+            this.RectanglesGroupBox.Controls.Add(this.LengthTextBox);
             this.RectanglesGroupBox.Controls.Add(this.label8);
             this.RectanglesGroupBox.Controls.Add(this.WidthTextBox);
             this.RectanglesGroupBox.Controls.Add(this.RectanglesListBox);
@@ -434,10 +433,19 @@
             this.RectanglesGroupBox.TabStop = false;
             this.RectanglesGroupBox.Text = "Rectangles";
             // 
+            // CollisionLabel
+            // 
+            this.CollisionLabel.AutoSize = true;
+            this.CollisionLabel.Location = new System.Drawing.Point(6, 313);
+            this.CollisionLabel.Name = "CollisionLabel";
+            this.CollisionLabel.Size = new System.Drawing.Size(41, 13);
+            this.CollisionLabel.TabIndex = 13;
+            this.CollisionLabel.Text = "label14";
+            // 
             // Label13
             // 
             this.Label13.AutoSize = true;
-            this.Label13.Location = new System.Drawing.Point(154, 265);
+            this.Label13.Location = new System.Drawing.Point(158, 21);
             this.Label13.Name = "Label13";
             this.Label13.Size = new System.Drawing.Size(23, 13);
             this.Label13.TabIndex = 12;
@@ -445,7 +453,7 @@
             // 
             // IDTextBox
             // 
-            this.IDTextBox.Location = new System.Drawing.Point(157, 280);
+            this.IDTextBox.Location = new System.Drawing.Point(161, 36);
             this.IDTextBox.Name = "IDTextBox";
             this.IDTextBox.ReadOnly = true;
             this.IDTextBox.Size = new System.Drawing.Size(120, 20);
@@ -454,7 +462,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(154, 215);
+            this.label12.Location = new System.Drawing.Point(158, 264);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(113, 13);
             this.label12.TabIndex = 10;
@@ -463,28 +471,27 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(154, 162);
+            this.label11.Location = new System.Drawing.Point(158, 215);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 13);
             this.label11.TabIndex = 9;
             this.label11.Text = "Center (X coordinate): ";
             // 
-            // PointYTextBox
+            // CoordinateYTextBox
             // 
-            this.PointYTextBox.Location = new System.Drawing.Point(157, 231);
-            this.PointYTextBox.Name = "PointYTextBox";
-            this.PointYTextBox.ReadOnly = true;
-            this.PointYTextBox.Size = new System.Drawing.Size(120, 20);
-            this.PointYTextBox.TabIndex = 8;
+            this.CoordinateYTextBox.Location = new System.Drawing.Point(161, 280);
+            this.CoordinateYTextBox.Name = "CoordinateYTextBox";
+            this.CoordinateYTextBox.ReadOnly = true;
+            this.CoordinateYTextBox.Size = new System.Drawing.Size(120, 20);
+            this.CoordinateYTextBox.TabIndex = 8;
             // 
-            // PointXTextBox
+            // CoordinateXTextBox
             // 
-            this.PointXTextBox.Location = new System.Drawing.Point(157, 178);
-            this.PointXTextBox.Name = "PointXTextBox";
-            this.PointXTextBox.ReadOnly = true;
-            this.PointXTextBox.Size = new System.Drawing.Size(120, 20);
-            this.PointXTextBox.TabIndex = 7;
-            this.PointXTextBox.TextChanged += new System.EventHandler(this.PointXTextBox_TextChanged);
+            this.CoordinateXTextBox.Location = new System.Drawing.Point(161, 231);
+            this.CoordinateXTextBox.Name = "CoordinateXTextBox";
+            this.CoordinateXTextBox.ReadOnly = true;
+            this.CoordinateXTextBox.Size = new System.Drawing.Size(120, 20);
+            this.CoordinateXTextBox.TabIndex = 7;
             // 
             // FindRectangleButton
             // 
@@ -498,24 +505,24 @@
             // 
             // ColorTextBox
             // 
-            this.ColorTextBox.Location = new System.Drawing.Point(157, 126);
+            this.ColorTextBox.Location = new System.Drawing.Point(161, 178);
             this.ColorTextBox.Name = "ColorTextBox";
             this.ColorTextBox.Size = new System.Drawing.Size(120, 20);
             this.ColorTextBox.TabIndex = 2;
             this.ColorTextBox.TextChanged += new System.EventHandler(this.ColorTextBox_TextChanged);
             // 
-            // LenghtTextBox
+            // LengthTextBox
             // 
-            this.LenghtTextBox.Location = new System.Drawing.Point(157, 36);
-            this.LenghtTextBox.Name = "LenghtTextBox";
-            this.LenghtTextBox.Size = new System.Drawing.Size(120, 20);
-            this.LenghtTextBox.TabIndex = 1;
-            this.LenghtTextBox.TextChanged += new System.EventHandler(this.LenghtTextBox_TextChanged);
+            this.LengthTextBox.Location = new System.Drawing.Point(161, 81);
+            this.LengthTextBox.Name = "LengthTextBox";
+            this.LengthTextBox.Size = new System.Drawing.Size(120, 20);
+            this.LengthTextBox.TabIndex = 1;
+            this.LengthTextBox.TextChanged += new System.EventHandler(this.LengthTextBox_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(154, 110);
+            this.label8.Location = new System.Drawing.Point(158, 162);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 5;
@@ -523,7 +530,7 @@
             // 
             // WidthTextBox
             // 
-            this.WidthTextBox.Location = new System.Drawing.Point(157, 81);
+            this.WidthTextBox.Location = new System.Drawing.Point(161, 126);
             this.WidthTextBox.Name = "WidthTextBox";
             this.WidthTextBox.Size = new System.Drawing.Size(120, 20);
             this.WidthTextBox.TabIndex = 0;
@@ -542,7 +549,7 @@
             // WidthLabel
             // 
             this.WidthLabel.AutoSize = true;
-            this.WidthLabel.Location = new System.Drawing.Point(154, 65);
+            this.WidthLabel.Location = new System.Drawing.Point(158, 110);
             this.WidthLabel.Name = "WidthLabel";
             this.WidthLabel.Size = new System.Drawing.Size(41, 13);
             this.WidthLabel.TabIndex = 4;
@@ -551,20 +558,11 @@
             // LenghtLabel
             // 
             this.LenghtLabel.AutoSize = true;
-            this.LenghtLabel.Location = new System.Drawing.Point(154, 20);
+            this.LenghtLabel.Location = new System.Drawing.Point(158, 65);
             this.LenghtLabel.Name = "LenghtLabel";
             this.LenghtLabel.Size = new System.Drawing.Size(46, 13);
             this.LenghtLabel.TabIndex = 3;
             this.LenghtLabel.Text = "Length: ";
-            // 
-            // CollisionLabel
-            // 
-            this.CollisionLabel.AutoSize = true;
-            this.CollisionLabel.Location = new System.Drawing.Point(6, 313);
-            this.CollisionLabel.Name = "CollisionLabel";
-            this.CollisionLabel.Size = new System.Drawing.Size(41, 13);
-            this.CollisionLabel.TabIndex = 13;
-            this.CollisionLabel.Text = "label14";
             // 
             // MainForm
             // 
@@ -616,7 +614,7 @@
         private System.Windows.Forms.ComboBox ChooseSeasonComboBox;
         private System.Windows.Forms.TabPage ClassesTabPage;
         private System.Windows.Forms.TextBox WidthTextBox;
-        private System.Windows.Forms.TextBox LenghtTextBox;
+        private System.Windows.Forms.TextBox LengthTextBox;
         private System.Windows.Forms.TextBox ColorTextBox;
         private System.Windows.Forms.Label LenghtLabel;
         private System.Windows.Forms.Label label8;
@@ -640,8 +638,8 @@
         private System.Windows.Forms.TextBox TitleTextBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox PointYTextBox;
-        private System.Windows.Forms.TextBox PointXTextBox;
+        private System.Windows.Forms.TextBox CoordinateYTextBox;
+        private System.Windows.Forms.TextBox CoordinateXTextBox;
         private System.Windows.Forms.Label Label13;
         private System.Windows.Forms.TextBox IDTextBox;
         private System.Windows.Forms.Label CollisionLabel;

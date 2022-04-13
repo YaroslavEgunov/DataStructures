@@ -9,23 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Programming.Model.Classes;
 using Programming.Model.Enums;
+using Rectangle = Programming.Model.Classes.Rectangle;
 
 
 namespace Programming.View
 {
     public partial class MainForm : Form
     {
-        private Model.Classes.Rectangle[] _rectangles;
-
-        private Model.Classes.Rectangle _currentRectangle = new Model.Classes.Rectangle();
-
-        private Model.Classes.Movie[] _movies;
-
-        private Model.Classes.Movie _currentMovie = new Movie();
-
         private readonly System.Drawing.Color ExceptionColor = System.Drawing.Color.LightPink;
 
         private readonly System.Drawing.Color CorrectColor = System.Drawing.Color.White;
+
+        private Rectangle[] _rectangles;
+
+        private Rectangle _currentRectangle;
+
+        private Movie[] _movies;
+
+        private Movie _currentMovie = new Movie();
 
         public MainForm()
         {
@@ -44,17 +45,69 @@ namespace Programming.View
                 ChooseSeasonComboBox.Items.Add(value);
             }
 
-            string[] MoviesTitle = {"Holk","Iren Man","Captain Latvia","White window", "Gold Man",
-                                   "Pink Panther", "Thor son of the Pluto", "Recruit Marvel", 
-                                    "Peter-man", "Vatman", "Flash energy", 
-                                    "Wonder NotHuman", "Super-Monkey" };
-            string[] RectangleColors = { "White", "Black", "Yellow", "Brown", 
-                                        "Green", "Red", "Blue", "Purple" };
-            string[] MoviesGenre = { "Horror", "Action", "Comedy", "Fantasy", 
-                                    "Mystery", "Romance", "Thriller", "Drama" };
+            InitRectangles();
+            InitMovies();
+        }
 
-            _rectangles = new Model.Classes.Rectangle[5];
+        private int FindRectangleWithMaxWidth(Model.Classes.Rectangle[] rectangles)
+        {
+            int index = 0;
+            double maxValues = 0;
+            for (var i = 0; i < rectangles.Length; i++)
+            {
+                if (rectangles[i].Width > maxValues)
+                {
+                    maxValues = rectangles[i].Width;
+                    index = i;
+                }
+            }
+            return index;
+        }
+
+        private int FindMovieWithMaxRating(Movie[] movies)
+        {
+            int index = 0;
+            double maxValues = 0;
+            for (var i = 0; i < movies.Length; i++)
+            {
+                if (movies[i].Rating > maxValues)
+                {
+                    maxValues = movies[i].Rating;
+                    index = i;
+                }
+            }
+            return index;
+        }
+
+        private void InitMovies()
+        {
             _movies = new Movie[5];
+            Random random = new Random();
+            string[] MoviesTitle = {"Holk","Iren Man","Captain Latvia","White window", "Gold Man",
+                                   "Pink Panther", "Thor son of the Pluto", "Recruit Marvel",
+                                    "Peter-man", "Vatman", "Flash energy",
+                                    "Wonder NotHuman", "Super-Monkey" };
+            string[] MoviesGenre = { "Horror", "Action", "Comedy", "Fantasy",
+                                    "Mystery", "Romance", "Thriller", "Drama" };
+            for (var i = 0; i < 5; i++)
+            {
+                var Title = random.Next(MoviesTitle.Length);
+                var Genre = random.Next(MoviesGenre.Length);
+                _movies[i] = new Movie(MoviesTitle[Title],
+                                      random.Next(1900, DateTime.Now.Year),
+                                      Math.Round(random.NextDouble() * 10, 1),
+                                      random.Next(60, 180),
+                                      MoviesGenre[Genre]);
+                MoviesListBox.Items.Add($"Movie {i + 1}");
+            }
+            MoviesListBox.SelectedIndex = 0;
+        }
+
+        private void InitRectangles()
+        {
+            string[] RectangleColors = { "White", "Black", "Yellow", "Brown",
+                                        "Green", "Red", "Blue", "Purple" };
+            _rectangles = new Model.Classes.Rectangle[5];
             Random random = new Random();
 
             for (var i = 0; i < 5; i++)
@@ -68,20 +121,7 @@ namespace Programming.View
                 RectanglesListBox.Items.Add($"Rectangle {i + 1}");
             }
 
-            for (var i = 0; i < 5; i++)
-            {
-                var Title = random.Next(MoviesTitle.Length);
-                var Genre = random.Next(MoviesGenre.Length);
-                _movies[i] = new Movie(MoviesTitle[Title],
-                                      random.Next(1900, DateTime.Now.Year),
-                                      Math.Round(random.NextDouble()*10, 1),
-                                      random.Next(60, 180), 
-                                      MoviesGenre[Genre]);
-                MoviesListBox.Items.Add($"Movie {i + 1}");
-            }
-
             RectanglesListBox.SelectedIndex = 0;
-            MoviesListBox.SelectedIndex = 0;
         }
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -180,28 +220,28 @@ namespace Programming.View
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _currentRectangle = _rectangles[RectanglesListBox.SelectedIndex];
-            LenghtTextBox.Text = _currentRectangle.Length.ToString();
+            LengthTextBox.Text = _currentRectangle.Length.ToString();
             WidthTextBox.Text = _currentRectangle.Width.ToString();
             ColorTextBox.Text = _currentRectangle.Color;
-            PointXTextBox.Text = _currentRectangle.Center.PointX.ToString();
-            PointYTextBox.Text = _currentRectangle.Center.PointY.ToString();
+            CoordinateXTextBox.Text = _currentRectangle.Center.X.ToString();
+            CoordinateYTextBox.Text = _currentRectangle.Center.Y.ToString();
             IDTextBox.Text = _currentRectangle.Id.ToString();
         }
 
-        private void LenghtTextBox_TextChanged(object sender, EventArgs e)
+        private void LengthTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                _currentRectangle.Length = Convert.ToDouble(LenghtTextBox.Text);
-                LenghtTextBox.BackColor = CorrectColor;
-                toolTip.SetToolTip(LenghtTextBox, "");
+                _currentRectangle.Length = Convert.ToDouble(LengthTextBox.Text);
+                LengthTextBox.BackColor = CorrectColor;
+                toolTip.SetToolTip(LengthTextBox, "");
             }
             catch (Exception exception)
             {
-                toolTip.SetToolTip(LenghtTextBox, exception.Message);
-                LenghtTextBox.BackColor = ExceptionColor;
+                toolTip.SetToolTip(LengthTextBox, exception.Message);
+                LengthTextBox.BackColor = ExceptionColor;
             }
-            CollisionLabel.Text = $"Rectangles 1 and 2 intersect?: {CollisionManager.IsCollision(_rectangles[0], _rectangles[1])}";
+            CollisionLabel.Text = $"Rectangles 1 and 2 collide?: {CollisionManager.IsCollision(_rectangles[0], _rectangles[1])}";
         }
 
         private void WidthTextBox_TextChanged(object sender, EventArgs e)
@@ -217,27 +257,12 @@ namespace Programming.View
                 toolTip.SetToolTip(WidthTextBox, exception.Message);
                 WidthTextBox.BackColor = ExceptionColor;
             }
-            CollisionLabel.Text = $"Rectangles 1 and 2 intersect?: {CollisionManager.IsCollision(_rectangles[0], _rectangles[1])}";
+            CollisionLabel.Text = $"Rectangles 1 and 2 collide?: {CollisionManager.IsCollision(_rectangles[0], _rectangles[1])}";
         }
 
         private void ColorTextBox_TextChanged(object sender, EventArgs e)
         {
             _currentRectangle.Color = ColorTextBox.Text;
-        }
-
-        private int FindRectangleWithMaxWidth(Model.Classes.Rectangle[] rectangles)
-        {
-            int Index = 0;
-            double maxValues = 0;
-            for (var i = 0; i < rectangles.Length; i++)
-            {
-                if (rectangles[i].Width > maxValues)
-                {
-                    maxValues = rectangles[i].Width;
-                    Index = i;
-                }
-            }
-            return Index;
         }
 
         private void MoviesListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -263,7 +288,6 @@ namespace Programming.View
                 toolTip.SetToolTip(DurationInMinutesTextBox, exception.Message);
                 DurationInMinutesTextBox.BackColor = ExceptionColor;
             }
-
         }
 
         private void YearTextBox_TextChanged(object sender, EventArgs e)
@@ -306,34 +330,9 @@ namespace Programming.View
             _currentMovie.Title = Convert.ToString(TitleTextBox.Text);
         }
 
-        private int FindMovieWithMaxRating(Movie[] movies)
-        {
-            int index = 0;
-            double maxValues = 0;
-            for (var i = 0; i < movies.Length; i++)
-            {
-                if (movies[i].Rating > maxValues)
-                {
-                    maxValues = movies[i].Rating;
-                    index = i;
-                }
-            }
-            return index;
-        }
-
         private void FindMovieButton_Click(object sender, EventArgs e)
         {
             MoviesListBox.SelectedIndex = FindMovieWithMaxRating(_movies);
-        }
-
-        private void PointXTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

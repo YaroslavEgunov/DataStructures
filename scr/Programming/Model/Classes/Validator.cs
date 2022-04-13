@@ -33,7 +33,7 @@ namespace Programming.Model.Classes
             }
         }
 
-        public static void AssertValueInRange(double value, int min, int max, string fieldName)
+        public static void AssertValueInRange(double value, double min, double max, string fieldName)
         {
             if (!(value >= min) || !(value <= max))
             {
@@ -51,24 +51,6 @@ namespace Programming.Model.Classes
                     throw new ArgumentException($"Only English letters are required in " +
                                                 $"{fieldName}");
                 }
-            }
-        }
-
-        public static void AssertInRadius(double value, double outRadius)
-        {
-            if (value > outRadius)
-            {
-                throw new ArgumentException("The inner radius cannot be greater " +
-                                            "than the outer one");
-            }
-        }
-
-        public static void AssertOutRadius(double value, double inRadius)
-        {
-            if (value < inRadius)
-            {
-                throw new ArgumentException("The outer radius cannot be less " +
-                                            "than the inner one.");
             }
         }
     }

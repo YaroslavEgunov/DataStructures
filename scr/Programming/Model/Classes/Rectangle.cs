@@ -5,13 +5,13 @@ namespace Programming.Model.Classes
 {
     public class Rectangle
     {
+        public static int AllRectanglesCount { get; set; }
+
         private double _width;
 
         private double _length;
 
-        private int _id;
-
-        private static int _allRectanglesCount;
+        public int Id { get; set; }
 
         public string Color { get; set; }
 
@@ -19,16 +19,18 @@ namespace Programming.Model.Classes
 
         public Rectangle()
         {
+            AllRectanglesCount++;
+            Id = AllRectanglesCount;
         }
 
-        public Rectangle(double length, double width, string color, double PointX, double PointY)
+        public Rectangle(double length, double width, string color, double x, double y)
         {
             Color = color;
             _width = width;
             _length = length;
-            Center = new Point2D(PointX, PointY);
-            AllRectanglesCount++;
+            Center = new Point2D(x, y);
             Id = AllRectanglesCount;
+            AllRectanglesCount++;
         }
 
         public double Width
@@ -43,10 +45,6 @@ namespace Programming.Model.Classes
                 _width = value;
             }
         }
-
-        public static int AllRectanglesCount { get; set; }
-
-        public int Id { get; set; }
 
         public double Length
         {

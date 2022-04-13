@@ -8,43 +8,43 @@ namespace Programming.Model.Classes
 {
     public class Point2D
     {
-        private double _pointY;
+        private double _y;
 
-        private double _pointX;
+        private double _x;
 
         public Point2D()
         {
         }
 
-        public Point2D(double PointX, double PointY)
+        public Point2D(double x, double y)
         {
-            _pointY = PointY;
-            _pointX = PointX;
+            _y = y;
+            _x = x;
         }
 
-        public double PointY
+        public double Y
         {
             get
             {
-                return _pointY;
+                return _y;
             }
             private set
             {
-                Validator.AssertOnPositiveValue(value, nameof(PointY));
-                _pointY = value;
+                Validator.AssertOnPositiveValue(value, nameof(Y));
+                _y = value;
             }
         }
 
-        public double PointX
+        public double X
         {
             get
             {
-                return _pointX;
+                return _x;
             }
             private set
             {
-                Validator.AssertOnPositiveValue(value, nameof(PointX));
-                _pointX = value;
+                Validator.AssertOnPositiveValue(value, nameof(X));
+                _x = value;
             }
         }
     }
