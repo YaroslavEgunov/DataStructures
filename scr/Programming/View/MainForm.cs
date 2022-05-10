@@ -118,10 +118,10 @@ namespace Programming.View
                                                              RectangleColors[Colors],
                                                              random.Next(1, 100),
                                                              random.Next(1, 100));
-                RectanglesListBox.Items.Add($"Rectangle {i + 1}");
+                RectanglesListBoxInClasses.Items.Add($"Rectangle {i + 1}");
             }
 
-            RectanglesListBox.SelectedIndex = 0;
+            RectanglesListBoxInClasses.SelectedIndex = 0;
         }
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -214,12 +214,12 @@ namespace Programming.View
 
         private void FindRectangleButton_Click(object sender, EventArgs e)
         {
-            RectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
+            RectanglesListBoxInClasses.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
         }
 
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _currentRectangle = _rectangles[RectanglesListBox.SelectedIndex];
+            _currentRectangle = _rectangles[RectanglesListBoxInClasses.SelectedIndex];
             LengthTextBox.Text = _currentRectangle.Length.ToString();
             WidthTextBox.Text = _currentRectangle.Width.ToString();
             ColorTextBox.Text = _currentRectangle.Color;
@@ -333,6 +333,21 @@ namespace Programming.View
         private void FindMovieButton_Click(object sender, EventArgs e)
         {
             MoviesListBox.SelectedIndex = FindMovieWithMaxRating(_movies);
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
