@@ -53,6 +53,18 @@ namespace Programming.Model.Classes
                 }
             }
         }
+
+        public static void AssertStringContainsOnlyNumbers(string value, string fieldName)
+        {
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (Char.IsNumber (value[i]) != true)
+                {
+                    throw new ArgumentException($"Only numbers are required in " +
+                                                $"{fieldName}");
+                }
+            }
+        }
     }
 }
 
