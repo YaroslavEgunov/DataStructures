@@ -19,8 +19,8 @@ namespace Programming.Model.Classes
 
         public Rectangle()
         {
-            AllRectanglesCount++;
             Id = AllRectanglesCount;
+            AllRectanglesCount++;
         }
 
         public Rectangle(double length, double width, string color, double x, double y)

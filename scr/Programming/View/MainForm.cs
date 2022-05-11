@@ -20,13 +20,37 @@ namespace Programming.View
 
         private readonly System.Drawing.Color CorrectColor = System.Drawing.Color.White;
 
-        private Rectangle[] _rectangles;
+        private readonly System.Drawing.Color _correctColorPanel = System.Drawing.Color.FromArgb(127, 127, 255, 127);
 
-        private Rectangle _currentRectangle;
+        private readonly System.Drawing.Color _wrongColorPanel = System.Drawing.Color.FromArgb(127, 255, 127, 127);
+
+        private List<Rectangle> _rectangles = new List<Rectangle>();
+
+        private Rectangle _currentRectangle = new Rectangle();
+
+        private List<Panel> _rectanglesPanel = new List<Panel>();
 
         private Movie[] _movies;
 
         private Movie _currentMovie = new Movie();
+
+        private void UpdatePanelListBox()
+        {
+            RectanglesPanelListBox.Items[RectanglesPanelListBox.SelectedIndex] =
+                $"{_currentRectangle.Id}:" +
+                $"(X = {_currentRectangle.Center.X};" +
+                $"Y = {_currentRectangle.Center.Y};" +
+                $"W = {_currentRectangle.Width};" +
+                $"H = {_currentRectangle.Length})";
+        }
+
+        private void UpdateRectanglesPanelListBox(Rectangle rectangle)
+        {
+            RectanglesPanelListBox.Items[RectanglesPanelListBox.SelectedIndex] =
+                $"{rectangle.Id}: (X= {rectangle.Center.X}; " +
+                $"Y= {rectangle.Center.Y}; W= {rectangle.Length}; " +
+                $"H= {rectangle.Width})";
+        }
 
         public MainForm()
         {
@@ -49,19 +73,19 @@ namespace Programming.View
             InitMovies();
         }
 
-        private int FindRectangleWithMaxWidth(Model.Classes.Rectangle[] rectangles)
+        private int FindRectangleWithMaxWidth(List<Rectangle> rectangles)
         {
-            int index = 0;
-            double maxValues = 0;
-            for (var i = 0; i < rectangles.Length; i++)
+            double max = 0;
+            int currentIndex = -1;
+            for (int i = 0; i < rectangles.Count; i++)
             {
-                if (rectangles[i].Width > maxValues)
+                if (rectangles[i].Width > max)
                 {
-                    maxValues = rectangles[i].Width;
-                    index = i;
+                    max = rectangles[i].Width;
+                    currentIndex = i;
                 }
             }
-            return index;
+            return currentIndex;
         }
 
         private int FindMovieWithMaxRating(Movie[] movies)
@@ -107,17 +131,16 @@ namespace Programming.View
         {
             string[] RectangleColors = { "White", "Black", "Yellow", "Brown",
                                         "Green", "Red", "Blue", "Purple" };
-            _rectangles = new Model.Classes.Rectangle[5];
             Random random = new Random();
 
             for (var i = 0; i < 5; i++)
             {
                 var Colors = random.Next(RectangleColors.Length);
-                _rectangles[i] = new Model.Classes.Rectangle(random.Next(1, 100),
+                _rectangles.Add (new Rectangle(random.Next(1, 100),
                                                              random.Next(1, 100),
                                                              RectangleColors[Colors],
                                                              random.Next(1, 100),
-                                                             random.Next(1, 100));
+                                                             random.Next(1, 100)));
                 RectanglesListBoxInClasses.Items.Add($"Rectangle {i + 1}");
             }
 
@@ -335,19 +358,75 @@ namespace Programming.View
             MoviesListBox.SelectedIndex = FindMovieWithMaxRating(_movies);
         }
 
-        private void label14_Click(object sender, EventArgs e)
-        {
 
+
+
+
+
+
+        private void AddPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            AddPictureBox.Image = Image.FromFile(@"E:\Лабы\Repos\Programming\resources\rectangle_add_24x24.png");
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void AddPictureBox_MouseLeave(object sender, EventArgs e)
         {
-
+            AddPictureBox.Image = Image.FromFile(@"E:\Лабы\Repos\Programming\resources\rectangle_add_24x24_uncolor.png");
         }
 
-        private void label16_Click(object sender, EventArgs e)
+        private void DeletePictureBox_MouseEnter(object sender, EventArgs e)
         {
-
+            DeletePictureBox.Image = Image.FromFile(@"E:\Лабы\Repos\Programming\resources\rectangle_remove_24x24.png");
         }
+
+        private void DeletePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            DeletePictureBox.Image = Image.FromFile(@"E:\Лабы\Repos\Programming\resources\rectangle_remove_24x24_uncolor.png");
+        }
+
+        private void AddPictureBox_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            _rectangles.Add(new Rectangle(
+                random.Next(10, 100),
+                random.Next(10, 100),
+                "White",
+                random.Next(10, 300),
+                random.Next(10, 300)));
+
+            _currentRectangle = _rectangles[_rectangles.Count-6];
+            RectanglesPanelListBox.Items.Add(
+                $"{_currentRectangle.Id}:" +
+                $"(X = {_currentRectangle.Center.X};" +
+                $"Y = {_currentRectangle.Center.Y};" +
+                $"W = {_currentRectangle.Width};" +
+                $"H = {_currentRectangle.Length})");
+        }
+
+        private void DeletePictureBox_Click(object sender, EventArgs e)
+        {
+            _rectangles.RemoveAt(RectanglesPanelListBox.SelectedIndex);
+            RectanglesPanelListBox.Items.RemoveAt(RectanglesPanelListBox.SelectedIndex);
+        }
+
+        private void RectanglesPanelListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RectanglesPanelListBox.SelectedIndex == -1)
+            {
+                _currentRectangle = null;
+                IdPanelTextBox.Text = "";
+                XPanelTextBox.Text = "";
+                YPanelTextBox.Text = "";
+                WidthPanelTextBox.Text = "";
+                HeightPanelTextBox.Text = "";
+                IdPanelTextBox.BackColor = CorrectColor;
+            }
+            else
+            {
+                _currentRectangle = _rectangles[RectanglesPanelListBox.SelectedIndex];
+                UpdateRectangleInfo(_currentRectangle);
+            }
+        }
+
     }
 }

@@ -130,6 +130,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8-magento-100.ico" />
+    <None Include="Resources\rectangle_remove_24x24_uncolor.png" />
+    <None Include="Resources\rectangle_add_24x24_uncolor.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
