@@ -44,14 +44,6 @@ namespace Programming.View
                 $"H = {_currentRectangle.Length})";
         }
 
-        private void UpdateRectanglesPanelListBox(Rectangle rectangle)
-        {
-            RectanglesPanelListBox.Items[RectanglesPanelListBox.SelectedIndex] =
-                $"{rectangle.Id}: (X= {rectangle.Center.X}; " +
-                $"Y= {rectangle.Center.Y}; W= {rectangle.Length}; " +
-                $"H= {rectangle.Width})";
-        }
-
         public MainForm()
         {
             InitializeComponent();
@@ -423,8 +415,7 @@ namespace Programming.View
             }
             else
             {
-                _currentRectangle = _rectangles[RectanglesPanelListBox.SelectedIndex];
-                UpdateRectangleInfo(_currentRectangle);
+                
             }
         }
 
