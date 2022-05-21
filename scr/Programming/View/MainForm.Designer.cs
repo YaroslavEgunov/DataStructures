@@ -317,9 +317,9 @@
             this.FilmsGroupBox.Controls.Add(this.label6);
             this.FilmsGroupBox.Controls.Add(this.YearTextBox);
             this.FilmsGroupBox.Controls.Add(this.RatingTextBox);
-            this.FilmsGroupBox.Location = new System.Drawing.Point(419, 6);
+            this.FilmsGroupBox.Location = new System.Drawing.Point(362, 6);
             this.FilmsGroupBox.Name = "FilmsGroupBox";
-            this.FilmsGroupBox.Size = new System.Drawing.Size(303, 419);
+            this.FilmsGroupBox.Size = new System.Drawing.Size(360, 419);
             this.FilmsGroupBox.TabIndex = 2;
             this.FilmsGroupBox.TabStop = false;
             this.FilmsGroupBox.Text = "Movies";
@@ -448,7 +448,7 @@
             this.RectanglesGroupBox.Controls.Add(this.LenghtLabel);
             this.RectanglesGroupBox.Location = new System.Drawing.Point(8, 6);
             this.RectanglesGroupBox.Name = "RectanglesGroupBox";
-            this.RectanglesGroupBox.Size = new System.Drawing.Size(303, 419);
+            this.RectanglesGroupBox.Size = new System.Drawing.Size(348, 419);
             this.RectanglesGroupBox.TabIndex = 1;
             this.RectanglesGroupBox.TabStop = false;
             this.RectanglesGroupBox.Text = "Rectangles";

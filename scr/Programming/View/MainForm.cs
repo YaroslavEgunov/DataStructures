@@ -16,13 +16,13 @@ namespace Programming.View
 {
     public partial class MainForm : Form
     {
-        private readonly System.Drawing.Color WrongColor = System.Drawing.Color.LightPink;
+        private readonly System.Drawing.Color _wrongColor = System.Drawing.Color.LightPink;
 
-        private readonly System.Drawing.Color CorrectColor = System.Drawing.Color.White;
+        private readonly System.Drawing.Color _correctColor = System.Drawing.Color.White;
 
-        private readonly System.Drawing.Color CorrectColorPanel = System.Drawing.Color.FromArgb(127, 127, 255, 127);
+        private readonly System.Drawing.Color _correctColorPanel = System.Drawing.Color.FromArgb(127, 127, 255, 127);
 
-        private readonly System.Drawing.Color WrongColorPanel = System.Drawing.Color.FromArgb(127, 255, 127, 127);
+        private readonly System.Drawing.Color _wrongColorPanel = System.Drawing.Color.FromArgb(127, 255, 127, 127);
 
         private List<Rectangle> _rectangles = new List<Rectangle>();
 
@@ -121,11 +121,10 @@ namespace Programming.View
                 _rectangles.Add (new Rectangle(random.Next(1, 100),
                                                              random.Next(1, 100),
                                                              RectangleColors[Colors],
-                                                             random.Next(1, 100),
-                                                             random.Next(1, 100)));
+                                                             random.Next(1, 400),
+                                                             random.Next(1, 400)));
                 RectanglesListBoxInClasses.Items.Add($"Rectangle {i + 1}");
             }
-
             RectanglesListBoxInClasses.SelectedIndex = 0;
         }
 
@@ -238,13 +237,13 @@ namespace Programming.View
             try
             {
                 _currentRectangle.Length = Convert.ToDouble(LengthTextBox.Text);
-                LengthTextBox.BackColor = CorrectColor;
+                LengthTextBox.BackColor = _correctColor;
                 toolTip.SetToolTip(LengthTextBox, "");
             }
             catch (Exception exception)
             {
                 toolTip.SetToolTip(LengthTextBox, exception.Message);
-                LengthTextBox.BackColor = WrongColor;
+                LengthTextBox.BackColor = _wrongColor;
             }
             CollisionLabel.Text = $"Rectangles 1 and 2 collide?: {CollisionManager.IsCollision(_rectangles[0], _rectangles[1])}";
         }
@@ -254,13 +253,13 @@ namespace Programming.View
             try
             {
                 _currentRectangle.Width = Convert.ToDouble(WidthTextBox.Text);
-                WidthTextBox.BackColor = CorrectColor;
+                WidthTextBox.BackColor = _correctColor;
                 toolTip.SetToolTip(WidthTextBox, "");
             }
             catch (Exception exception)
             {
                 toolTip.SetToolTip(WidthTextBox, exception.Message);
-                WidthTextBox.BackColor = WrongColor;
+                WidthTextBox.BackColor = _wrongColor;
             }
             CollisionLabel.Text = $"Rectangles 1 and 2 collide?: {CollisionManager.IsCollision(_rectangles[0], _rectangles[1])}";
         }
@@ -285,13 +284,13 @@ namespace Programming.View
             try
             {
                 _currentMovie.DurationInMinutes = Convert.ToInt32(DurationInMinutesTextBox.Text);
-                DurationInMinutesTextBox.BackColor = CorrectColor;
+                DurationInMinutesTextBox.BackColor = _correctColor;
                 toolTip.SetToolTip(DurationInMinutesTextBox, "");
             }
             catch (Exception exception)
             {
                 toolTip.SetToolTip(DurationInMinutesTextBox, exception.Message);
-                DurationInMinutesTextBox.BackColor = WrongColor;
+                DurationInMinutesTextBox.BackColor = _wrongColor;
             }
         }
 
@@ -300,13 +299,13 @@ namespace Programming.View
             try
             {
                 _currentMovie.Year = Convert.ToInt32(YearTextBox.Text);
-                YearTextBox.BackColor = CorrectColor;
+                YearTextBox.BackColor = _correctColor;
                 toolTip.SetToolTip(YearTextBox, "");
             }
             catch (Exception exception)
             {
                 toolTip.SetToolTip(YearTextBox, exception.Message);
-                YearTextBox.BackColor = WrongColor;
+                YearTextBox.BackColor = _wrongColor;
             }
         }
 
@@ -315,13 +314,13 @@ namespace Programming.View
             try
             {
                 _currentMovie.Rating = Convert.ToDouble(RatingTextBox.Text);
-                RatingTextBox.BackColor = CorrectColor;
+                RatingTextBox.BackColor = _correctColor;
                 toolTip.SetToolTip(RatingTextBox, "");
             }
             catch (Exception exception)
             {
                 toolTip.SetToolTip(RatingTextBox, exception.Message);
-                RatingTextBox.BackColor = WrongColor;
+                RatingTextBox.BackColor = _wrongColor;
             }
         }
 
@@ -340,9 +339,6 @@ namespace Programming.View
             MoviesListBox.SelectedIndex = FindMovieWithMaxRating(_movies);
         }
 
-
-
-
         private void ClearRectangleInfo()
         {
             _currentRectangle = null;
@@ -351,6 +347,11 @@ namespace Programming.View
             YPanelTextBox.Text = "";
             WidthPanelTextBox.Text = "";
             HeightPanelTextBox.Text = "";
+            HeightPanelTextBox.BackColor = _correctColor;
+            XPanelTextBox.BackColor = _correctColor;
+            YPanelTextBox.BackColor = _correctColor;
+            WidthPanelTextBox.BackColor = _correctColor;
+
         }
 
         private void UpdateRectangleInfo(Rectangle rectangle)
@@ -363,55 +364,76 @@ namespace Programming.View
             HeightPanelTextBox.Text = _currentRectangle.Length.ToString();
         }
 
-        private void FindCollisions()
-        {
-            for (int i = 0; i < _rectanglesPanel.Count; i++)
-            {
-                _rectanglesPanel[i].BackColor = CorrectColorPanel;
-            }
-            for (int i = 0; i < _rectangles.Count; i++)
-            {
-                for (int j = i + 1; j < _rectangles.Count; j++)
-                {
-                    if (CollisionManager.IsCollision(_rectangles[i], _rectangles[j]))
-                    {
-                        _rectanglesPanel[i].BackColor = WrongColorPanel;
-                        _rectanglesPanel[j].BackColor = WrongColorPanel;
-                    }
-                }
-            }
-        }
-
         private void AddPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            AddPictureBox.Image = Image.FromFile(@"C:\Users\anton\source\repos\Programming\resources\rectangle_add_24x24.png");
+            AddPictureBox.Image = Properties.Resources.rectangle_add_24x24_uncolor;
+            //Image.FromFile(@"resources\rectangle_add_24x24.png");
         }
 
         private void AddPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            AddPictureBox.Image = Image.FromFile(@"C:\Users\anton\source\repos\Programming\resources\rectangle_add_24x24_uncolor.png");
+            //AddPictureBox.Image = Image.FromFile(@"resources\rectangle_add_24x24_uncolor.png");
         }
 
         private void DeletePictureBox_MouseEnter(object sender, EventArgs e)
         {
-            DeletePictureBox.Image = Image.FromFile(@"C:\Users\anton\source\repos\Programming\resources\rectangle_remove_24x24.png");
+            //DeletePictureBox.Image = Image.FromFile(@"resources\rectangle_remove_24x24.png");
         }
 
         private void DeletePictureBox_MouseLeave(object sender, EventArgs e)
         {
-            DeletePictureBox.Image = Image.FromFile(@"C:\Users\anton\source\repos\Programming\resources\rectangle_remove_24x24_uncolor.png");
+            //DeletePictureBox.Image = Image.FromFile(@"resources\rectangle_remove_24x24_uncolor.png");
+        }
+
+        private void FindCollisions()
+        {
+            for (int i = 0; i < _rectanglesPanel.Count; i++)
+            {
+                _rectanglesPanel[i].BackColor = _correctColorPanel;
+            }
+
+            for (int i = 0; i< _rectanglesPanel.Count; i++)
+            {
+                for (int j = i+1; j < _rectanglesPanel.Count; j++)
+                {
+                    if (CollisionManager.IsCollision(_rectangles[i], _rectangles[j]))
+                    {
+                        _rectanglesPanel[i].BackColor = _wrongColorPanel;
+                        _rectanglesPanel[j].BackColor = _wrongColorPanel;
+                    }
+                }
+            }
+
+        }
+
+
+        private void NewPanel(Rectangle rectangle)
+        {
+            Panel panel = new Panel();
+            panel.BackColor = _correctColorPanel;
+            panel.Location = new Point(
+                (int)rectangle.Center.X,
+                (int)rectangle.Center.Y);
+            panel.Width = (int)rectangle.Width;
+            panel.Height = (int)rectangle.Length;
+            _rectanglesPanel.Add(panel);
+            RectanglePanel.Controls.Add(panel);
+        }
+
+        private void UpdatePanel(Panel panel)
+        {
+            panel.BackColor = _correctColorPanel;
+            panel.Location = new Point(
+                (int)_currentRectangle.Center.X,
+                (int)_currentRectangle.Center.Y);
+            panel.Width = (int)_currentRectangle.Width;
+            panel.Height = (int)_currentRectangle.Length;
         }
 
         private void AddPictureBox_Click(object sender, EventArgs e)
         {
-            
-            Random random = new Random();
-            _rectangles.Add(new Rectangle(
-                random.Next(10, 100),
-                random.Next(10, 100),
-                "White",
-                random.Next(10, 100),
-                random.Next(10, 100)));
+
+            RectangleFactory.Randomize(_rectangles);
 
             _currentRectangle = _rectangles[_rectangles.Count- 6];
             RectanglesPanelListBox.Items.Add(
@@ -420,6 +442,9 @@ namespace Programming.View
                 $"Y = {_currentRectangle.Center.Y};" +
                 $"W = {_currentRectangle.Width};" +
                 $"H = {_currentRectangle.Length})");
+
+            NewPanel(_currentRectangle);
+            FindCollisions();
         }
 
         private void DeletePictureBox_Click(object sender, EventArgs e)
@@ -431,15 +456,17 @@ namespace Programming.View
             else
             {
                 _rectangles.RemoveAt(RectanglesPanelListBox.SelectedIndex);
+                _rectanglesPanel.RemoveAt(RectanglesPanelListBox.SelectedIndex);
+                RectanglePanel.Controls.RemoveAt(RectanglesPanelListBox.SelectedIndex);
                 RectanglesPanelListBox.Items.RemoveAt(RectanglesPanelListBox.SelectedIndex);
                 if (RectanglesPanelListBox.Items.Count > 0)
                 {
                     RectanglesPanelListBox.SelectedIndex = 0;
                 }
             }
+            FindCollisions();
         }
 
-        
         private void RectanglesPanelListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (RectanglesPanelListBox.SelectedIndex == -1)
@@ -471,17 +498,18 @@ namespace Programming.View
             }
             try
             {
-                _currentRectangle.Length = Int32.Parse(HeightPanelTextBox.Text);
-                Validator.AssertOnPositiveValue(_currentRectangle.Length, nameof(HeightPanelTextBox));
-                HeightPanelTextBox.BackColor = CorrectColor;
+                _currentRectangle.Length = Convert.ToInt32(HeightPanelTextBox.Text);
+                HeightPanelTextBox.BackColor = _correctColor;
                 toolTip.SetToolTip(HeightPanelTextBox, "");
-                UpdatePanelListBox();
                 UpdateRectangleInfo(_currentRectangle);
+                UpdatePanelListBox();
+                UpdatePanel(_rectanglesPanel[RectanglesPanelListBox.SelectedIndex]);
                 FindCollisions();
             }
             catch (Exception exception)
             {
-                HeightPanelTextBox.BackColor = WrongColor;
+                Validator.AssertOnPositiveValue(_currentRectangle.Length, nameof(HeightPanelTextBox));
+                HeightPanelTextBox.BackColor = _wrongColor;
                 toolTip.SetToolTip(HeightPanelTextBox, exception.Message);
                 return;
             }
@@ -496,15 +524,16 @@ namespace Programming.View
             try
             {
                 _currentRectangle.Center.X = Int32.Parse(XPanelTextBox.Text);
-                XPanelTextBox.BackColor = CorrectColor;
+                XPanelTextBox.BackColor = _correctColor;
                 toolTip.SetToolTip(XPanelTextBox, "");
-                UpdatePanelListBox();
                 UpdateRectangleInfo(_currentRectangle);
+                UpdatePanelListBox();
+                UpdatePanel(_rectanglesPanel[RectanglesPanelListBox.SelectedIndex]);
                 FindCollisions();
             }
             catch (Exception exception)
             {
-                XPanelTextBox.BackColor = WrongColor;
+                XPanelTextBox.BackColor = _wrongColor;
                 toolTip.SetToolTip(XPanelTextBox, exception.Message);
                 return;
             }
@@ -518,16 +547,17 @@ namespace Programming.View
             }
             try
             {
+                YPanelTextBox.BackColor = _correctColor;
                 _currentRectangle.Center.Y = Int32.Parse(YPanelTextBox.Text);
-                YPanelTextBox.BackColor = CorrectColor;
                 toolTip.SetToolTip(YPanelTextBox, "");
-                UpdatePanelListBox();
                 UpdateRectangleInfo(_currentRectangle);
+                UpdatePanelListBox();
+                UpdatePanel(_rectanglesPanel[RectanglesPanelListBox.SelectedIndex]);
                 FindCollisions();
             }
             catch (Exception exception)
             {
-                YPanelTextBox.BackColor = WrongColor;
+                YPanelTextBox.BackColor = _wrongColor;
                 toolTip.SetToolTip(YPanelTextBox, exception.Message);
                 return;
             }
@@ -535,24 +565,20 @@ namespace Programming.View
 
         private void WidthPanelTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (_currentRectangle == null)
-            {
-                return;
-            }
             try
             {
-                _currentRectangle.Width = Int32.Parse(WidthPanelTextBox.Text);
-                Validator.AssertOnPositiveValue(_currentRectangle.Width, nameof(WidthPanelTextBox));
-                WidthPanelTextBox.BackColor = CorrectColor;
+                _currentRectangle.Width = Convert.ToInt32(WidthPanelTextBox.Text);
+                WidthPanelTextBox.BackColor = _correctColor;
                 toolTip.SetToolTip(WidthPanelTextBox, "");
-                UpdatePanelListBox();
                 UpdateRectangleInfo(_currentRectangle);
+                UpdatePanelListBox();
+                UpdatePanel(_rectanglesPanel[RectanglesPanelListBox.SelectedIndex]);
                 FindCollisions();
             }
             catch (Exception exception)
             {
-                WidthPanelTextBox.BackColor = WrongColor;
                 toolTip.SetToolTip(WidthPanelTextBox, exception.Message);
+                WidthPanelTextBox.BackColor = _wrongColor;
                 return;
             }
         }
