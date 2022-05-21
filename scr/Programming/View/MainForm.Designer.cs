@@ -611,7 +611,7 @@
             // 
             // DeletePictureBox
             // 
-            this.DeletePictureBox.Image = global::Programming.Properties.Resources.rectangle_remove_24x24_uncolor;
+            this.DeletePictureBox.Image = global::Programming.Properties.Resources.rectangle_remove_uncolor;
             this.DeletePictureBox.Location = new System.Drawing.Point(145, 198);
             this.DeletePictureBox.Name = "DeletePictureBox";
             this.DeletePictureBox.Size = new System.Drawing.Size(62, 49);
@@ -623,7 +623,7 @@
             // 
             // AddPictureBox
             // 
-            this.AddPictureBox.Image = global::Programming.Properties.Resources.rectangle_add_24x24_uncolor;
+            this.AddPictureBox.Image = global::Programming.Properties.Resources.rectangle_add__uncolor;
             this.AddPictureBox.Location = new System.Drawing.Point(30, 198);
             this.AddPictureBox.Name = "AddPictureBox";
             this.AddPictureBox.Size = new System.Drawing.Size(62, 49);
@@ -655,9 +655,9 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(1, 334);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(48, 13);
+            this.label19.Size = new System.Drawing.Size(44, 13);
             this.label19.TabIndex = 15;
-            this.label19.Text = "Hength: ";
+            this.label19.Text = "Heigth: ";
             // 
             // label15
             // 

@@ -131,8 +131,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8-magento-100.ico" />
-    <Content Include="Resources\rectangle_add_24x24.png" />
-    <Content Include="Resources\rectangle_remove_24x24.png" />
+    <None Include="Resources\rectangle_remove_24x24.png" />
+    <None Include="Resources\rectangle_add_24x24.png" />
     <None Include="Resources\rectangle_remove_24x24_uncolor.png" />
     <None Include="Resources\rectangle_add_24x24_uncolor.png" />
   </ItemGroup>

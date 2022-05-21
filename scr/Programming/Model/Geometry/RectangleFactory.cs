@@ -8,16 +8,16 @@ namespace Programming.Model.Classes
 {
     public static class RectangleFactory
     {
-        private static Random random = new Random();
+        private static Random Random = new Random();
 
         public static void Randomize(List<Rectangle> rectangles)
         {
             rectangles.Add(new Rectangle(
-                random.Next(10, 100),
-                random.Next(10, 100),
+                Random.Next(10, 100),
+                Random.Next(10, 100),
                 "White",
-                random.Next(10, 400),
-                random.Next(10, 400)));
+                Random.Next(10, 400),
+                Random.Next(10, 400)));
         }
     }
 }
