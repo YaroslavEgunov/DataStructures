@@ -13,21 +13,36 @@ using Rectangle = Programming.Model.Geometry.Rectangle;
 
 namespace Programming.View.Controls
 {
+    /// <summary>
+    /// Показывает на холсте прямоугольники и проверяет на пересечение.
+    /// </summary>
     public partial class RectanglesCollisionControl : UserControl
     {
+        /// <summary>
+        /// Список прямоугольников.
+        /// </summary>
         private List<Rectangle> _rectangles = new List<Rectangle>();
 
+        /// <summary>
+        /// Хранит данные о выбранном прямоугольнике.
+        /// </summary>
         private Rectangle _currentRectangle = new Rectangle();
 
+        /// <summary>
+        /// Список прямоугольников для холста.
+        /// </summary>
         private List<Panel> _rectanglesPanel = new List<Panel>();
 
         public RectanglesCollisionControl()
         {
-            Rectangle.AllRectanglesCount = 1; 
+            Rectangle._allRectanglesCount = 1; 
             InitializeComponent();
             FindCollisions();
         }
 
+        /// <summary>
+        /// Очищает все значения TextBoх и меняет цвет на стандартный. 
+        /// </summary>
         private void ClearRectangleInfo()
         {
             _currentRectangle = null;
@@ -42,6 +57,10 @@ namespace Programming.View.Controls
             WidthPanelTextBox.BackColor = AppColors.CorrectColor;
         }
 
+        /// <summary>
+        /// Обновляет информацию о прямоугольнике во всех TextBox.
+        /// </summary>
+        /// <param name="rectangle"></param>
         private void UpdateRectangleInfo(Rectangle rectangle)
         {
             _currentRectangle = rectangle;
@@ -72,6 +91,9 @@ namespace Programming.View.Controls
             DeletePictureBox.Image = Properties.Resources.rectangle_remove_uncolor;
         }
 
+        /// <summary>
+        /// Проверяет прямоугольники на пересечение.
+        /// </summary>
         private void FindCollisions()
         {
             for (int i = 0; i < _rectanglesPanel.Count; i++)
@@ -91,6 +113,11 @@ namespace Programming.View.Controls
             }
         }
 
+        /// <summary>
+        /// Создаёт объект типа Panel, добавляет на холст.
+        /// </summary>
+        /// <param name="rectangle">Прямоугольник, 
+        /// на основе которого создаётся прямоугольник для холста.</param>
         private void NewPanel(Rectangle rectangle)
         {
             Panel panel = new Panel();
@@ -104,6 +131,10 @@ namespace Programming.View.Controls
             RectanglePanel.Controls.Add(panel);
         }
 
+        /// <summary>
+        /// Предоставляет информацию о прямоугольнике.
+        /// </summary>
+        /// <returns>Возвращает сроку с обновлёнными данными.</returns>
         private string GetRectangleInfo()
         {
             return $"{_currentRectangle.Id}:" +
@@ -113,6 +144,10 @@ namespace Programming.View.Controls
                 $"H = {_currentRectangle.Length})";
         }
 
+        /// <summary>
+        /// Обновляет информацию о прямоугольнике на холсте.
+        /// </summary>
+        /// <param name="panel"></param>
         private void UpdatePanel(Panel panel)
         {
             panel.BackColor = AppColors.CorrectColorPanel;
@@ -123,6 +158,9 @@ namespace Programming.View.Controls
             panel.Height = (int)_currentRectangle.Length;
         }
 
+        /// <summary>
+        /// Инициализирует список 5 прямоугольников.
+        /// </summary>
         private void AddPictureBox_Click(object sender, EventArgs e)
         {
             RectangleFactory.RandomizeList(_rectangles);

@@ -43,7 +43,7 @@ namespace Programming.View.Controls
             this.SeasonHandleGroupBox.Controls.Add(this.label5);
             this.SeasonHandleGroupBox.Location = new System.Drawing.Point(0, 0);
             this.SeasonHandleGroupBox.Name = "SeasonHandleGroupBox";
-            this.SeasonHandleGroupBox.Size = new System.Drawing.Size(363, 235);
+            this.SeasonHandleGroupBox.Size = new System.Drawing.Size(368, 235);
             this.SeasonHandleGroupBox.TabIndex = 3;
             this.SeasonHandleGroupBox.TabStop = false;
             this.SeasonHandleGroupBox.Text = "Season Handle";
@@ -81,7 +81,7 @@ namespace Programming.View.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.SeasonHandleGroupBox);
             this.Name = "SeasonHandleControl";
-            this.Size = new System.Drawing.Size(363, 235);
+            this.Size = new System.Drawing.Size(371, 235);
             this.SeasonHandleGroupBox.ResumeLayout(false);
             this.SeasonHandleGroupBox.PerformLayout();
             this.ResumeLayout(false);

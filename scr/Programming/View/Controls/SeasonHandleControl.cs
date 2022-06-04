@@ -12,6 +12,9 @@ using Programming.Model.Classes;
 
 namespace Programming.View.Controls
 {
+    /// <summary>
+    /// При нажатии на кнопку происходит действие в зависимости от выбранного времени года.
+    /// </summary>
     public partial class SeasonHandleControl : UserControl
     {
         public SeasonHandleControl()

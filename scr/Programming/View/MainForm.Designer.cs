@@ -36,11 +36,11 @@
             this.weekdayParsingControl1 = new Programming.View.Controls.WeekdayParsingControl();
             this.enumerationsControl1 = new Programming.View.Controls.EnumerationsControl();
             this.ClassesTabPage = new System.Windows.Forms.TabPage();
+            this.moviesControl1 = new Programming.View.Controls.MoviesControl();
             this.rectanglesControl1 = new Programming.View.Controls.RectanglesControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.rectanglesCollisionControl1 = new Programming.View.Controls.RectanglesCollisionControl();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.moviesControl1 = new Programming.View.Controls.MoviesControl();
             this.TabControl.SuspendLayout();
             this.EnumTabPage.SuspendLayout();
             this.ClassesTabPage.SuspendLayout();
@@ -74,23 +74,23 @@
             // 
             // seasonHandleControl1
             // 
-            this.seasonHandleControl1.Location = new System.Drawing.Point(359, 190);
+            this.seasonHandleControl1.Location = new System.Drawing.Point(356, 190);
             this.seasonHandleControl1.Name = "seasonHandleControl1";
-            this.seasonHandleControl1.Size = new System.Drawing.Size(363, 235);
+            this.seasonHandleControl1.Size = new System.Drawing.Size(375, 235);
             this.seasonHandleControl1.TabIndex = 5;
             // 
             // weekdayParsingControl1
             // 
-            this.weekdayParsingControl1.Location = new System.Drawing.Point(8, 190);
+            this.weekdayParsingControl1.Location = new System.Drawing.Point(5, 190);
             this.weekdayParsingControl1.Name = "weekdayParsingControl1";
             this.weekdayParsingControl1.Size = new System.Drawing.Size(345, 235);
             this.weekdayParsingControl1.TabIndex = 4;
             // 
             // enumerationsControl1
             // 
-            this.enumerationsControl1.Location = new System.Drawing.Point(8, 3);
+            this.enumerationsControl1.Location = new System.Drawing.Point(5, 3);
             this.enumerationsControl1.Name = "enumerationsControl1";
-            this.enumerationsControl1.Size = new System.Drawing.Size(714, 178);
+            this.enumerationsControl1.Size = new System.Drawing.Size(726, 178);
             this.enumerationsControl1.TabIndex = 3;
             // 
             // ClassesTabPage
@@ -105,11 +105,18 @@
             this.ClassesTabPage.Text = "Classes";
             this.ClassesTabPage.UseVisualStyleBackColor = true;
             // 
+            // moviesControl1
+            // 
+            this.moviesControl1.Location = new System.Drawing.Point(363, 3);
+            this.moviesControl1.Name = "moviesControl1";
+            this.moviesControl1.Size = new System.Drawing.Size(368, 431);
+            this.moviesControl1.TabIndex = 4;
+            // 
             // rectanglesControl1
             // 
-            this.rectanglesControl1.Location = new System.Drawing.Point(3, 6);
+            this.rectanglesControl1.Location = new System.Drawing.Point(6, 3);
             this.rectanglesControl1.Name = "rectanglesControl1";
-            this.rectanglesControl1.Size = new System.Drawing.Size(348, 419);
+            this.rectanglesControl1.Size = new System.Drawing.Size(357, 428);
             this.rectanglesControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -130,13 +137,6 @@
             this.rectanglesCollisionControl1.Name = "rectanglesCollisionControl1";
             this.rectanglesCollisionControl1.Size = new System.Drawing.Size(728, 428);
             this.rectanglesCollisionControl1.TabIndex = 0;
-            // 
-            // moviesControl1
-            // 
-            this.moviesControl1.Location = new System.Drawing.Point(366, 6);
-            this.moviesControl1.Name = "moviesControl1";
-            this.moviesControl1.Size = new System.Drawing.Size(360, 419);
-            this.moviesControl1.TabIndex = 4;
             // 
             // MainForm
             // 

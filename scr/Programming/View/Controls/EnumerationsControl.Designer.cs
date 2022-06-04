@@ -49,7 +49,7 @@ namespace Programming.View.Controls
             this.EnumerationsGroupBox.Controls.Add(this.label1);
             this.EnumerationsGroupBox.Location = new System.Drawing.Point(0, 0);
             this.EnumerationsGroupBox.Name = "EnumerationsGroupBox";
-            this.EnumerationsGroupBox.Size = new System.Drawing.Size(714, 178);
+            this.EnumerationsGroupBox.Size = new System.Drawing.Size(719, 178);
             this.EnumerationsGroupBox.TabIndex = 1;
             this.EnumerationsGroupBox.TabStop = false;
             this.EnumerationsGroupBox.Text = "Enumerations";
@@ -116,7 +116,7 @@ namespace Programming.View.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.EnumerationsGroupBox);
             this.Name = "EnumerationsControl";
-            this.Size = new System.Drawing.Size(714, 178);
+            this.Size = new System.Drawing.Size(778, 178);
             this.EnumerationsGroupBox.ResumeLayout(false);
             this.EnumerationsGroupBox.PerformLayout();
             this.ResumeLayout(false);

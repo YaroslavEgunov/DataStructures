@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Programming.View.Controls
 {
+    /// <summary>
+    /// Проверяет существует ли введённый день недели.
+    /// </summary>
     public partial class WeekdayParsingControl : UserControl
     {
         public WeekdayParsingControl()

@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace Programming.Model.Geometry
 {
+    /// <summary>
+    /// Предоставляет методы для создания коллекции класса Rectangle со случайными значениями.
+    /// </summary>
     public static class RectangleFactory
     {
+        /// <summary>
+        /// Позволяет генерировать случайные значения.
+        /// </summary>
         private static Random Random = new Random();
 
+        /// <summary>
+        /// Создаёт один объект класса Rectangle и добавляет его в список.
+        /// </summary>
+        /// <param name="rectangles">Список, куда нужно добавить новый элемент. </param>
         public static void RandomizeList(List<Rectangle> rectangles)
         {
             rectangles.Add(new Rectangle(
@@ -20,7 +30,11 @@ namespace Programming.Model.Geometry
                 Random.Next(10, 400)));
         }
 
-        public static void RandomizeMassiv(Rectangle[] rectangles)
+        /// <summary>
+        /// Создаёт пять объектов класса Rectangle и добавляет их в массив.
+        /// </summary>
+        /// <param name="rectangles">Массив, куда нужно добавить новые элементы. </param>
+        public static void RandomizeArray(Rectangle[] rectangles)
         {
             string[] RectangleColors = { "White", "Black", "Yellow", "Brown",
                 "Green", "Red", "Blue", "Purple" };
@@ -34,6 +48,5 @@ namespace Programming.Model.Geometry
                     Random.Next(1, 100));
             }
         }
-
     }
 }

@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Programming.View.Controls
 {
+    /// <summary>
+    /// Выводит список перечислений.
+    /// </summary>
     public partial class EnumerationsControl : UserControl
     {
         public EnumerationsControl()

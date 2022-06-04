@@ -63,7 +63,7 @@ namespace Programming.View.Controls
             this.FilmsGroupBox.Controls.Add(this.RatingTextBox);
             this.FilmsGroupBox.Location = new System.Drawing.Point(0, 0);
             this.FilmsGroupBox.Name = "FilmsGroupBox";
-            this.FilmsGroupBox.Size = new System.Drawing.Size(360, 419);
+            this.FilmsGroupBox.Size = new System.Drawing.Size(361, 422);
             this.FilmsGroupBox.TabIndex = 3;
             this.FilmsGroupBox.TabStop = false;
             this.FilmsGroupBox.Text = "Movies";
@@ -179,7 +179,7 @@ namespace Programming.View.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.FilmsGroupBox);
             this.Name = "MoviesControl";
-            this.Size = new System.Drawing.Size(360, 419);
+            this.Size = new System.Drawing.Size(368, 449);
             this.FilmsGroupBox.ResumeLayout(false);
             this.FilmsGroupBox.PerformLayout();
             this.ResumeLayout(false);

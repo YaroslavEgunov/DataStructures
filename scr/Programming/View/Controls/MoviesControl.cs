@@ -11,10 +11,19 @@ using System.Windows.Forms;
 
 namespace Programming.View.Controls
 {
+    /// <summary>
+    /// Выводит список фильмов и их информацию. Нажатие кнопки находит фильм с наивысшим рейтингом.
+    /// </summary>
     public partial class MoviesControl : UserControl
     {
+        /// <summary>
+        /// Массив из фильмов.
+        /// </summary>
         private Movie[] _movies;
 
+        /// <summary>
+        /// Хранит данные о выбранном фильме.
+        /// </summary>
         private Movie _currentMovie = new Movie();
 
         public MoviesControl()
@@ -23,6 +32,11 @@ namespace Programming.View.Controls
             InitMovies();
         }
 
+        /// <summary>
+        /// Находит фильм с наивысшим рейтингом.
+        /// </summary>
+        /// <param name="movies">Массив фильмов. </param>
+        /// <returns>Возвращает индекс фильма с наивысшим рейтингом. </returns>
         private int FindMovieWithMaxRating(Movie[] movies)
         {
             int index = 0;
@@ -38,6 +52,9 @@ namespace Programming.View.Controls
             return index;
         }
 
+        /// <summary>
+        /// Метод инициализации массива фильмов со случайными значениями.
+        /// </summary>
         private void InitMovies()
         {
             _movies = new Movie[5];

@@ -69,7 +69,7 @@ namespace Programming.View.Controls
             this.RectanglesGroupBox.Controls.Add(this.LenghtLabel);
             this.RectanglesGroupBox.Location = new System.Drawing.Point(0, 0);
             this.RectanglesGroupBox.Name = "RectanglesGroupBox";
-            this.RectanglesGroupBox.Size = new System.Drawing.Size(348, 419);
+            this.RectanglesGroupBox.Size = new System.Drawing.Size(348, 422);
             this.RectanglesGroupBox.TabIndex = 2;
             this.RectanglesGroupBox.TabStop = false;
             this.RectanglesGroupBox.Text = "Rectangles";
@@ -212,7 +212,7 @@ namespace Programming.View.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.RectanglesGroupBox);
             this.Name = "RectanglesControl";
-            this.Size = new System.Drawing.Size(348, 419);
+            this.Size = new System.Drawing.Size(355, 445);
             this.RectanglesGroupBox.ResumeLayout(false);
             this.RectanglesGroupBox.PerformLayout();
             this.ResumeLayout(false);

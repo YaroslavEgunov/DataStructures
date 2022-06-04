@@ -2,18 +2,39 @@
 
 namespace Programming.Model.Classes
 {
+    /// <summary>
+    /// Хранит данные о времени.
+    /// </summary>
     public class Time
     {
+        /// <summary>
+        /// Часы.
+        /// </summary>
         private int _hours;
 
+        /// <summary>
+        /// Минуты.
+        /// </summary>
         private int _minutes;
 
+        /// <summary>
+        /// Секунды.
+        /// </summary>
         private int _seconds;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Time"/>.
+        /// </summary>
         public Time()
         {
         }
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Time"/>.
+        /// </summary>
+        /// <param name="hours">Время в часах. </param>
+        /// <param name="minutes">Время в минутах. </param>
+        /// <param name="seconds">Время в секундах. </param>
         public Time(int hours, int minutes, int seconds)
         {
             _hours = hours;
@@ -21,6 +42,9 @@ namespace Programming.Model.Classes
             _seconds = seconds;
         }
 
+        /// <summary>
+        /// Возвращает и задаёт время в часах. Должно быть значением от 0 до 23 включительно.
+        /// </summary>
         public int Hours
         {
             get
@@ -34,6 +58,9 @@ namespace Programming.Model.Classes
             }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт время в минутах. Должно быть значением от 0 до 59 включительно.
+        /// </summary>
         public int Minutes
         {
             get
@@ -47,6 +74,9 @@ namespace Programming.Model.Classes
             }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт время в секундах. Должно быть значением от 0 до 59 включительно.
+        /// </summary>
         public int Seconds
         {
             get
