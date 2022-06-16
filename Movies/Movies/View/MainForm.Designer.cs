@@ -53,6 +53,8 @@ namespace Movies.View
             // 
             // MoviesListBox
             // 
+            this.MoviesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.MoviesListBox.FormattingEnabled = true;
             this.MoviesListBox.Location = new System.Drawing.Point(12, 12);
             this.MoviesListBox.Name = "MoviesListBox";
@@ -62,6 +64,9 @@ namespace Movies.View
             // 
             // MoviesGroupBox
             // 
+            this.MoviesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MoviesGroupBox.Controls.Add(this.RemovePictureBox);
             this.MoviesGroupBox.Controls.Add(this.GenreComboBox);
             this.MoviesGroupBox.Controls.Add(this.RefreshPictureBox);
@@ -84,6 +89,9 @@ namespace Movies.View
             // 
             // RemovePictureBox
             // 
+            this.RemovePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RemovePictureBox.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.RemovePictureBox.Image = global::Movies.Properties.Resources.Video_remove;
             this.RemovePictureBox.Location = new System.Drawing.Point(165, 282);
@@ -97,6 +105,9 @@ namespace Movies.View
             // 
             // GenreComboBox
             // 
+            this.GenreComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GenreComboBox.FormattingEnabled = true;
             this.GenreComboBox.Location = new System.Drawing.Point(65, 182);
             this.GenreComboBox.Name = "GenreComboBox";
@@ -106,6 +117,9 @@ namespace Movies.View
             // 
             // RefreshPictureBox
             // 
+            this.RefreshPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RefreshPictureBox.Image = global::Movies.Properties.Resources.Video_refresh;
             this.RefreshPictureBox.Location = new System.Drawing.Point(87, 282);
             this.RefreshPictureBox.Name = "RefreshPictureBox";
@@ -117,6 +131,9 @@ namespace Movies.View
             // 
             // DurationTextBox
             // 
+            this.DurationTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DurationTextBox.Location = new System.Drawing.Point(65, 234);
             this.DurationTextBox.Name = "DurationTextBox";
             this.DurationTextBox.Size = new System.Drawing.Size(292, 20);
@@ -125,6 +142,9 @@ namespace Movies.View
             // 
             // AddPictureBox
             // 
+            this.AddPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.AddPictureBox.Image = global::Movies.Properties.Resources.Video_add;
             this.AddPictureBox.Location = new System.Drawing.Point(9, 282);
             this.AddPictureBox.Name = "AddPictureBox";
@@ -137,6 +157,9 @@ namespace Movies.View
             // 
             // RatingTextBox
             // 
+            this.RatingTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RatingTextBox.Location = new System.Drawing.Point(65, 132);
             this.RatingTextBox.Name = "RatingTextBox";
             this.RatingTextBox.Size = new System.Drawing.Size(292, 20);
@@ -147,6 +170,9 @@ namespace Movies.View
             // 
             // YearTextBox
             // 
+            this.YearTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.YearTextBox.Location = new System.Drawing.Point(65, 83);
             this.YearTextBox.Name = "YearTextBox";
             this.YearTextBox.Size = new System.Drawing.Size(292, 20);
@@ -155,6 +181,9 @@ namespace Movies.View
             // 
             // TitleTextBox
             // 
+            this.TitleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TitleTextBox.Location = new System.Drawing.Point(65, 32);
             this.TitleTextBox.Name = "TitleTextBox";
             this.TitleTextBox.Size = new System.Drawing.Size(292, 20);
@@ -210,7 +239,7 @@ namespace Movies.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 450);
+            this.ClientSize = new System.Drawing.Size(757, 360);
             this.Controls.Add(this.MoviesGroupBox);
             this.Controls.Add(this.MoviesListBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
