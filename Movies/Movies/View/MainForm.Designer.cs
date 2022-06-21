@@ -53,19 +53,19 @@ namespace Movies.View
             // 
             // MoviesListBox
             // 
-            this.MoviesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.MoviesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MoviesListBox.FormattingEnabled = true;
             this.MoviesListBox.Location = new System.Drawing.Point(12, 12);
             this.MoviesListBox.Name = "MoviesListBox";
-            this.MoviesListBox.Size = new System.Drawing.Size(277, 342);
+            this.MoviesListBox.Size = new System.Drawing.Size(428, 446);
             this.MoviesListBox.TabIndex = 0;
             this.MoviesListBox.SelectedIndexChanged += new System.EventHandler(this.MoviesListBox_SelectedIndexChanged);
             // 
             // MoviesGroupBox
             // 
-            this.MoviesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.MoviesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MoviesGroupBox.Controls.Add(this.RemovePictureBox);
             this.MoviesGroupBox.Controls.Add(this.GenreComboBox);
@@ -80,9 +80,9 @@ namespace Movies.View
             this.MoviesGroupBox.Controls.Add(this.GenreLabel);
             this.MoviesGroupBox.Controls.Add(this.YearLabel);
             this.MoviesGroupBox.Controls.Add(this.TitleLabel);
-            this.MoviesGroupBox.Location = new System.Drawing.Point(305, 6);
+            this.MoviesGroupBox.Location = new System.Drawing.Point(456, 6);
             this.MoviesGroupBox.Name = "MoviesGroupBox";
-            this.MoviesGroupBox.Size = new System.Drawing.Size(447, 348);
+            this.MoviesGroupBox.Size = new System.Drawing.Size(447, 460);
             this.MoviesGroupBox.TabIndex = 1;
             this.MoviesGroupBox.TabStop = false;
             this.MoviesGroupBox.Text = "Selected Movie";
@@ -96,7 +96,7 @@ namespace Movies.View
             this.RemovePictureBox.Image = global::Movies.Properties.Resources.Video_remove;
             this.RemovePictureBox.Location = new System.Drawing.Point(165, 282);
             this.RemovePictureBox.Name = "RemovePictureBox";
-            this.RemovePictureBox.Size = new System.Drawing.Size(72, 41);
+            this.RemovePictureBox.Size = new System.Drawing.Size(72, 153);
             this.RemovePictureBox.TabIndex = 4;
             this.RemovePictureBox.TabStop = false;
             this.RemovePictureBox.Click += new System.EventHandler(this.RemovePictureBox_Click);
@@ -123,9 +123,10 @@ namespace Movies.View
             this.RefreshPictureBox.Image = global::Movies.Properties.Resources.Video_refresh;
             this.RefreshPictureBox.Location = new System.Drawing.Point(87, 282);
             this.RefreshPictureBox.Name = "RefreshPictureBox";
-            this.RefreshPictureBox.Size = new System.Drawing.Size(72, 41);
+            this.RefreshPictureBox.Size = new System.Drawing.Size(72, 153);
             this.RefreshPictureBox.TabIndex = 3;
             this.RefreshPictureBox.TabStop = false;
+            this.RefreshPictureBox.Click += new System.EventHandler(this.RefreshPictureBox_Click);
             this.RefreshPictureBox.MouseEnter += new System.EventHandler(this.RefreshPictureBox_MouseEnter);
             this.RefreshPictureBox.MouseLeave += new System.EventHandler(this.RefreshPictureBox_MouseLeave);
             // 
@@ -148,7 +149,7 @@ namespace Movies.View
             this.AddPictureBox.Image = global::Movies.Properties.Resources.Video_add;
             this.AddPictureBox.Location = new System.Drawing.Point(9, 282);
             this.AddPictureBox.Name = "AddPictureBox";
-            this.AddPictureBox.Size = new System.Drawing.Size(72, 41);
+            this.AddPictureBox.Size = new System.Drawing.Size(72, 153);
             this.AddPictureBox.TabIndex = 2;
             this.AddPictureBox.TabStop = false;
             this.AddPictureBox.Click += new System.EventHandler(this.AddPictureBox_Click);
@@ -239,7 +240,7 @@ namespace Movies.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 360);
+            this.ClientSize = new System.Drawing.Size(908, 472);
             this.Controls.Add(this.MoviesGroupBox);
             this.Controls.Add(this.MoviesListBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

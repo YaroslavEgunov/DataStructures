@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Model\AppColors.cs" />
     <Compile Include="Model\Movie.cs" />
+    <Compile Include="Model\ProjectSerializer.cs" />
     <Compile Include="Model\Validator.cs" />
     <Compile Include="Model\Genres.cs" />
     <Compile Include="View\MainForm.cs">

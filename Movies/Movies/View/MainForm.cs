@@ -157,10 +157,10 @@ namespace Movies.View
         private void AddPictureBox_Click(object sender, EventArgs e)
         {
             _movies.Add(new Movie());
-            TitleSort(_movies);
             _currentMovie = _movies[_movies.Count - 1];
             MoviesListBox.Items.Add(GetMovieInfo(_currentMovie));
             MoviesListBox.SelectedIndex = MoviesListBox.Items.Count - 1;
+
         }
 
         private void RemovePictureBox_Click(object sender, EventArgs e)
@@ -191,7 +191,6 @@ namespace Movies.View
                 TitleTextBox.BackColor = AppColors.CorrectColor;
                 UpdateMovieInfo();
                 UpdateMoviesListBox();
-                TitleSort(_movies);
             }
             catch (Exception exception)
             {
@@ -302,25 +301,21 @@ namespace Movies.View
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            StreamReader streamReader = new StreamReader(@"..\..\..\Movies.txt");
-            var data = streamReader.ReadToEnd();
-            var jsonMovies = JsonConvert.DeserializeObject<List<Movie>>(data);
-            _movies.Clear();
-            _movies.AddRange(jsonMovies);
-            for (int i = 0; i < jsonMovies.Count; i++)
+            _movies.AddRange(ProjectSerializer.LoadMoviesToFile());
+            for (int i = 0; i < _movies.Count; i++)
             {
-                MoviesListBox.Items.Add(GetMovieInfo(jsonMovies[i]));
+                MoviesListBox.Items.Add(GetMovieInfo(_movies[i]));
             }
-            streamReader.Close();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+           ProjectSerializer.SaveMoviesToFile(_movies);
+        }
 
-            StreamWriter streamWriter = new StreamWriter(@"..\..\..\Movies.txt");
-            var jsonBooks = JsonConvert.SerializeObject(_movies);
-            streamWriter.Write(jsonBooks);
-            streamWriter.Close();
+        private void RefreshPictureBox_Click(object sender, EventArgs e)
+        {
+            TitleSort(_movies);
         }
     }
 }
