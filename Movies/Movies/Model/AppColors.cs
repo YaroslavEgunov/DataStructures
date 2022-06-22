@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Movies.Model.Classes
+namespace Movies.Model
 {
     public class AppColors
     {

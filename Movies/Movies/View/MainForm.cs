@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Movies.Model;
-using Movies.Model.Classes;
 using Movies.Properties;
 using Newtonsoft.Json;
 
@@ -160,7 +159,6 @@ namespace Movies.View
             _currentMovie = _movies[_movies.Count - 1];
             MoviesListBox.Items.Add(GetMovieInfo(_currentMovie));
             MoviesListBox.SelectedIndex = MoviesListBox.Items.Count - 1;
-
         }
 
         private void RemovePictureBox_Click(object sender, EventArgs e)
