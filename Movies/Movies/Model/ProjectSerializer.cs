@@ -16,7 +16,8 @@ namespace Movies.Model
         /// <summary>
         /// Путь к файлу сохранения.
         /// </summary>
-        private static string _fileName = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Movies";
+        private static string _fileName =
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Movies";
 
         /// <summary>
         /// Проверяет наличие файла, если он отсутствует, то создает его. 

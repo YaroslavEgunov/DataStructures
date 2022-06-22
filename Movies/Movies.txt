@@ -1,1 +1,0 @@
-[{"Genre":2,"Title":"Амарат","Year":2010,"Rating":5.0,"Duration":124},{"Genre":0,"Title":"Борат","Year":2015,"Rating":5.5,"Duration":150},{"Genre":5,"Title":"И другие","Year":2017,"Rating":5.0,"Duration":132},{"Genre":3,"Title":"ЧТО?","Year":2021,"Rating":5.0,"Duration":150}]
