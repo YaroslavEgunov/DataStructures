@@ -125,8 +125,7 @@ namespace Movies.View
         /// </summary>
         private void SetCurrentMovie()
         {
-            var index = MoviesListBox.SelectedIndex;
-            _currentMovie = _movies[index];
+            _currentMovie = _movies[MoviesListBox.SelectedIndex];
         }
 
         /// <summary>
@@ -182,12 +181,12 @@ namespace Movies.View
         {
             try
             {
-                TitleTextBox.SelectionStart = TitleTextBox.Text.Length;
                 SetCurrentMovie();
+                TitleTextBox.SelectionStart = TitleTextBox.Text.Length;
                 _currentMovie.Title = TitleTextBox.Text;
                 _toolTip.SetToolTip(TitleTextBox, "");
                 TitleTextBox.BackColor = AppColors.CorrectColor;
-                UpdateMovieInfo();
+                TitleSort(_movies);
                 UpdateMoviesListBox();
             }
             catch (Exception exception)
@@ -195,19 +194,17 @@ namespace Movies.View
                 TitleTextBox.BackColor = AppColors.WrongColor;
                 _toolTip.SetToolTip(TitleTextBox, exception.Message);
             }
-           
         }
 
         private void YearTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                YearTextBox.SelectionStart = YearTextBox.Text.Length;
                 SetCurrentMovie();
+                YearTextBox.SelectionStart = YearTextBox.Text.Length;
                 _currentMovie.Year = Convert.ToInt32(YearTextBox.Text);
                 _toolTip.SetToolTip(YearTextBox, "");
                 YearTextBox.BackColor = AppColors.CorrectColor;
-                UpdateMovieInfo();
                 UpdateMoviesListBox();
             }
             catch (Exception exception)
@@ -221,12 +218,11 @@ namespace Movies.View
         {
             try
             {
-                RatingTextBox.SelectionStart = RatingTextBox.Text.Length;
                 SetCurrentMovie();
+                RatingTextBox.SelectionStart = RatingTextBox.Text.Length;
                 _currentMovie.Rating = Convert.ToDouble(RatingTextBox.Text);
                 _toolTip.SetToolTip(RatingTextBox,"");
                 RatingTextBox.BackColor = AppColors.CorrectColor;
-                UpdateMovieInfo();
                 UpdateMoviesListBox();
             }
             catch (Exception exception)
@@ -250,12 +246,11 @@ namespace Movies.View
         {
             try
             {
-                GenreComboBox.SelectionStart = GenreComboBox.Text.Length;
                 SetCurrentMovie();
+                GenreComboBox.SelectionStart = GenreComboBox.Text.Length;
                 _currentMovie.Genre = (Genres)GenreComboBox.SelectedIndex;
                 _toolTip.SetToolTip(GenreComboBox, "");
                 GenreComboBox.BackColor = AppColors.CorrectColor;
-                UpdateMovieInfo();
                 UpdateMoviesListBox();
             }
             catch (Exception exception)
@@ -269,12 +264,11 @@ namespace Movies.View
         {
             try
             {
-                DurationTextBox.SelectionStart = DurationTextBox.Text.Length;
                 SetCurrentMovie();
+                DurationTextBox.SelectionStart = DurationTextBox.Text.Length;
                 _currentMovie.Duration = Convert.ToInt32(DurationTextBox.Text);
                 _toolTip.SetToolTip(DurationTextBox, "");
                 DurationTextBox.BackColor = AppColors.CorrectColor;
-                UpdateMovieInfo();
                 UpdateMoviesListBox();
             }
             catch (Exception exception)
@@ -292,7 +286,7 @@ namespace Movies.View
             }
             else
             {
-                _currentMovie = _movies[MoviesListBox.SelectedIndex];
+                SetCurrentMovie();
                 UpdateMovieInfo();
             }
         }

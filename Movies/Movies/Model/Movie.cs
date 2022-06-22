@@ -125,5 +125,10 @@ namespace Movies.Model
             Genre = Genres.Horror;
             Duration = 150;
         }
+
+        public static implicit operator int(Movie v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
