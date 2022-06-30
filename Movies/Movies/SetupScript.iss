@@ -24,11 +24,11 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 ChangesAssociations=yes
 DisableProgramGroupPage=yes
-LicenseFile=E:\Лабы\Repos\Programming\Movies\Movies\LICENSE
+LicenseFile=LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputBaseFilename=MoviesSetup
-SetupIconFile=E:\Лабы\Repos\Programming\Movies\Movies\icons8-cinema-64.ico
+SetupIconFile=icons8-cinema-64.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern

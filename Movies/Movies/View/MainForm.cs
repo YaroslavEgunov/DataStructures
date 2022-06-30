@@ -31,36 +31,6 @@ namespace Movies.View
         /// </summary>
         private Movie _currentMovie;
 
-        private void AddPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            AddPictureBox.Image = Resources.Video_add_color;
-        }
-
-        private void AddPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            AddPictureBox.Image = Resources.Video_add;
-        }
-
-        private void RefreshPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            RefreshPictureBox.Image = Resources.Video_refresh;
-        }
-
-        private void RefreshPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            RefreshPictureBox.Image = Resources.Video_refresh_color;
-        }
-
-        private void RemovePictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            RemovePictureBox.Image = Resources.Video_remove;
-        }
-
-        private void RemovePictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            RemovePictureBox.Image = Resources.Video_remove_color;
-        }
-
         /// <summary>
         /// Находит индекс жанра из перечисления.
         /// </summary>
@@ -69,15 +39,6 @@ namespace Movies.View
         private int SelectedGenre(Genres genre)
         {
             return (int) genre;
-        }
-
-        /// <summary>
-        /// Обновляет информацию в ListBox.
-        /// </summary>
-        private void UpdateMoviesListBox()
-        {
-            MoviesListBox.Items [MoviesListBox.SelectedIndex] =
-                    GetMovieInfo(_currentMovie);
         }
 
         /// <summary>
@@ -134,11 +95,11 @@ namespace Movies.View
         /// <param name="movies">Фильмы.</param>
         private void TitleSort(List<Movie> movies)
         {
-            var sortedMovies = movies.OrderBy(movie => movie.Title).ToList();
+            movies = movies.OrderBy(movie => movie.Title).ToList();
             for (int i = 0; i < MoviesListBox.Items.Count; i++)
             {
                 MoviesListBox.Items[i] = GetMovieInfo(movies[i]);
-                movies[i] = sortedMovies[i];
+
             }
         }
 
@@ -187,7 +148,6 @@ namespace Movies.View
                 _toolTip.SetToolTip(TitleTextBox, "");
                 TitleTextBox.BackColor = AppColors.CorrectColor;
                 TitleSort(_movies);
-                UpdateMoviesListBox();
             }
             catch (Exception exception)
             {
@@ -200,12 +160,10 @@ namespace Movies.View
         {
             try
             {
-                SetCurrentMovie();
                 YearTextBox.SelectionStart = YearTextBox.Text.Length;
                 _currentMovie.Year = Convert.ToInt32(YearTextBox.Text);
                 _toolTip.SetToolTip(YearTextBox, "");
                 YearTextBox.BackColor = AppColors.CorrectColor;
-                UpdateMoviesListBox();
             }
             catch (Exception exception)
             {
@@ -218,28 +176,16 @@ namespace Movies.View
         {
             try
             {
-                SetCurrentMovie();
                 RatingTextBox.SelectionStart = RatingTextBox.Text.Length;
                 _currentMovie.Rating = Convert.ToDouble(RatingTextBox.Text);
                 _toolTip.SetToolTip(RatingTextBox,"");
                 RatingTextBox.BackColor = AppColors.CorrectColor;
-                UpdateMoviesListBox();
             }
             catch (Exception exception)
             {
                 RatingTextBox.BackColor = AppColors.WrongColor;
                 _toolTip.SetToolTip(RatingTextBox, exception.Message);
             }
-        }
-
-        private void RatingTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            RatingTextBox.Text = RatingTextBox.Text.Replace(".", ",");
-        }
-
-        private void RatingTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            RatingTextBox.Text = RatingTextBox.Text.Replace(".", ",");
         }
 
         private void GenreComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -251,7 +197,6 @@ namespace Movies.View
                 _currentMovie.Genre = (Genres)GenreComboBox.SelectedIndex;
                 _toolTip.SetToolTip(GenreComboBox, "");
                 GenreComboBox.BackColor = AppColors.CorrectColor;
-                UpdateMoviesListBox();
             }
             catch (Exception exception)
             {
@@ -264,12 +209,10 @@ namespace Movies.View
         {
             try
             {
-                SetCurrentMovie();
                 DurationTextBox.SelectionStart = DurationTextBox.Text.Length;
                 _currentMovie.Duration = Convert.ToInt32(DurationTextBox.Text);
                 _toolTip.SetToolTip(DurationTextBox, "");
                 DurationTextBox.BackColor = AppColors.CorrectColor;
-                UpdateMoviesListBox();
             }
             catch (Exception exception)
             {
@@ -308,6 +251,36 @@ namespace Movies.View
         private void RefreshPictureBox_Click(object sender, EventArgs e)
         {
             TitleSort(_movies);
+        }
+
+        private void AddPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            AddPictureBox.Image = Resources.Video_add_color;
+        }
+
+        private void AddPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            AddPictureBox.Image = Resources.Video_add;
+        }
+
+        private void RefreshPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            RefreshPictureBox.Image = Resources.Video_refresh;
+        }
+
+        private void RefreshPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            RefreshPictureBox.Image = Resources.Video_refresh_color;
+        }
+
+        private void RemovePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            RemovePictureBox.Image = Resources.Video_remove;
+        }
+
+        private void RemovePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            RemovePictureBox.Image = Resources.Video_remove_color;
         }
     }
 }

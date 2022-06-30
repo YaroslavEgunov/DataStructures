@@ -81,7 +81,7 @@ namespace Movies.Model
         }
 
         /// <summary>
-        /// Продолжительность фильма.  Должена быть больше 0 и меньше 300. 
+        /// Продолжительность фильма.  Должна быть больше 0 и меньше 300. 
         /// </summary>
         public int Duration
         {
@@ -124,11 +124,6 @@ namespace Movies.Model
             Rating = 5;
             Genre = Genres.Horror;
             Duration = 150;
-        }
-
-        public static implicit operator int(Movie v)
-        {
-            throw new NotImplementedException();
         }
     }
 }

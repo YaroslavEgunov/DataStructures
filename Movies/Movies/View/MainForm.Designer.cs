@@ -168,8 +168,6 @@ namespace Movies.View
             this.RatingTextBox.Size = new System.Drawing.Size(292, 20);
             this.RatingTextBox.TabIndex = 9;
             this.RatingTextBox.TextChanged += new System.EventHandler(this.RatingTextBox_TextChanged);
-            this.RatingTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RatingTextBox_KeyDown);
-            this.RatingTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RatingTextBox_KeyPress);
             // 
             // YearTextBox
             // 
