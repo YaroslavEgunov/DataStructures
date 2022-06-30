@@ -99,7 +99,6 @@ namespace Movies.View
             for (int i = 0; i < MoviesListBox.Items.Count; i++)
             {
                 MoviesListBox.Items[i] = GetMovieInfo(movies[i]);
-
             }
         }
 
@@ -148,6 +147,7 @@ namespace Movies.View
                 _toolTip.SetToolTip(TitleTextBox, "");
                 TitleTextBox.BackColor = AppColors.CorrectColor;
                 TitleSort(_movies);
+                UpdateMovieInfo();
             }
             catch (Exception exception)
             {
