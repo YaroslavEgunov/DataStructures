@@ -72,14 +72,13 @@ namespace Movies.View
         /// <summary>
         /// Сортировка по названию фильма.
         /// </summary>
-        private void TitleSort()
+        private void TitleSorting(List<Movie> movies)
         {
-            _movies.Sort(delegate(Movie movie1, Movie movie2) 
-                {return movie1.Title.CompareTo(movie2.Title); });
-            MoviesListBox.Items.Clear();
-            for (int i = 0; i <= _movies.Count - 1; i++)
+            var sortedMovies = movies.OrderBy(movie => movie.Title).ToList();
+            for (int i = 0; i < MoviesListBox.Items.Count; i++)
             {
-                MoviesListBox.Items.Add(GetMovieInfo(_movies[i]));
+                MoviesListBox.Items[i] = GetMovieInfo(movies[i]);
+                movies[i] = sortedMovies[i];
             }
             MoviesListBox.SelectedIndex = _movies.IndexOf(_currentMovie);
         }
@@ -124,7 +123,7 @@ namespace Movies.View
                 _toolTip.SetToolTip(TitleTextBox, "");
                 TitleTextBox.BackColor = AppColors.CorrectColor;
                 UpdateMovieInfo(_currentMovie);
-                TitleSort();
+                TitleSorting(_movies);
             }
             catch (Exception exception)
             {
@@ -236,11 +235,6 @@ namespace Movies.View
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
            ProjectSerializer.SaveMoviesToFile(_movies);
-        }
-
-        private void RefreshPictureBox_Click(object sender, EventArgs e)
-        {
-            TitleSort();
         }
 
         private void AddPictureBox_MouseEnter(object sender, EventArgs e)
