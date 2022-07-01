@@ -34,7 +34,6 @@ namespace Movies.View
             this.MoviesGroupBox = new System.Windows.Forms.GroupBox();
             this.RemovePictureBox = new System.Windows.Forms.PictureBox();
             this.GenreComboBox = new System.Windows.Forms.ComboBox();
-            this.RefreshPictureBox = new System.Windows.Forms.PictureBox();
             this.DurationTextBox = new System.Windows.Forms.TextBox();
             this.AddPictureBox = new System.Windows.Forms.PictureBox();
             this.RatingTextBox = new System.Windows.Forms.TextBox();
@@ -47,7 +46,6 @@ namespace Movies.View
             this.TitleLabel = new System.Windows.Forms.Label();
             this.MoviesGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RemovePictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RefreshPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +68,6 @@ namespace Movies.View
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MoviesGroupBox.Controls.Add(this.RemovePictureBox);
             this.MoviesGroupBox.Controls.Add(this.GenreComboBox);
-            this.MoviesGroupBox.Controls.Add(this.RefreshPictureBox);
             this.MoviesGroupBox.Controls.Add(this.DurationTextBox);
             this.MoviesGroupBox.Controls.Add(this.AddPictureBox);
             this.MoviesGroupBox.Controls.Add(this.RatingTextBox);
@@ -95,7 +92,7 @@ namespace Movies.View
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RemovePictureBox.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.RemovePictureBox.Image = global::Movies.Properties.Resources.Video_remove;
-            this.RemovePictureBox.Location = new System.Drawing.Point(165, 282);
+            this.RemovePictureBox.Location = new System.Drawing.Point(87, 282);
             this.RemovePictureBox.Name = "RemovePictureBox";
             this.RemovePictureBox.Size = new System.Drawing.Size(72, 54);
             this.RemovePictureBox.TabIndex = 4;
@@ -116,21 +113,6 @@ namespace Movies.View
             this.GenreComboBox.Size = new System.Drawing.Size(292, 21);
             this.GenreComboBox.TabIndex = 12;
             this.GenreComboBox.SelectedIndexChanged += new System.EventHandler(this.GenreComboBox_SelectedIndexChanged);
-            // 
-            // RefreshPictureBox
-            // 
-            this.RefreshPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RefreshPictureBox.Image = global::Movies.Properties.Resources.Video_refresh;
-            this.RefreshPictureBox.Location = new System.Drawing.Point(87, 282);
-            this.RefreshPictureBox.Name = "RefreshPictureBox";
-            this.RefreshPictureBox.Size = new System.Drawing.Size(72, 54);
-            this.RefreshPictureBox.TabIndex = 3;
-            this.RefreshPictureBox.TabStop = false;
-            this.RefreshPictureBox.Click += new System.EventHandler(this.RefreshPictureBox_Click);
-            this.RefreshPictureBox.MouseEnter += new System.EventHandler(this.RefreshPictureBox_MouseEnter);
-            this.RefreshPictureBox.MouseLeave += new System.EventHandler(this.RefreshPictureBox_MouseLeave);
             // 
             // DurationTextBox
             // 
@@ -251,7 +233,6 @@ namespace Movies.View
             this.MoviesGroupBox.ResumeLayout(false);
             this.MoviesGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RemovePictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RefreshPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -272,7 +253,6 @@ namespace Movies.View
         private System.Windows.Forms.ComboBox GenreComboBox;
         private System.Windows.Forms.TextBox RatingTextBox;
         private System.Windows.Forms.PictureBox AddPictureBox;
-        private System.Windows.Forms.PictureBox RefreshPictureBox;
         private System.Windows.Forms.PictureBox RemovePictureBox;
     }
 }
