@@ -2,6 +2,9 @@
 
 namespace Movies.Model
 {
+    /// <summary>
+    /// Предоставляет цвета для приложения.
+    /// </summary>
     public class AppColors
     {
         /// <summary>

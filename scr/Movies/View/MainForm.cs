@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Movies.Model;
 using Movies.Properties;
-using Newtonsoft.Json;
 
 namespace Movies.View
 {

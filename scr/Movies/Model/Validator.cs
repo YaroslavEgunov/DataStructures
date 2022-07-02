@@ -2,6 +2,9 @@
 
 namespace Movies.Model
 {
+    /// <summary>
+    /// Предоставляет методы для проверки значений.
+    /// </summary>
     public static class Validator
     {
         /// <summary>
