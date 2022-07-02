@@ -47,7 +47,8 @@ namespace Movies.Model
         /// <param name="propertyName">Имя объекта у которого проверяется значение.</param>
         /// <exception cref="ArgumentException">Возникает, 
         /// если значение не входит в промежуток.</exception>
-        public static void AssertValueInRangeDouble(double value, int min, int max, string fieldName)
+        public static void AssertValueInRangeDouble
+            (double value, int min, int max, string fieldName)
         {
             if (!(value >= min) || !(value <= max))
             {
@@ -65,7 +66,8 @@ namespace Movies.Model
         /// <param name="propertyName">Имя объекта у которого проверяется значение.</param>
         /// <exception cref="ArgumentException">Возникает, 
         /// если значение не входит в промежуток.</exception>
-        public static void AssertValueInRangeInt(int value, int min, int max, string fieldName)
+        public static void AssertValueInRangeInt
+            (int value, int min, int max, string fieldName)
         {
             if (!(value >= min) || !(value <= max))
             {

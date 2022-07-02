@@ -59,7 +59,8 @@ namespace Movies.Model
             }
             set
             {
-                Validator.AssertValueInRangeInt(value, 1895, DateTime.Now.Year, nameof(Year));
+                Validator.AssertValueInRangeInt
+                    (value, 1895, DateTime.Now.Year, nameof(Year));
                 _year = value;
             }
         }
