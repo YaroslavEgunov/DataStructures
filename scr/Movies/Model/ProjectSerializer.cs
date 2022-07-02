@@ -61,13 +61,13 @@ namespace Movies.Model
             СheckFile();
             StreamReader streamReader = new StreamReader(_fileName);
             var data = streamReader.ReadToEnd();
-            var jsonBooks = JsonConvert.DeserializeObject<List<Movie>>(data);
+            var jsonMovies = JsonConvert.DeserializeObject<List<Movie>>(data);
             streamReader.Close();
-            if (jsonBooks == null)
+            if (jsonMovies == null)
             {
                 return new List<Movie>();
             }
-            return jsonBooks;
+            return jsonMovies;
         }
     }
 }
