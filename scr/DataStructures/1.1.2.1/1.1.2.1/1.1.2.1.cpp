@@ -6,6 +6,7 @@ using namespace std;
 
 int main()
 {
+	// int array[10] = { 34, -24, 12, 44, -65, 52, -72, 12, 87, -10 };
 	int array[10];
 	srand(time(0));
 	cout << "Source array is: ";
