@@ -46,7 +46,6 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // ItemsListBox
             // 
-            this.ItemsListBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ItemsListBox.FormattingEnabled = true;
             this.ItemsListBox.Location = new System.Drawing.Point(6, 22);
             this.ItemsListBox.Name = "ItemsListBox";
@@ -56,11 +55,9 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // AddButton
             // 
-            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.AddButton.Location = new System.Drawing.Point(6, 461);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(93, 39);
+            this.AddButton.Size = new System.Drawing.Size(93, 44);
             this.AddButton.TabIndex = 1;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -68,11 +65,9 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.RemoveButton.Location = new System.Drawing.Point(105, 461);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(90, 39);
+            this.RemoveButton.Size = new System.Drawing.Size(93, 44);
             this.RemoveButton.TabIndex = 2;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;

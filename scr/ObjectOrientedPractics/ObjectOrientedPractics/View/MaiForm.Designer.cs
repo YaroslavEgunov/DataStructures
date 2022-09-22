@@ -30,24 +30,26 @@ namespace ObjectOrientedPractics.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaiForm));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.CustomersTabControl = new System.Windows.Forms.TabPage();
             this.ItemsTabControl = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.itemsTab1 = new ObjectOrientedPractics.View.Tabs.ItemsTab();
-            this.tabControl1.SuspendLayout();
+            this.customersTab1 = new ObjectOrientedPractics.View.Tabs.CustomersTab();
+            this.CustomersTabControl.SuspendLayout();
             this.ItemsTabControl.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // CustomersTabControl
             // 
-            this.tabControl1.Controls.Add(this.ItemsTabControl);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(805, 530);
-            this.tabControl1.TabIndex = 0;
+            this.CustomersTabControl.Controls.Add(this.customersTab1);
+            this.CustomersTabControl.Location = new System.Drawing.Point(4, 22);
+            this.CustomersTabControl.Name = "CustomersTabControl";
+            this.CustomersTabControl.Padding = new System.Windows.Forms.Padding(3);
+            this.CustomersTabControl.Size = new System.Drawing.Size(797, 510);
+            this.CustomersTabControl.TabIndex = 1;
+            this.CustomersTabControl.Text = "Customers";
+            this.CustomersTabControl.UseVisualStyleBackColor = true;
             // 
             // ItemsTabControl
             // 
@@ -60,15 +62,16 @@ namespace ObjectOrientedPractics.View
             this.ItemsTabControl.Text = "Items";
             this.ItemsTabControl.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabControl1
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(805, 508);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabControl1.Controls.Add(this.ItemsTabControl);
+            this.tabControl1.Controls.Add(this.CustomersTabControl);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(805, 536);
+            this.tabControl1.TabIndex = 0;
             // 
             // itemsTab1
             // 
@@ -80,27 +83,37 @@ namespace ObjectOrientedPractics.View
             this.itemsTab1.Size = new System.Drawing.Size(801, 513);
             this.itemsTab1.TabIndex = 0;
             // 
+            // customersTab1
+            // 
+            this.customersTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customersTab1.Location = new System.Drawing.Point(3, 3);
+            this.customersTab1.Name = "customersTab1";
+            this.customersTab1.Size = new System.Drawing.Size(791, 504);
+            this.customersTab1.TabIndex = 0;
+            // 
             // MaiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 530);
+            this.ClientSize = new System.Drawing.Size(805, 536);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MaiForm";
             this.Text = "Object Oriented Practics";
-            this.tabControl1.ResumeLayout(false);
+            this.CustomersTabControl.ResumeLayout(false);
             this.ItemsTabControl.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage CustomersTabControl;
         private System.Windows.Forms.TabPage ItemsTabControl;
-        private System.Windows.Forms.TabPage tabPage2;
         private Tabs.ItemsTab itemsTab1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private Tabs.CustomersTab customersTab1;
     }
 }
 
