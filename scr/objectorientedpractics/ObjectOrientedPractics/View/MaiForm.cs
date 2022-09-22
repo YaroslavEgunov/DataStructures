@@ -1,4 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
+using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Services;
+using ObjectOrientedPractics.View.Tabs;
 
 namespace ObjectOrientedPractics.View
 {
@@ -7,6 +11,12 @@ namespace ObjectOrientedPractics.View
         public MaiForm()
         {
             InitializeComponent();
+        }
+
+        private void MaiForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ProjectSerializer.SaveItemsToFile(_items);
+            ProjectSerializer.SaveCustomersToFile(_customers);
         }
     }
 }
