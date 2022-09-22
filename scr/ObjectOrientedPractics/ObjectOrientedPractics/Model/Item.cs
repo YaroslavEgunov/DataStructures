@@ -11,7 +11,7 @@ namespace ObjectOrientedPractics.Model
     /// <summary>
     /// Хранит данные о товаре. 
     /// </summary>
-    class Item
+    public class Item
     {
         /// <summary>
         /// Уникальный индетификатор.

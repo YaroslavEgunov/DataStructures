@@ -7,7 +7,7 @@ using ObjectOrientedPractics.Services;
 
 namespace ObjectOrientedPractics.Model
 {
-    class Customer
+    public class Customer
     {
         /// <summary>
         /// Уникальный индетификатор.

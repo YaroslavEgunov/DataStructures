@@ -42,12 +42,12 @@ namespace ObjectOrientedPractics.Services
         /// Сохраняет данные в файл.
         /// </summary>
         /// <param name="items">Путь к файлу, в который нужно сохранить данные.</param>
-        public static void SaveItemsToFile(List<Item> items)
+        public static void SaveItemsData(List<Item> items)
         {
             СheckFile(_itemsFileName);
             StreamWriter streamWriter = new StreamWriter(_itemsFileName);
-            var jsonData = JsonConvert.SerializeObject(items);
-            streamWriter.Write(jsonData);
+            var jsonItems = JsonConvert.SerializeObject(items);
+            streamWriter.Write(jsonItems);
             streamWriter.Close();
         }
 
@@ -55,12 +55,12 @@ namespace ObjectOrientedPractics.Services
         /// Сохраняет данные в файл.
         /// </summary>
         /// <param name="items">Путь к файлу, в который нужно сохранить данные.</param>
-        public static void SaveCustomersToFile(List<Customer> customers)
+        public static void SaveCustomersTData(List<Customer> customers)
         {
             СheckFile(_customersFileName);
             StreamWriter streamWriter = new StreamWriter(_customersFileName);
-            var jsonData = JsonConvert.SerializeObject(customers);
-            streamWriter.Write(jsonData);
+            var jsonCustomers = JsonConvert.SerializeObject(customers);
+            streamWriter.Write(jsonCustomers);
             streamWriter.Close();
         }
 
@@ -68,7 +68,7 @@ namespace ObjectOrientedPractics.Services
         /// Загружает данные о товарах из файла.
         /// </summary>
         /// <returns>Возвращает список загруженных товаров.</returns>
-        public static List<Item> LoadItemsToFile()
+        public static List<Item> LoadItemsData()
         {
             СheckFile(_itemsFileName);
             StreamReader streamReader = new StreamReader(_itemsFileName);
@@ -82,7 +82,7 @@ namespace ObjectOrientedPractics.Services
         /// Загружает данные о покупателях из файла.
         /// </summary>
         /// <returns>Возвращает список загруженных покупателей.</returns>
-        public static List<Customer> LoadCustomersToFile()
+        public static List<Customer> LoadCustomersData()
         {
             СheckFile(_customersFileName);
             StreamReader streamReader = new StreamReader(_customersFileName);

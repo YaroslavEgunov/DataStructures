@@ -22,9 +22,16 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private Item _currentItem;
 
+        public List<Item> ItemsData = new List<Item>();
+
         public ItemsTab()
         {
             InitializeComponent();
+        }
+
+        private void UpdateItemsData()
+        {
+            ItemsData = _items;
         }
 
         private void ClearItemsTextBox()
@@ -73,6 +80,7 @@ namespace ObjectOrientedPractics.View.Tabs
             }
             _items.RemoveAt(ItemsListBox.SelectedIndex);
             ItemsListBox.Items.RemoveAt(ItemsListBox.SelectedIndex);
+            UpdateItemsData();
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -80,8 +88,8 @@ namespace ObjectOrientedPractics.View.Tabs
             _items.Add(new Item());
             _currentItem = _items.Last();
             ItemsListBox.Items.Add(_currentItem.Name);
-            UpdateItemsTextBox(_currentItem);
             ItemsListBox.SelectedIndex = ItemsListBox.Items.Count - 1;
+            UpdateItemsData();
         }
 
         private void CostTextBox_TextChanged(object sender, EventArgs e)
@@ -90,7 +98,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Cost = Convert.ToDouble(CostTextBox.Text);
                 CostTextBox.BackColor = Color.CorrectColor;
-                UpdateItemsTextBox(_currentItem);
+                UpdateItemsData();
             }
             catch (Exception exception)
             {
@@ -108,7 +116,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 NameTextBox.BackColor = Color.CorrectColor;
                 ItemsListBox.Items[ItemsListBox.SelectedIndex] =
                     NameTextBox.Text;
-                UpdateItemsTextBox(_currentItem);
+                UpdateItemsData();
             }
             catch (Exception exception)
             {
@@ -123,7 +131,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Info = DescriptionTextBox.Text;
                 DescriptionTextBox.BackColor = Color.CorrectColor;
-                UpdateItemsTextBox(_currentItem);
+                UpdateItemsData();
             }
             catch (Exception exception)
             {
@@ -134,7 +142,12 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private void ItemsTab_Load(object sender, EventArgs e)
         {
-            _items.AddRange(ProjectSerializer.LoadItemsToFile());
+            var data = ProjectSerializer.LoadItemsData();
+            if (data == null)
+            {
+                return;
+            }
+            _items.AddRange(data);
             for (int i = 0; i < _items.Count; i++)
             {
                 ItemsListBox.Items.Add(_items[i].Name);

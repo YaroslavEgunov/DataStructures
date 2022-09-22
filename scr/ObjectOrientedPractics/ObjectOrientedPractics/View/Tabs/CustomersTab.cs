@@ -20,9 +20,16 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private Customer _currentCustomer;
 
+        public List<Customer> CustomerData = new List<Customer>();
+
         public CustomersTab()
         {
             InitializeComponent();
+        }
+
+        private void UpdateCustomersData()
+        {
+            CustomerData = _customers;
         }
 
         private void ClearCustomersTextBox()
@@ -68,6 +75,7 @@ namespace ObjectOrientedPractics.View.Tabs
             }
             _customers.RemoveAt(CustomersListBox.SelectedIndex);
             CustomersListBox.Items.RemoveAt(CustomersListBox.SelectedIndex);
+            UpdateCustomersData();
         }
 
         private void AddCustomersButton_Click(object sender, EventArgs e)
@@ -77,6 +85,7 @@ namespace ObjectOrientedPractics.View.Tabs
             CustomersListBox.Items.Add(_currentCustomer.FullName);
             UpdateCustomersTextBox(_currentCustomer);
             CustomersListBox.SelectedIndex = CustomersListBox.Items.Count - 1;
+            UpdateCustomersData();
         }
 
         private void FullNameTextBox_TextChanged(object sender, EventArgs e)
@@ -88,7 +97,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 FullNameTextBox.BackColor = AppColors.CorrectColor;
                 CustomersListBox.Items[CustomersListBox.SelectedIndex] =
                     FullNameTextBox.Text;
-                UpdateCustomersTextBox(_currentCustomer);
+                UpdateCustomersData();
             }
             catch (Exception exception)
             {
@@ -104,6 +113,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 _currentCustomer.Address = AddressTextBox.Text;
                 AddressTextBox.BackColor = AppColors.CorrectColor;
                 UpdateCustomersTextBox(_currentCustomer);
+                UpdateCustomersData();
             }
             catch (Exception exception)
             {
@@ -114,7 +124,12 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private void CustomersTab_Load(object sender, EventArgs e)
         {
-            _customers.AddRange(ProjectSerializer.LoadCustomersToFile());
+            var data = ProjectSerializer.LoadCustomersData();
+            if (data == null)
+            {
+                return;
+            }
+            _customers.AddRange(data);
             for (int i = 0; i < _customers.Count; i++)
             {
                 CustomersListBox.Items.Add(_customers[i].FullName);

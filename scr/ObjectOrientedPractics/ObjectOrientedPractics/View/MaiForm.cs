@@ -15,8 +15,8 @@ namespace ObjectOrientedPractics.View
 
         private void MaiForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ProjectSerializer.SaveItemsToFile(_items);
-            ProjectSerializer.SaveCustomersToFile(_customers);
+            ProjectSerializer.SaveItemsData(ItemsTab.ItemsData);
+            ProjectSerializer.SaveCustomersTData(CustomersTab.CustomerData);
         }
     }
 }
