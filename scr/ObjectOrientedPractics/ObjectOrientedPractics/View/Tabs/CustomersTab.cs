@@ -111,5 +111,14 @@ namespace ObjectOrientedPractics.View.Tabs
                 AddressTextBox.BackColor = AppColors.WrongColor;
             }
         }
+
+        private void CustomersTab_Load(object sender, EventArgs e)
+        {
+            _customers.AddRange(ProjectSerializer.LoadCustomersToFile());
+            for (int i = 0; i < _customers.Count; i++)
+            {
+                CustomersListBox.Items.Add(_customers[i].FullName);
+            }
+        }
     }
 }

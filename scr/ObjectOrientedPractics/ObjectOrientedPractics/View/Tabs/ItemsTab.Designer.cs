@@ -190,6 +190,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.Controls.Add(this.ItemsListBox);
             this.Name = "ItemsTab";
             this.Size = new System.Drawing.Size(801, 513);
+            this.Load += new System.EventHandler(this.ItemsTab_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace Movies.Model
 {
@@ -34,15 +33,15 @@ namespace Movies.Model
         /// <summary>
         /// Сохраняет все данные о фильмах в файл.
         /// </summary>
-        /// <param name="books">Список фильмов, которые нужно сохранить.</param>
+        /// <param name="movies">Список фильмов, которые нужно сохранить.</param>
         /// <exception cref="NotImplementedException">Возникает, если произошла ошибка при сохранении.</exception>
-        public static void SaveMoviesToFile(List<Movie> books)
+        public static void SaveMoviesToFile(List<Movie> movies)
         {
             try
             {
                 СheckFile();
                 StreamWriter streamWriter = new StreamWriter(_fileName);
-                var jsonBooks = JsonConvert.SerializeObject(books);
+                var jsonBooks = JsonConvert.SerializeObject(movies);
                 streamWriter.Write(jsonBooks);
                 streamWriter.Close();
             }

@@ -31,10 +31,10 @@ namespace ObjectOrientedPractics.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaiForm));
             this.CustomersTabControl = new System.Windows.Forms.TabPage();
-            this.ItemsTabControl = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.itemsTab1 = new ObjectOrientedPractics.View.Tabs.ItemsTab();
             this.customersTab1 = new ObjectOrientedPractics.View.Tabs.CustomersTab();
+            this.ItemsTabControl = new System.Windows.Forms.TabPage();
+            this.itemsTab1 = new ObjectOrientedPractics.View.Tabs.ItemsTab();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.CustomersTabControl.SuspendLayout();
             this.ItemsTabControl.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -51,16 +51,34 @@ namespace ObjectOrientedPractics.View
             this.CustomersTabControl.Text = "Customers";
             this.CustomersTabControl.UseVisualStyleBackColor = true;
             // 
+            // customersTab1
+            // 
+            this.customersTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customersTab1.Location = new System.Drawing.Point(3, 3);
+            this.customersTab1.Name = "customersTab1";
+            this.customersTab1.Size = new System.Drawing.Size(791, 504);
+            this.customersTab1.TabIndex = 0;
+            // 
             // ItemsTabControl
             // 
             this.ItemsTabControl.Controls.Add(this.itemsTab1);
             this.ItemsTabControl.Location = new System.Drawing.Point(4, 22);
             this.ItemsTabControl.Name = "ItemsTabControl";
             this.ItemsTabControl.Padding = new System.Windows.Forms.Padding(3);
-            this.ItemsTabControl.Size = new System.Drawing.Size(797, 504);
+            this.ItemsTabControl.Size = new System.Drawing.Size(797, 510);
             this.ItemsTabControl.TabIndex = 0;
             this.ItemsTabControl.Text = "Items";
             this.ItemsTabControl.UseVisualStyleBackColor = true;
+            // 
+            // itemsTab1
+            // 
+            this.itemsTab1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.itemsTab1.Location = new System.Drawing.Point(0, 0);
+            this.itemsTab1.Name = "itemsTab1";
+            this.itemsTab1.Size = new System.Drawing.Size(801, 513);
+            this.itemsTab1.TabIndex = 0;
             // 
             // tabControl1
             // 
@@ -73,24 +91,6 @@ namespace ObjectOrientedPractics.View
             this.tabControl1.Size = new System.Drawing.Size(805, 536);
             this.tabControl1.TabIndex = 0;
             // 
-            // itemsTab1
-            // 
-            this.itemsTab1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.itemsTab1.Location = new System.Drawing.Point(0, 0);
-            this.itemsTab1.Name = "itemsTab1";
-            this.itemsTab1.Size = new System.Drawing.Size(801, 513);
-            this.itemsTab1.TabIndex = 0;
-            // 
-            // customersTab1
-            // 
-            this.customersTab1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customersTab1.Location = new System.Drawing.Point(3, 3);
-            this.customersTab1.Name = "customersTab1";
-            this.customersTab1.Size = new System.Drawing.Size(791, 504);
-            this.customersTab1.TabIndex = 0;
-            // 
             // MaiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,6 +100,7 @@ namespace ObjectOrientedPractics.View
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MaiForm";
             this.Text = "Object Oriented Practics";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MaiForm_FormClosed);
             this.CustomersTabControl.ResumeLayout(false);
             this.ItemsTabControl.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);

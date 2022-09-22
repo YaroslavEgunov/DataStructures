@@ -131,5 +131,14 @@ namespace ObjectOrientedPractics.View.Tabs
                 DescriptionTextBox.BackColor = Color.WrongColor;
             }
         }
+
+        private void ItemsTab_Load(object sender, EventArgs e)
+        {
+            _items.AddRange(ProjectSerializer.LoadItemsToFile());
+            for (int i = 0; i < _items.Count; i++)
+            {
+                ItemsListBox.Items.Add(_items[i].Name);
+            }
+        }
     }
 }

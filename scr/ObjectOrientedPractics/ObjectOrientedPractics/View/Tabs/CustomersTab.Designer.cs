@@ -179,6 +179,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.Controls.Add(this.CustomersListBox);
             this.Name = "CustomersTab";
             this.Size = new System.Drawing.Size(801, 513);
+            this.Load += new System.EventHandler(this.CustomersTab_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
