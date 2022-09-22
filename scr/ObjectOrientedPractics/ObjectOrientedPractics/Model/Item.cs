@@ -34,6 +34,17 @@ namespace ObjectOrientedPractics.Model
         private double _cost;
 
         /// <summary>
+        /// Возвращает уникальный идентификатор.
+        /// </summary>
+        public int Id
+        {
+            get
+            {
+                return _id;
+            }
+        }
+
+        /// <summary>
         /// Возвращает и задаёт название товара. Должно быть меньше 200 символов.
         /// </summary>
         public string Name
@@ -44,7 +55,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertOnCharactersRange(value, 200, nameof(Name));
+                Validator.AssertStringOnLength(value, 200, nameof(Name));
                 _name = value;
             }
         }
@@ -60,7 +71,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertOnCharactersRange(value, 1000, nameof(Info));
+                Validator.AssertStringOnLength(value, 1000, nameof(Info));
                 _info = value;
             }
         }
@@ -82,7 +93,7 @@ namespace ObjectOrientedPractics.Model
         }
 
         /// <summary>
-        /// Создает экземпляр класса <see cref="Item"/>
+        /// Создает экземпляр класса <see cref="Item"/>.
         /// </summary>
         /// <param name="Id">Уникальный индетификатор.</param>
         /// <param name="Name">Название товара. Должно быть меньше 200 символов.</param>
@@ -95,7 +106,9 @@ namespace ObjectOrientedPractics.Model
             Info = _info;
             Cost = _cost;
         }
-
+        /// <summary>
+        /// Создает экземпляр класса <see cref="Item"/>.
+        /// </summary>
         public Item()
         {
             _id = IdGenerator.GetNextId();

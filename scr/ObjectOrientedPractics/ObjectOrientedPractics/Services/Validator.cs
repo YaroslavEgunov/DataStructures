@@ -18,7 +18,9 @@ namespace ObjectOrientedPractics.Services
         /// <param name="value">Значение, не больше которого должна быть строка.</param>
         /// <param name="fieldName">Имя свойства или объекта, 
         /// которое подлежит проверке.</param>
-        public static void AssertOnCharactersRange
+        /// <exception cref="ArgumentException">Возникает, 
+        /// если количество символов больше введёного значения.</exception>
+        public static void AssertStringOnLength
             (string @string , int value, string fieldName)
         {
             if (@string.Length > value)
@@ -28,7 +30,18 @@ namespace ObjectOrientedPractics.Services
             }
         }
 
-        public static void AssertValueInRange(double value, double min, double max, string fieldName)
+        /// <summary>
+        /// Проверяет, входит ли значение в заданный диапазон.
+        /// </summary>
+        /// <param name="value">Значение, которое нужно проверить.</param>
+        /// <param name="min">Нижняя граница.</param>
+        /// <param name="max">Верхняя граница.</param>
+        /// <param name="fieldName">Имя свойства или объекта, 
+        /// которое подлежит проверке.</param>
+        /// <exception cref="ArgumentException">
+        /// Возникает, если введённое значение вне диапазона.</exception>
+        public static void AssertValueInRange
+            (double value, double min, double max, string fieldName)
         {
             if (!(value >= min) || !(value <= max))
             {

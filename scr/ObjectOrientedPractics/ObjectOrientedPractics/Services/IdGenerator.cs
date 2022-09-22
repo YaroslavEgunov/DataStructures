@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ObjectOrientedPractics.Services
 {
+    /// <summary>
+    /// Хранит метод, отвечающий за создание уникальных идентификаторов.
+    /// </summary>
     public static class IdGenerator
     {
         /// <summary>
