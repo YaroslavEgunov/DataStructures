@@ -17,7 +17,7 @@ namespace ObjectOrientedPractics
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MaiForm());
+            Application.Run(new MainForm());
         }
     }
 }

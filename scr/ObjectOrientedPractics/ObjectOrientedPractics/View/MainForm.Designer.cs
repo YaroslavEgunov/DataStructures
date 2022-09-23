@@ -1,7 +1,7 @@
 ﻿
 namespace ObjectOrientedPractics.View
 {
-    partial class MaiForm
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,7 +29,7 @@ namespace ObjectOrientedPractics.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaiForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.CustomersTabControl = new System.Windows.Forms.TabPage();
             this.customersTab1 = new ObjectOrientedPractics.View.Tabs.CustomersTab();
             this.ItemsTabControl = new System.Windows.Forms.TabPage();

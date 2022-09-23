@@ -14,15 +14,29 @@ namespace ObjectOrientedPractics.Services
         /// <summary>
         /// Уникальный индетификатор. 
         /// </summary>
-        private static int _id = 1;
+        private static int _itemsId = 1;
 
         /// <summary>
         /// Создаёт уникальный идентификатор.
         /// </summary>
         /// <returns>Возвращает уникальный идентификатор.</returns>
-        public static int GetNextId()
+        public static int GetNextItemsId()
         {
-            return _id++;
+            return _itemsId++;
+        }
+
+        /// <summary>
+        /// Уникальный индетификатор. 
+        /// </summary>
+        private static int _customersId = 1;
+
+        /// <summary>
+        /// Создаёт уникальный идентификатор.
+        /// </summary>
+        /// <returns>Возвращает уникальный идентификатор.</returns>
+        public static int GetNextCustomersId()
+        {
+            return _customersId++;
         }
     }
 }

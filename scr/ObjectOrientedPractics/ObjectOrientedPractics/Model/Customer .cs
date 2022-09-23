@@ -12,7 +12,7 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Уникальный индетификатор.
         /// </summary>
-        private readonly int _id;
+        private readonly int _customersId;
 
         /// <summary>
         /// Полное имя покупателя. Должно быть меньше 200 символов.
@@ -31,7 +31,7 @@ namespace ObjectOrientedPractics.Model
         {
             get
             {
-                return _id;
+                return _customersId;
             }
         }
 
@@ -75,7 +75,7 @@ namespace ObjectOrientedPractics.Model
         /// <param name="Address">Адрес доставки. Должен быть меньше 500 символов.</param>
         public Customer(int Id, string FullName, string Address)
         {
-            _id = IdGenerator.GetNextId();
+            _customersId = IdGenerator.GetNextCustomersId();
             FullName = _fullName;
             Address = _address;
         }
@@ -85,7 +85,7 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         public Customer()
         {
-            _id = IdGenerator.GetNextId();
+            _customersId = IdGenerator.GetNextCustomersId();
             FullName = "Empty";
             Address = "Empty";
         }

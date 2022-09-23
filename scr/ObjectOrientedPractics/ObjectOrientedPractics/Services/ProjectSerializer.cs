@@ -55,7 +55,7 @@ namespace ObjectOrientedPractics.Services
         /// Сохраняет данные в файл.
         /// </summary>
         /// <param name="items">Путь к файлу, в который нужно сохранить данные.</param>
-        public static void SaveCustomersTData(List<Customer> customers)
+        public static void SaveCustomersData(List<Customer> customers)
         {
             СheckFile(_customersFileName);
             StreamWriter streamWriter = new StreamWriter(_customersFileName);

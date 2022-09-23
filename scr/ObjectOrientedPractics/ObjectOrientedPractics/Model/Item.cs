@@ -101,7 +101,7 @@ namespace ObjectOrientedPractics.Model
         /// <param name="Cost">Цена товара. Должна быть в пределах от 0 до 100 000.</param>
         public Item(int Id, string Name, string Info, double Cost)
         {
-            _id = IdGenerator.GetNextId();
+            _id = IdGenerator.GetNextItemsId();
             Name = _name;
             Info = _info;
             Cost = _cost;
@@ -111,7 +111,7 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         public Item()
         {
-            _id = IdGenerator.GetNextId();
+            _id = IdGenerator.GetNextItemsId();
             Name = "Empty";
             Info = "Empty";
             Cost = 0;

@@ -6,17 +6,17 @@ using ObjectOrientedPractics.View.Tabs;
 
 namespace ObjectOrientedPractics.View
 {
-    public partial class MaiForm : Form
+    public partial class MainForm : Form
     {
-        public MaiForm()
+        public MainForm()
         {
             InitializeComponent();
         }
 
         private void MaiForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ProjectSerializer.SaveItemsData(ItemsTab.ItemsData);
-            ProjectSerializer.SaveCustomersTData(CustomersTab.CustomerData);
+            ProjectSerializer.SaveItemsData(itemsTab1.ItemsData);
+            ProjectSerializer.SaveCustomersData(customersTab1.CustomerData);
         }
     }
 }
