@@ -16,7 +16,7 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Уникальный индетификатор.
         /// </summary>
-        private readonly int _id;
+        private readonly int _itemsId;
 
         /// <summary>
         /// Название товара. 
@@ -40,7 +40,7 @@ namespace ObjectOrientedPractics.Model
         {
             get
             {
-                return _id;
+                return _itemsId;
             }
         }
 
@@ -101,7 +101,7 @@ namespace ObjectOrientedPractics.Model
         /// <param name="Cost">Цена товара. Должна быть в пределах от 0 до 100 000.</param>
         public Item(int Id, string Name, string Info, double Cost)
         {
-            _id = IdGenerator.GetNextItemsId();
+            _itemsId = IdGenerator.GetNextItemsId();
             Name = _name;
             Info = _info;
             Cost = _cost;
@@ -111,7 +111,7 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         public Item()
         {
-            _id = IdGenerator.GetNextItemsId();
+            _itemsId = IdGenerator.GetNextItemsId();
             Name = "Empty";
             Info = "Empty";
             Cost = 0;

@@ -14,6 +14,11 @@ namespace ObjectOrientedPractics.Services
         /// <summary>
         /// Уникальный индетификатор. 
         /// </summary>
+        private static int _customersId = 1;
+
+        /// <summary>
+        /// Уникальный индетификатор. 
+        /// </summary>
         private static int _itemsId = 1;
 
         /// <summary>
@@ -24,11 +29,6 @@ namespace ObjectOrientedPractics.Services
         {
             return _itemsId++;
         }
-
-        /// <summary>
-        /// Уникальный индетификатор. 
-        /// </summary>
-        private static int _customersId = 1;
 
         /// <summary>
         /// Создаёт уникальный идентификатор.
