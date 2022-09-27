@@ -91,14 +91,15 @@ namespace ObjectOrientedPractics.View
             this.tabControl1.Size = new System.Drawing.Size(805, 536);
             this.tabControl1.TabIndex = 0;
             // 
-            // MaiForm
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 536);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MaiForm";
+            this.MinimumSize = new System.Drawing.Size(821, 575);
+            this.Name = "MainForm";
             this.Text = "Object Oriented Practics";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MaiForm_FormClosed);
             this.CustomersTabControl.ResumeLayout(false);
