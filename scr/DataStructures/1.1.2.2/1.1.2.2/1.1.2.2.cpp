@@ -1,6 +1,4 @@
-﻿// 1.1.2.2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-using namespace std;
+﻿using namespace std;
 
 #include <iostream>
 
@@ -8,7 +6,7 @@ int main()
 {
 	double array[12] = { 34.3, -24.67, 12.17, 44.4, -65.13, 52.91, -72.36, 12.4, 87.85, -10.8 };
 	cout << "Source array is: ";
-
+	//TODO: массив в переменную
 	for (int i = 0; i < 10; i++)
 	{
 		cout << array[i] << " ";

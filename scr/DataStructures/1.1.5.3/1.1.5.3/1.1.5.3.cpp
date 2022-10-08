@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    //TODO: code style
     int n;
     cout << "Enter char array size: ";
     cin >> n;

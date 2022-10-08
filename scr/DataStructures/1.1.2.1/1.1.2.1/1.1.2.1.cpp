@@ -1,18 +1,18 @@
-﻿// 1.1.2.1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-using namespace std;
+﻿using namespace std;
 
 #include <iostream>
 
 int main()
 {
+	//TODO: убрать комментарии
 	// int array[10] = { 34, -24, 12, 44, -65, 52, -72, 12, 87, -10 };
 	int array[10];
 	srand(time(0));
 	cout << "Source array is: ";
-
+	//TODO: размер вычислять
 	for (int i=0; i<10; i++)
 	{
+		//TODO: магические числа
 		array[i] =  1 + rand() % 200 + (-100);
 		cout << array[i] << " ";
 	}

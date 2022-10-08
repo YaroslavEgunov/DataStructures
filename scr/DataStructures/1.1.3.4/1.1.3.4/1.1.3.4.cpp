@@ -3,6 +3,7 @@ using namespace std;
 
 void RoundToTens(int& value)
 {
+    //TODO: 10 в переменную 
     int remainder = value % 10;
     if (remainder < 5)
     {
@@ -16,6 +17,7 @@ void RoundToTens(int& value)
 
 int main()
 {
+    //TODO: лишние переменные
     int a = 34;
     RoundToTens(a);
     a = 245;

@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    //TODO: code style
     double* array = new double[10]{ 3, 45, -23, 42, -2.34, 23, -5, 3.41, 4, -45 };
     cout << "Your array:" << endl;
     for (int i = 0; i < 10; i++)
