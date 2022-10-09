@@ -16,10 +16,7 @@ void DemoGetPower(double base, int exponent)
 
 int main()
 {
-    //TODO: убрать вызов
-    cout << GetPower(3, 7) << endl;
-    cout << GetPower(-6.2, 4) << endl;
-    cout << GetPower(1.7, 12) << endl;
+    //TODO: убрать вызов +
     DemoGetPower(5, 5);
     DemoGetPower(-3, 3);
     DemoGetPower(999999, 0);

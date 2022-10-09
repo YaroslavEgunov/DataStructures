@@ -4,22 +4,20 @@
 
 int main()
 {
-	//TODO: убрать комментарии
-	// int array[10] = { 34, -24, 12, 44, -65, 52, -72, 12, 87, -10 };
-	int array[10];
-	srand(time(0));
+	//TODO: убрать комментарии +
+	const int ArraySize = 10;
+	int array[ArraySize] = { 34, -24, 12, 44, -65, 52, -72, 21, 87, -10 };
 	cout << "Source array is: ";
-	//TODO: размер вычислять
-	for (int i=0; i<10; i++)
+
+	//TODO: размер вычислять +
+	for (int i=0; i< ArraySize; i++)
 	{
-		//TODO: магические числа
-		array[i] =  1 + rand() % 200 + (-100);
 		cout << array[i] << " ";
 	}
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < ArraySize; i++)
 	{
-		for (int j = i+1; j < 10; j++)
+		for (int j = i+1; j < ArraySize; j++)
 		{
 			if (array[i] > array[j])
 			{
@@ -32,7 +30,7 @@ int main()
 
 	cout << "\nSorted array is: ";
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < ArraySize; i++)
 	{
 		cout << array[i] << " ";
 	}
