@@ -6,6 +6,7 @@ void AddAndDelete::DeleteElement(Array* propertyName)
     cout << "Insert index of element you want to delete:";
     int index;
     cin >> index;
+
     if (index > propertyName->Length - 1)
     {
         cout << "Incorrect index" << endl;
@@ -41,6 +42,7 @@ void AddAndDelete::AddFirstElement(Array* propertyName)
         cout << "Capacity is maximum" << endl;
         return;
     }
+
     cout << "Insert element you want to add first:";
     int element;
     cin >> element;
@@ -63,6 +65,7 @@ void AddAndDelete::AddLastElement(Array* propertyName)
         cout << "Capacity is maximum" << endl;
         return;
     }
+
     cout << "Insert element you want to add last:";
     int element;
     cin >> element;

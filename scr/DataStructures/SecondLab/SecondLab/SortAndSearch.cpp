@@ -52,6 +52,7 @@ void  SortAndSearch::BinarySearch(int* array, int length)
 	int right = length - 1;
 	int mid;
 	bool flag = false;
+
 	while ((left <= right) && (flag != true)) 
 	{
 		mid = (left + right) / 2;
