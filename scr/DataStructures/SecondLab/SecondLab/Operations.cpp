@@ -1,8 +1,8 @@
 #include "Operations.h"
 #include <iostream>
 #include "Array.h"
-
 using namespace std;
+
 void Operations::InitializeArray(int* array, int length)
 {
 	for (int i = 0; i < length;i++)
@@ -10,7 +10,13 @@ void Operations::InitializeArray(int* array, int length)
 		int element;
 		cout << "a[" << i << "] = ";
 		cin >> element;
-		array[i] = element;
+
+		if (!cin)
+		{
+			throw invalid_argument("Incorrect value");
+		}
+
+		array[i] = element;		
 	}
 }
 

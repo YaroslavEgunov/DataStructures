@@ -9,5 +9,5 @@ struct AddAndDelete
 	static void DeleteElement(Array* propertyName);
 	static void AddFirstElement(Array* propertyName);
 	static void AddLastElement(Array* propertyName);
-	static void AddSpecificElement(Array* propertyName);
+	static void AddElement(Array* propertyName);
 };

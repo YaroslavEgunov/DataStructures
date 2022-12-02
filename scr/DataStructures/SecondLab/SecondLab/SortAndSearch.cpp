@@ -23,6 +23,11 @@ void  SortAndSearch::LinearSearch(int* array, int length)
 	cout << "Insert value you want to find: ";
 	cin >> searchValue;
 
+	if (!cin)
+	{
+		throw invalid_argument("Incorrect value");
+	}
+
 	for (int i = 0; i < length; i++)
 	{
 		if (array[i] == searchValue)
@@ -47,6 +52,12 @@ void  SortAndSearch::BinarySearch(int* array, int length)
 	int searchValue;
 	cout << "Insert value you want to find: ";
 	cin >> searchValue;
+
+	if (!cin)
+	{
+		throw invalid_argument("Incorrect value");
+	}
+
 	SortAscending(array, length);
 	int left = 0;
 	int right = length - 1;

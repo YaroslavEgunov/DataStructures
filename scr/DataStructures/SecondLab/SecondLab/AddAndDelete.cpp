@@ -46,6 +46,12 @@ void AddAndDelete::AddFirstElement(Array* propertyName)
     cout << "Insert element you want to add first:";
     int element;
     cin >> element;
+
+    if (!cin)
+    {
+        throw invalid_argument("Incorrect value");
+    }
+
     int* temp = new int[propertyName->Length + 1];
     temp[0] = element;
 
@@ -69,6 +75,12 @@ void AddAndDelete::AddLastElement(Array* propertyName)
     cout << "Insert element you want to add last:";
     int element;
     cin >> element;
+
+    if (!cin)
+    {
+        throw invalid_argument("Incorrect value");
+    }
+
     int* temp = new int[propertyName->Length + 1];
 
     for (int i = 0; i < propertyName->Length; i++)
@@ -81,7 +93,7 @@ void AddAndDelete::AddLastElement(Array* propertyName)
     propertyName->Length = propertyName->Length + 1;
 }
 
-void AddAndDelete::AddSpecificElement(Array* propertyName)
+void AddAndDelete::AddElement(Array* propertyName)
 {
     if (propertyName->Length == propertyName->Capacity)
     {
@@ -92,9 +104,20 @@ void AddAndDelete::AddSpecificElement(Array* propertyName)
     cout << "Insert index of element you want to add:";
     int index;
     cin >> index;
+
+    if (!cin)
+    {
+        throw invalid_argument("Incorrect value");
+    }
+
     cout << "Insert element you want to add:";
     int element;
     cin >> element;
+
+    if (!cin)
+    {
+        throw invalid_argument("Incorrect value");
+    }
 
     if (index > propertyName->Length)
     {
@@ -119,7 +142,7 @@ void AddAndDelete::AddSpecificElement(Array* propertyName)
         }
         else
         {
-            temp[i] = propertyName->DynamicArray[i - 1];
+            temp[i+1] = propertyName->DynamicArray[i - 1];
         }
     }
 
