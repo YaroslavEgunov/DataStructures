@@ -30,3 +30,10 @@ void Operations::ShowArray(int* array, int length)
 		cout << "a[" << i << "] = " << array[i] << endl;
 	}
 }
+
+void Operations::Validate()
+{
+	cin.clear();
+	cin.ignore(32767, '\n');
+	cout << "Incorrect value" << endl;
+}

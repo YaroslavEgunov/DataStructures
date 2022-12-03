@@ -15,9 +15,7 @@ void AddDelete::DeleteElement(Array* propertyName)
 
     if (!cin)
     {
-        cin.clear();
-        cin.ignore(32767, '\n');
-        cout << "Incorrect value" << endl;
+        Operations::Validate();
         return;
     }
 
@@ -58,9 +56,7 @@ void AddDelete::AddFirstElement(Array* propertyName)
 
     if (!cin)
     {
-        cin.clear();
-        cin.ignore(32767, '\n');
-        cout<<"Incorrect value"<< endl;
+        Operations::Validate();
         return;
     }
 
@@ -90,9 +86,7 @@ void AddDelete::AddLastElement(Array* propertyName)
 
     if (!cin)
     {
-        cin.clear();
-        cin.ignore(32767, '\n');
-        cout << "Incorrect value" << endl;
+        Operations::Validate();
         return;
     }
 
@@ -122,9 +116,7 @@ void AddDelete::AddElement(Array* propertyName)
 
     if (!cin)
     {
-        cin.clear();
-        cin.ignore(32767, '\n');
-        cout << "Incorrect value" << endl;
+        Operations::Validate();
         return;
     }
 
@@ -134,9 +126,7 @@ void AddDelete::AddElement(Array* propertyName)
 
     if (!cin)
     {
-        cin.clear();
-        cin.ignore(32767, '\n');
-        cout << "Incorrect value" << endl;
+        Operations::Validate();
         return;
     }
 

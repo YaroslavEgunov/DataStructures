@@ -32,47 +32,69 @@ void Menu::MainMenu()
         {
             switch (key)
             {
-            case 1:
-                Operations::InitializeArray(DynamicArray->DynamicArray, DynamicArray->Length);
-                cout << endl;
-                break;
-            case 2:
-                Operations::ShowArray(DynamicArray->DynamicArray, DynamicArray->Length);
-                cout << endl;
-                break;
-            case 3:
-                SortSearch::AscendingSort(DynamicArray->DynamicArray, DynamicArray->Length);
-                cout << endl;
-                break;
-            case 4:
-                SortSearch::LinearSearch(DynamicArray->DynamicArray, DynamicArray->Length);
-                cout << endl;
-                break;
-            case 5:
-                SortSearch::BinarySearch(DynamicArray->DynamicArray, DynamicArray->Length);
-                cout << endl;
-                break;
-            case 6:
-                AddDelete::DeleteElement(DynamicArray);
-                cout << endl;
-                break;
-            case 7:
-                AddDelete::AddFirstElement(DynamicArray);
-                cout << endl;
-                break;
-            case 8:
-                AddDelete::AddLastElement(DynamicArray);
-                cout << endl;
-                break;
-            case 9:
-                AddDelete::AddElement(DynamicArray);
-                cout << endl;
-                break;
-            case 0:
-                break;
-            default:
-                cout << "Incorrect command\n" << endl;
-                break;
+	            case 1:
+				{
+					Operations::InitializeArray(DynamicArray->DynamicArray, DynamicArray->Length);
+					cout << endl;
+					break;
+				}
+	            case 2:
+				{
+	                Operations::ShowArray(DynamicArray->DynamicArray, DynamicArray->Length);
+	                cout << endl;
+	                break;
+				}
+	            case 3:
+				{
+	                SortSearch::AscendingSort(DynamicArray->DynamicArray, DynamicArray->Length);
+	                cout << endl;
+	                break;
+				}
+	            case 4:
+				{
+					SortSearch::LinearSearch(DynamicArray->DynamicArray, DynamicArray->Length);
+					cout << endl;
+					break;
+				}
+	            case 5:
+				{
+					SortSearch::BinarySearch(DynamicArray->DynamicArray, DynamicArray->Length);
+					cout << endl;
+					break;
+				}
+	            case 6:
+				{
+					AddDelete::DeleteElement(DynamicArray);
+					cout << endl;
+					break;
+				}
+	            case 7:
+				{
+					AddDelete::AddFirstElement(DynamicArray);
+					cout << endl;
+					break;
+				}
+	            case 8:
+				{
+					AddDelete::AddLastElement(DynamicArray);
+					cout << endl;
+					break;
+				}
+	            case 9:
+				{
+					AddDelete::AddElement(DynamicArray);
+					cout << endl;
+					break;
+				}
+	            case 0:
+				{
+					break;
+				}
+	            default:
+				{
+					cout << "Incorrect command\n" << endl;
+					break;
+				}
             }
         }
         catch (exception ex)

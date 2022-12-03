@@ -1,4 +1,5 @@
 #include "SortSearch.h"
+#include "Operations.h"
 
 void SortSearch::AscendingSort(int* array, int length)
 {
@@ -25,9 +26,7 @@ void  SortSearch::LinearSearch(int* array, int length)
 
 	if (!cin)
 	{
-		cin.clear();
-		cin.ignore(32767, '\n');
-		cout << "Incorrect value" << endl;
+		Operations::Validate();
 		return;
 	}
 
@@ -58,9 +57,7 @@ void  SortSearch::BinarySearch(int* array, int length)
 
 	if (!cin)
 	{
-		cin.clear();
-		cin.ignore(32767, '\n');
-		cout << "Incorrect value" << endl;
+		Operations::Validate();
 		return;
 	}
 
