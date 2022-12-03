@@ -1,6 +1,6 @@
-#include "SortAndSearch.h"
+#include "SortSearch.h"
 
-void SortAndSearch::SortAscending(int* array, int length)
+void SortSearch::AscendingSort(int* array, int length)
 {
 	for (int j = 0; j < length; j++)
 	{
@@ -16,7 +16,7 @@ void SortAndSearch::SortAscending(int* array, int length)
 	}
 }
 
-void  SortAndSearch::LinearSearch(int* array, int length)
+void  SortSearch::LinearSearch(int* array, int length)
 {
 	int index = -1;
 	int searchValue;
@@ -49,7 +49,7 @@ void  SortAndSearch::LinearSearch(int* array, int length)
 	}
 }
 
-void  SortAndSearch::BinarySearch(int* array, int length)
+void  SortSearch::BinarySearch(int* array, int length)
 {
 	int index = -1;
 	int searchValue;
@@ -64,7 +64,7 @@ void  SortAndSearch::BinarySearch(int* array, int length)
 		return;
 	}
 
-	SortAscending(array, length);
+	AscendingSort(array, length);
 	int left = 0;
 	int right = length - 1;
 	int mid;

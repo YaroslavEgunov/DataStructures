@@ -21,10 +21,10 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="AddAndDelete.cpp">
+    <ClCompile Include="AddDelete.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="SortAndSearch.cpp">
+    <ClCompile Include="SortSearch.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Operations.cpp">
@@ -41,10 +41,10 @@
     <ClInclude Include="Menu.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="AddAndDelete.h">
+    <ClInclude Include="AddDelete.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="SortAndSearch.h">
+    <ClInclude Include="SortSearch.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Operations.h">

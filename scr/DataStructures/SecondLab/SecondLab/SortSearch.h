@@ -4,9 +4,9 @@
 
 using namespace std;
 
-struct SortAndSearch
+struct SortSearch
 {
-	static void SortAscending(int* array, int length);
+	static void AscendingSort(int* array, int length);
 	static void LinearSearch(int* array, int length);
 	static void BinarySearch(int* array, int length);
 };

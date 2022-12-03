@@ -139,19 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AddAndDelete.cpp" />
+    <ClCompile Include="AddDelete.cpp" />
     <ClCompile Include="Array.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Operations.cpp" />
-    <ClCompile Include="SortAndSearch.cpp" />
+    <ClCompile Include="SortSearch.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AddAndDelete.h" />
+    <ClInclude Include="AddDelete.h" />
     <ClInclude Include="Array.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Operations.h" />
-    <ClInclude Include="SortAndSearch.h" />
+    <ClInclude Include="SortSearch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

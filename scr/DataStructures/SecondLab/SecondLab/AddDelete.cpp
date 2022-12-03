@@ -1,7 +1,7 @@
-#include "AddAndDelete.h"
+#include "AddDelete.h"
 #include "Operations.h"
 
-void AddAndDelete::DeleteElement(Array* propertyName)
+void AddDelete::DeleteElement(Array* propertyName)
 {
     cout << "Insert index of element you want to delete:";
     int index;
@@ -41,9 +41,10 @@ void AddAndDelete::DeleteElement(Array* propertyName)
 
     propertyName->DynamicArray = temp;
     propertyName->Length = propertyName->Length - 1;
+
 }
 
-void AddAndDelete::AddFirstElement(Array* propertyName)
+void AddDelete::AddFirstElement(Array* propertyName)
 {
     if (propertyName->Length == propertyName->Capacity)
     {
@@ -75,7 +76,7 @@ void AddAndDelete::AddFirstElement(Array* propertyName)
     propertyName->Length = propertyName->Length + 1;
 }
 
-void AddAndDelete::AddLastElement(Array* propertyName)
+void AddDelete::AddLastElement(Array* propertyName)
 {
     if (propertyName->Length == propertyName->Capacity)
     {
@@ -107,7 +108,7 @@ void AddAndDelete::AddLastElement(Array* propertyName)
     propertyName->Length = propertyName->Length + 1;
 }
 
-void AddAndDelete::AddElement(Array* propertyName)
+void AddDelete::AddElement(Array* propertyName)
 {
     if (propertyName->Length == propertyName->Capacity)
     {
@@ -162,7 +163,7 @@ void AddAndDelete::AddElement(Array* propertyName)
         }
         else
         {
-            temp[i+1] = propertyName->DynamicArray[i - 1];
+            temp[i+1] = propertyName->DynamicArray[i];
         }
     }
 

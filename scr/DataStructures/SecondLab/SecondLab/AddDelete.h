@@ -4,7 +4,7 @@
 
 using namespace std;
 
-struct AddAndDelete
+struct AddDelete
 {
 	static void DeleteElement(Array* propertyName);
 	static void AddFirstElement(Array* propertyName);
