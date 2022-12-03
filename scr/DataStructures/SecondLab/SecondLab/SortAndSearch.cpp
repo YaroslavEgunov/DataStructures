@@ -25,7 +25,10 @@ void  SortAndSearch::LinearSearch(int* array, int length)
 
 	if (!cin)
 	{
-		throw invalid_argument("Incorrect value");
+		cin.clear();
+		cin.ignore(32767, '\n');
+		cout << "Incorrect value" << endl;
+		return;
 	}
 
 	for (int i = 0; i < length; i++)
@@ -55,7 +58,10 @@ void  SortAndSearch::BinarySearch(int* array, int length)
 
 	if (!cin)
 	{
-		throw invalid_argument("Incorrect value");
+		cin.clear();
+		cin.ignore(32767, '\n');
+		cout << "Incorrect value" << endl;
+		return;
 	}
 
 	SortAscending(array, length);

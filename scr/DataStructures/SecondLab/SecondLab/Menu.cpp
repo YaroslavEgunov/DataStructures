@@ -77,8 +77,7 @@ void Menu::MainMenu()
         }
         catch (exception ex)
         {
-            cout << "Wrong format" << endl;
-            break;
+            return;
         }
     }while (key != 0);
 }

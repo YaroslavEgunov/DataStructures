@@ -13,7 +13,8 @@ void Operations::InitializeArray(int* array, int length)
 
 		if (!cin)
 		{
-			throw invalid_argument("Incorrect value");
+			cin.clear();
+			cin.ignore(32767, '\n');
 		}
 
 		array[i] = element;		

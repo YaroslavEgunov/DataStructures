@@ -13,6 +13,14 @@ void AddAndDelete::DeleteElement(Array* propertyName)
         return;
     }
 
+    if (!cin)
+    {
+        cin.clear();
+        cin.ignore(32767, '\n');
+        cout << "Incorrect value" << endl;
+        return;
+    }
+
     int* temp = new int[propertyName->Length - 1];
 
     for (int i = 0; i < propertyName->Length; i++)
@@ -49,7 +57,10 @@ void AddAndDelete::AddFirstElement(Array* propertyName)
 
     if (!cin)
     {
-        throw invalid_argument("Incorrect value");
+        cin.clear();
+        cin.ignore(32767, '\n');
+        cout<<"Incorrect value"<< endl;
+        return;
     }
 
     int* temp = new int[propertyName->Length + 1];
@@ -78,7 +89,10 @@ void AddAndDelete::AddLastElement(Array* propertyName)
 
     if (!cin)
     {
-        throw invalid_argument("Incorrect value");
+        cin.clear();
+        cin.ignore(32767, '\n');
+        cout << "Incorrect value" << endl;
+        return;
     }
 
     int* temp = new int[propertyName->Length + 1];
@@ -107,7 +121,10 @@ void AddAndDelete::AddElement(Array* propertyName)
 
     if (!cin)
     {
-        throw invalid_argument("Incorrect value");
+        cin.clear();
+        cin.ignore(32767, '\n');
+        cout << "Incorrect value" << endl;
+        return;
     }
 
     cout << "Insert element you want to add:";
@@ -116,7 +133,10 @@ void AddAndDelete::AddElement(Array* propertyName)
 
     if (!cin)
     {
-        throw invalid_argument("Incorrect value");
+        cin.clear();
+        cin.ignore(32767, '\n');
+        cout << "Incorrect value" << endl;
+        return;
     }
 
     if (index > propertyName->Length)
