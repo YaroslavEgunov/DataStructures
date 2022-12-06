@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ListOperations.cpp">
+    <ClCompile Include="Operations.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
@@ -29,7 +29,7 @@
     <ClInclude Include="Node.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="ListOperations.h">
+    <ClInclude Include="Operations.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
