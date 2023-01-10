@@ -1,5 +1,5 @@
 ﻿#include "Stack.h"
-
+using namespace std;
 
 Node* Node::GetNext() const
 {
@@ -20,6 +20,25 @@ int Node::GetData() const
 {
     return _data;
 }
+
+int Stack::GetSize() const
+{
+    return _size;
+}
+
+Node* Stack::GetLast() const
+{
+    return _last;
+}
+
+void Stack::Clear()
+{
+    while (_size > 0)
+    {
+        Pop();
+    }
+}
+
 
 Node* Stack::Push(int value)
 {
@@ -44,39 +63,9 @@ int Stack::Pop()
     return data;
 }
 
-int Stack::Peek()
+ostream& operator<<(ostream& os, const Stack& stack)
 {
-    if (_size == 0)
-    {
-        return 0;
-    }
-    return _last->GetData();
-}
-
-void Stack::Clear()
-{
-    while (_size > 0)
-    {
-        Pop();
-    }
-}
-
-int Stack::GetSize() const
-{
-    return _size;
-}
-
-Node* Stack::GetLast() const
-{
-    return _last;
-}
-
-std::ostream& operator<<(std::ostream& os, const Stack& stack)
-{
-    os << "=== Stack ===" << std::endl;
-    os << "Size: " << stack.GetSize() << std::endl;
-    os << "Last: " << stack.GetLast()->GetData() << std::endl;
-    os << "Elements: " << std::endl;
+    os << "Elements: " << endl;
     os << "[";
     auto* node = stack._last;
     while (node != nullptr)
@@ -88,6 +77,6 @@ std::ostream& operator<<(std::ostream& os, const Stack& stack)
             os << ", ";
         }
     }
-    os << "]" << std::endl;
+    os << "]" << endl;
     return os;
 }

@@ -1,5 +1,41 @@
-#include <iostream>
+﻿#include <iostream>
 #include "RingBuffer.h"
+using namespace std;
+
+RingBuffer::~RingBuffer()
+{
+    delete[] _buffer;
+}
+
+char** RingBuffer::GetBuffer() const
+{
+    return _buffer;
+}
+
+int RingBuffer::GetFirstIndex() const
+{
+    return _firstIndex;
+}
+
+int RingBuffer::GetLastIndex() const
+{
+    return _lastIndex;
+}
+
+int RingBuffer::GetSize() const
+{
+    return _size;
+}
+
+int RingBuffer::GetFreeSize() const
+{
+    return _size - _count;
+}
+
+int RingBuffer::GetCount() const
+{
+    return _count;
+}
 
 RingBuffer::RingBuffer(int size)
 {
@@ -41,21 +77,6 @@ char* RingBuffer::Get()
     return value;
 }
 
-int RingBuffer::GetSize() const
-{
-    return _size;
-}
-
-int RingBuffer::GetFreeSize() const
-{
-    return _size - _count;
-}
-
-int RingBuffer::GetCount() const
-{
-    return _count;
-}
-
 void RingBuffer::Resize(int size)
 {
     if (size < _count)
@@ -78,35 +99,12 @@ void RingBuffer::Resize(int size)
     _lastIndex = _count;
 }
 
-RingBuffer::~RingBuffer()
+ostream& operator<<(ostream& os, const RingBuffer& buffer)
 {
-    delete[] _buffer;
-}
-
-char** RingBuffer::GetBuffer() const
-{
-    return _buffer;
-}
-
-int RingBuffer::GetFirstIndex() const
-{
-    return _firstIndex;
-}
-
-int RingBuffer::GetLastIndex() const
-{
-    return _lastIndex;
-}
-
-std::ostream& operator<<(std::ostream& os, const RingBuffer& buffer)
-{
-    os << "=== RingBuffer ===" << std::endl;
-    os << "Size: " << buffer.GetSize() << std::endl;
-    os << "Count: " << buffer.GetCount() << std::endl;
-    os << "Free size: " << buffer.GetFreeSize() << std::endl;
-    os << "First index: " << buffer.GetFirstIndex() << std::endl;
-    os << "Last index: " << buffer.GetLastIndex() << std::endl;
-    os << "Buffer: " << std::endl;
+    os << "Size: " << buffer.GetSize() << endl;
+    os << "Count: " << buffer.GetCount() << endl;
+    os << "Free size: " << buffer.GetFreeSize() << endl;
+    os << "Buffer: " << endl;
     os << "[";
     for (int i = 0; i < buffer.GetSize(); i++)
     {
@@ -123,7 +121,8 @@ std::ostream& operator<<(std::ostream& os, const RingBuffer& buffer)
             os << ", ";
         }
     }
-    os << "]" << std::endl;
-    os << std::endl;
+    os << "]\n" << endl;
+    os << endl;
     return os;
 }
+

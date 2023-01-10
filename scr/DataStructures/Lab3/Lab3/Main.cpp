@@ -4,6 +4,7 @@
 #include "StackQueue.h"
 #include "RingBufferQueue.h"
 #include "Menu.h"
+
 using namespace std;
 
 int main()
@@ -14,46 +15,62 @@ int main()
 
     while (true)
     {
-        cout << "1. Stack" << std::endl;
-        cout << "2. RingBuffer" << std::endl;
-        cout << "3. StackQueue" << std::endl;
-        cout << "4. RingBufferQueue" << std::endl;
-        cout << "5. Exit" << std::endl;
-        int choice = Menu::InputPositiveInt("Enter your choice: ");
+		cout << " --- Main menu --- \n"
+			"1. Stack\n"
+			"2. RingBuffer\n"
+			"3. StackQueue\n"
+			"4. RingBufferQueue\n"
+			"5. Exit\n"
+			"Enter your choice :" << endl;
+
+		int choice = -1;
+		cin >> choice;
+		if (!cin)
+		{
+			cin.clear();
+			cin.ignore(32767, '\n');
+		}
+
         switch (choice)
         {
-        case 1:
-        {
-            Menu::MenuStack(stack);
-            break;
-        }
-        case 2:
-        {
-            int size = Menu::InputPositiveInt("Enter buffer size: ");
-            auto* buffer = new RingBuffer(size);
-            Menu::MenuBuffer(buffer);
-            break;
-        }
-        case 3:
-        {
-            Menu::MenuStackQueue(stackQueue);
-            break;
-        }
-        case 4:
-        {
-            Menu::MenuRingBufferQueue(ringBufferQueue);
-            break;
-        }
-        case 5:
-        {
-            return 0;
-        }
-        default:
-        {
-            std::cout << "Invalid choice" << std::endl;
-            break;
-        }
+	        case 1:
+	        {
+	            Menu::MenuStack(stack);
+	            break;
+	        }
+	        case 2:
+	        {
+				cout << "Enter buffer size: " << endl;
+	            int size = -1;
+				cin >> size;
+				if (!cin)
+				{
+					cin.clear();
+					cin.ignore(32767, '\n');
+				}
+	            auto* buffer = new RingBuffer(size);
+	            Menu::MenuBuffer(buffer);
+	            break;
+	        }
+	        case 3:
+	        {
+	            Menu::MenuStackQueue(stackQueue);
+	            break;
+	        }
+	        case 4:
+	        {
+	            Menu::MenuRingBufferQueue(ringBufferQueue);
+	            break;
+	        }
+	        case 5:
+	        {
+	            return 0;
+	        }
+	        default:
+	        {
+	            cout << "Invalid choice\n" << endl;
+	            break;
+	        }
         }
     }
 }
-

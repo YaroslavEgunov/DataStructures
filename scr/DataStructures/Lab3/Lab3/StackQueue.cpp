@@ -1,18 +1,34 @@
 ﻿#include <iostream>
 #include "StackQueue.h"
+using namespace std;
 
+int StackQueue::GetSize() const
+{
+    return _size;
+}
+
+Stack* StackQueue::GetStackIn() const
+{
+    return _stackIn;
+}
+
+Stack* StackQueue::GetStackOut() const
+{
+    return _stackOut;
+}
+
+
+void StackQueue::Enqueue(int value)
+{
+    _stackIn->Push(value);
+    _size++;
+}
 
 StackQueue::StackQueue()
 {
     _stackIn = new Stack();
     _stackOut = new Stack();
     _size = 0;
-}
-
-void StackQueue::Enqueue(int value)
-{
-    _stackIn->Push(value);
-    _size++;
 }
 
 int StackQueue::Dequeue()
@@ -32,32 +48,9 @@ int StackQueue::Dequeue()
     return _stackOut->Pop();
 }
 
-
-void StackQueue::Clear()
+ostream& operator<<(ostream& os, const StackQueue& queue)
 {
-    _stackIn->Clear();
-    _stackOut->Clear();
-    _size = 0;
-}
-
-int StackQueue::GetSize() const
-{
-    return _size;
-}
-
-Stack* StackQueue::GetStackIn() const
-{
-    return _stackIn;
-}
-
-Stack* StackQueue::GetStackOut() const
-{
-    return _stackOut;
-}
-
-std::ostream& operator<<(std::ostream& os, const StackQueue& queue)
-{
-    os << "StackIn: " << *queue.GetStackIn() << std::endl;
-    os << "StackOut: " << *queue.GetStackOut() << std::endl;
+    os << "StackIn: " << *queue.GetStackIn() << endl;
+    os << "StackOut: " << *queue.GetStackOut() << endl;
     return os;
 }

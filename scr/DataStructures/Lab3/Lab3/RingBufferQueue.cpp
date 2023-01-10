@@ -1,15 +1,32 @@
 ﻿#include <iostream>
 #include "RingBufferQueue.h"
+using namespace std;
 
-RingBufferQueue::RingBufferQueue()
+
+RingBufferQueue::Node* RingBufferQueue::GetLast() const
 {
-    _last = nullptr;
-    _size = 0;
+    return _last;
+}
+
+int RingBufferQueue::GetSize() const
+{
+    return _size;
+}
+
+bool RingBufferQueue::IsEmpty() const
+{
+    return _last == nullptr;
 }
 
 RingBufferQueue::~RingBufferQueue()
 {
     Clear();
+}
+
+RingBufferQueue::RingBufferQueue()
+{
+    _last = nullptr;
+    _size = 0;
 }
 
 void RingBufferQueue::Enqueue(int value)
@@ -49,16 +66,6 @@ int RingBufferQueue::Dequeue()
     return data;
 }
 
-int RingBufferQueue::GetSize() const
-{
-    return _size;
-}
-
-bool RingBufferQueue::IsEmpty() const
-{
-    return _last == nullptr;
-}
-
 void RingBufferQueue::Clear()
 {
     if (_last == nullptr)
@@ -76,23 +83,16 @@ void RingBufferQueue::Clear()
     _last = nullptr;
 }
 
-RingBufferQueue::Node* RingBufferQueue::GetLast() const
+ostream& operator<<(std::ostream& os, const RingBufferQueue& queue)
 {
-    return _last;
-}
-
-std::ostream& operator<<(std::ostream& os, const RingBufferQueue& queue)
-{
-    os << "=== RingBufferQueue ===" << std::endl;
+    os << "=== RingBufferQueue ===" << endl;
     if (queue.GetLast() == nullptr)
     {
-        os << "Queue is empty" << std::endl;
+        os << "Queue is empty" << endl;
         return os;
     }
     auto* node = queue.GetLast()->_next;
-    os << "Size: " << queue.GetSize() << std::endl;
-    os << "First: " << node->_value << std::endl;
-    os << "Last: " << queue.GetLast()->_value << std::endl;
+    os << "Size: " << queue.GetSize() << endl;
     os << "Elements: ";
     os << "[";
     do
@@ -104,7 +104,6 @@ std::ostream& operator<<(std::ostream& os, const RingBufferQueue& queue)
             os << ", ";
         }
     } while (node != queue.GetLast()->_next);
-    os << "]" << std::endl;
+    os << "]\n" << endl;
     return os;
 }
-
