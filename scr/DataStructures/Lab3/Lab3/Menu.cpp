@@ -7,6 +7,13 @@
 #include "Menu.h"
 using namespace std;
 
+void Validate()
+{
+	cin.clear();
+	cin.ignore(32767, '\n');
+}
+
+
 void Menu::MenuRingBufferQueue(RingBufferQueue* queue)
 {
     while (true)
@@ -18,17 +25,16 @@ void Menu::MenuRingBufferQueue(RingBufferQueue* queue)
         "4. Is empty\n"
         "5. Print\n" 
     	"6. Back\n"
-    	"Enter your choice : " <<endl;
+    	"Enter key : " <<endl;
 
-        int choice = -1;
-    	cin >> choice;
+        int key = -1;
+    	cin >> key;
         if (!cin)
         {
-            cin.clear();
-            cin.ignore(32767, '\n');
-        }
+			Validate();
+		}
 
-        switch (choice)
+        switch (key)
         {
 	        case 1:
 	        {
@@ -77,7 +83,7 @@ void Menu::MenuRingBufferQueue(RingBufferQueue* queue)
 	        }
 	        default:
 	        {
-	            cout << "Invalid choice" << endl;
+	            cout << "Invalid value\n" << endl;
 	            break;
 	        }
         }
@@ -94,21 +100,20 @@ void Menu::MenuStackQueue(StackQueue* queue)
         "3. Get size\n" 
         "4. Print\n" 
         "5. Exit\n" 
-    	"Enter your choice : " << endl;
+    	"Enter key : " << endl;
 
-        int choice = -1;
-        cin >> choice;
-        if (!cin)
-        {
-            cin.clear();
-            cin.ignore(32767, '\n');
-        }
+        int key = -1;
+        cin >> key;
+		if (!cin)
+		{
+			Validate();
+		}
 
-        switch (choice)
+        switch (key)
         {
 	        case 1:
 	        {
-	            cout << "Enter _value: " << endl;
+	            cout << "Enter value: " << endl;
 	            int value = -1;
 	            cin >> value;
 	            if (!cin)
@@ -128,7 +133,7 @@ void Menu::MenuStackQueue(StackQueue* queue)
 	            }
 	            else
 	            {
-	                cout << "Dequeued _value: " << value << endl;
+	                cout << "Dequeued value: " << value << endl;
 	            }
 	            break;
 	        }
@@ -148,7 +153,7 @@ void Menu::MenuStackQueue(StackQueue* queue)
 	        }
 	        default:
 	        {
-	            cout << "Invalid choice" << endl;
+	            cout << "Invalid value\n" << endl;
 	            break;
 	        }
         }
@@ -166,17 +171,16 @@ void Menu::MenuBuffer(RingBuffer* buffer)
         "4. Get size\n" 
         "5. Print\n" 
     	"6. Exit\n"
-        "Enter your choice : " << endl;
+        "Enter key : " << endl;
 
-        int choice = -1;
-        cin >> choice;
-        if (!cin)
-        {
-            cin.clear();
-            cin.ignore(32767, '\n');
-        }
+        int key = -1;
+        cin >> key;
+		if (!cin)
+		{
+			Validate();
+		}
 
-        switch (choice)
+        switch (key)
         {
 	        case 1:
 	        {
@@ -233,7 +237,7 @@ void Menu::MenuBuffer(RingBuffer* buffer)
 	        }
 	        default:
 	        {
-	            cout << "Invalid choice" << endl;
+	            cout << "Invalid value\n" << endl;
 	            break;
 	        }
         }
@@ -250,21 +254,20 @@ void Menu::MenuStack(Stack* stack)
         "3. Clear\n" 
         "4. Print\n" 
         "5. Back\n"
-        "Enter your choice : " << endl;
+        "Enter key : " << endl;
 
-        int choice = -1;
-        cin >> choice;
-        if (!cin)
-        {
-            cin.clear();
-            cin.ignore(32767, '\n');
-        }
+        int key = -1;
+        cin >> key;
+		if (!cin)
+		{
+			Validate();
+		}
 
-        switch (choice)
+        switch (key)
         {
 	        case 1:
 	        {
-	            cout << "Enter _value: " << endl;
+	            cout << "Enter value: " << endl;
 	            int value = -1;
 	            cin >> value;
 	            if (!cin)
@@ -284,7 +287,7 @@ void Menu::MenuStack(Stack* stack)
 	            }
 	            else
 	            {
-	                cout << "Popped _value: " << value << endl;
+	                cout << "Popped value: " << value << endl;
 	            }
 	            break;
 	        }
@@ -304,7 +307,7 @@ void Menu::MenuStack(Stack* stack)
 	        }
 	        default:
 	        {
-	           cout << "Invalid choice" << endl;
+	           cout << "Invalid value\n" << endl;
 	            break;
 	        }
         }

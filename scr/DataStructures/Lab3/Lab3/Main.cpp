@@ -21,17 +21,17 @@ int main()
 			"3. StackQueue\n"
 			"4. RingBufferQueue\n"
 			"5. Exit\n"
-			"Enter your choice :" << endl;
+			"Enter key :" << endl;
 
-		int choice = -1;
-		cin >> choice;
+		int key = -1;
+		cin >> key;
 		if (!cin)
 		{
 			cin.clear();
 			cin.ignore(32767, '\n');
 		}
 
-        switch (choice)
+        switch (key)
         {
 	        case 1:
 	        {
@@ -68,7 +68,7 @@ int main()
 	        }
 	        default:
 	        {
-	            cout << "Invalid choice\n" << endl;
+	            cout << "Invalid value\n" << endl;
 	            break;
 	        }
         }
