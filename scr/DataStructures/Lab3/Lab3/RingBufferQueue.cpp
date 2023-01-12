@@ -1,7 +1,5 @@
 ﻿#include <iostream>
 #include "RingBufferQueue.h"
-using namespace std;
-
 
 RingBufferQueue::Node* RingBufferQueue::GetLast() const
 {
@@ -85,25 +83,24 @@ void RingBufferQueue::Clear()
 
 ostream& operator<<(std::ostream& os, const RingBufferQueue& queue)
 {
-    os << "=== RingBufferQueue ===" << endl;
     if (queue.GetLast() == nullptr)
     {
-        os << "Queue is empty" << endl;
-        return os;
+        cout << "Queue is empty" << endl;
+        return cout;
     }
     auto* node = queue.GetLast()->_next;
-    os << "Size: " << queue.GetSize() << endl;
-    os << "Elements: ";
-    os << "[";
+    cout << "Size: " << queue.GetSize() <<
+        "\nElements: "
+		"\n[" << endl;
     do
     {
-        os << node->_value;
+        cout << node->_value;
         node = node->_next;
         if (node != queue.GetLast()->_next)
         {
-            os << ", ";
+            cout << ", ";
         }
     } while (node != queue.GetLast()->_next);
-    os << "]\n" << endl;
-    return os;
+    cout << "]\n" << endl;
+    return cout;
 }

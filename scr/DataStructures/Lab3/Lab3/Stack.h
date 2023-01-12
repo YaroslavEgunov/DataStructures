@@ -1,6 +1,7 @@
 ﻿#ifndef DATA_STRUCTURES_STACK_H
 #define DATA_STRUCTURES_STACK_H
 #include <ostream>
+using namespace std;
 
 class Node
 {

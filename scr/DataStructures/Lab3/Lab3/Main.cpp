@@ -4,7 +4,6 @@
 #include "StackQueue.h"
 #include "RingBufferQueue.h"
 #include "Menu.h"
-
 using namespace std;
 
 int main()

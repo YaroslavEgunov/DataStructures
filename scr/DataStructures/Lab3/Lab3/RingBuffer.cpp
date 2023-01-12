@@ -1,6 +1,5 @@
 ﻿#include <iostream>
 #include "RingBuffer.h"
-using namespace std;
 
 RingBuffer::~RingBuffer()
 {
@@ -101,28 +100,28 @@ void RingBuffer::Resize(int size)
 
 ostream& operator<<(ostream& os, const RingBuffer& buffer)
 {
-    os << "Size: " << buffer.GetSize() << endl;
-    os << "Count: " << buffer.GetCount() << endl;
-    os << "Free size: " << buffer.GetFreeSize() << endl;
-    os << "Buffer: " << endl;
-    os << "[";
+    cout << "Size: " << buffer.GetSize() << 
+        "\nCount: " << buffer.GetCount() << 
+        "\nFree size: " << buffer.GetFreeSize() << 
+        "\nBuffer: "
+		"[" << endl;
     for (int i = 0; i < buffer.GetSize(); i++)
     {
         if (buffer.GetBuffer()[i] == nullptr)
         {
-            os << "null";
+            cout << "null";
         }
         else
         {
-            os << buffer.GetBuffer()[i];
+            cout << buffer.GetBuffer()[i];
         }
         if (i != buffer.GetSize() - 1)
         {
-            os << ", ";
+            cout << ", ";
         }
     }
-    os << "]\n" << endl;
-    os << endl;
-    return os;
+    cout << "]\n" << endl;
+    cout << endl;
+    return cout;
 }
 

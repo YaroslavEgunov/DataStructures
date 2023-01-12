@@ -50,7 +50,7 @@ int StackQueue::Dequeue()
 
 ostream& operator<<(ostream& os, const StackQueue& queue)
 {
-    os << "StackIn: " << *queue.GetStackIn() << endl;
-    os << "StackOut: " << *queue.GetStackOut() << endl;
-    return os;
+    cout << "StackIn: " << *queue.GetStackIn() << 
+        "\nStackOut: " << *queue.GetStackOut() << endl;
+    return cout;
 }

@@ -1,91 +1,39 @@
-﻿//
-// Created by akarmanov on 28-11-2022.
-//
-
-#ifndef DATA_STRUCTURES_RINGBUFFERQUEUE_H
+﻿#ifndef DATA_STRUCTURES_RINGBUFFERQUEUE_H
 #define DATA_STRUCTURES_RINGBUFFERQUEUE_H
-
 #include <ostream>
 #include "RingBuffer.h"
+using namespace std;
 
-/**
- * Очередь на кольцевом буфере.
- */
 class RingBufferQueue
 {
 private:
-    /**
-     * Структура, описывающая элемент очереди.
-     */
     struct Node
     {
-        /**
-         * Данные, хранимые в элементе.
-         */
         int _value;
-        /**
-         * Указатель на следующий элемент.
-         */
         Node* _next;
     };
-    /**
-     * Указатель на последний элемент очереди.
-     */
     Node* _last;
 
-    /**
-     * Размер очереди.
-     */
     int _size;
-
 public:
-    /**
-     * Конструктор.
-     * @param size размер очереди.
-     */
+
     RingBufferQueue();
 
-    /**
-     * Деструктор.
-     */
     ~RingBufferQueue();
 
-    /**
-     * Добавить элемент в очередь.
-     * @param value значение элемента.
-     */
     void Enqueue(int value);
 
-    /**
-     * Удалить элемент из очереди.
-     * @return значение элемента.
-     */
     int Dequeue();
 
-    /**
-     * Вернуть размер очереди.
-     * @return размер очереди.
-     */
     int GetSize() const;
 
-    /**
-     * Вернуть true, если очередь пуста.
-     * @return true, если очередь пуста.
-     */
     bool IsEmpty() const;
 
-    /**
-     * Очистить очередь.
-     */
     void Clear();
 
-
-    /**
-     * Вернуть элемент из очереди.
-     */
     Node* GetLast() const;
 
-    friend std::ostream& operator<<(std::ostream& os, const RingBufferQueue& queue);
+    friend ostream& operator<<(ostream& os, const RingBufferQueue& queue);
 };
 
 

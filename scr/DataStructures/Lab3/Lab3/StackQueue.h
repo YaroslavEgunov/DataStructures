@@ -1,8 +1,9 @@
 ﻿#ifndef DATA_STRUCTURES_STACKQUEUE_H
 #define DATA_STRUCTURES_STACKQUEUE_H
-
 #include <ostream>
+#include <iostream>
 #include "Stack.h"
+using namespace std;
 
 class StackQueue
 {
@@ -25,7 +26,7 @@ public:
 
     Stack* GetStackOut() const;
 
-    friend std::ostream& operator<<(std::ostream& os, const StackQueue& queue);
+    friend ostream& operator<<(ostream& os, const StackQueue& queue);
 };
 
 

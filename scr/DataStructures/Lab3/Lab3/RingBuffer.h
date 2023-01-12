@@ -1,6 +1,7 @@
 ﻿#ifndef DATA_STRUCTURES_RINGBUFFER_H
 #define DATA_STRUCTURES_RINGBUFFER_H
 #include <ostream>
+using namespace std;
 
 class RingBuffer
 {
@@ -33,7 +34,7 @@ public:
 
     int GetLastIndex() const;
 
-    friend std::ostream& operator<<(std::ostream& os, const RingBuffer& buffer);
+    friend ostream& operator<<(ostream& os, const RingBuffer& buffer);
 };
 
 

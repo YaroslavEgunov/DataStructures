@@ -5,7 +5,6 @@
 #include "RingBuffer.h"
 #include "RingBufferQueue.h"
 #include "Menu.h"
-using namespace std;
 
 void Validate()
 {

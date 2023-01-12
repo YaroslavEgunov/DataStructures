@@ -1,5 +1,5 @@
 ﻿#include "Stack.h"
-using namespace std;
+#include <iostream>
 
 Node* Node::GetNext() const
 {
@@ -65,18 +65,18 @@ int Stack::Pop()
 
 ostream& operator<<(ostream& os, const Stack& stack)
 {
-    os << "Elements: " << endl;
-    os << "[";
+    cout << "Elements: " <<
+        "\n[" << endl;
     auto* node = stack._last;
     while (node != nullptr)
     {
-        os << node->GetData();
+        cout << node->GetData();
         node = node->GetNext();
         if (node != nullptr)
         {
-            os << ", ";
+            cout << ", ";
         }
     }
-    os << "]" << endl;
-    return os;
+    cout << "]\n" << endl;
+    return cout;
 }
