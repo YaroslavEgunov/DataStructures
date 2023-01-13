@@ -7,29 +7,43 @@
 int main()
 {
     srand(time(nullptr));
-    cout << "=== Binary tree root ===" << endl;
-    auto binaryTree = new BinaryTree(Menu::InputInt("Enter root value for binary tree: "));
-    cout << "=== Treap root ===" << endl;
-    auto treap = new Treap(Menu::InputInt("Enter root value for treap: "),
-        Menu::GetRandomInt());
+    cout << "--- Binary tree root ---" << endl;
+    int BinaryRootValue = -1;
+    cin >> BinaryRootValue;
+    if (!cin)
+    {
+        cin.clear();
+        cin.ignore(32767, '\n');
+    }
+    auto binaryTree = new BinaryTree(BinaryRootValue);
+    cout << "--- Treap root ---" << endl;
+    cout << "Enter root value for treap: " << endl;
+    int TreapRootValue = -1;
+    cin >> TreapRootValue;
+    if (!cin)
+    {
+        cin.clear();
+        cin.ignore(32767, '\n');
+    }
+    auto treap = new Treap(TreapRootValue,Menu::GetRandomInt());
 
     while (true)
     {
-        cout << "=== Tree menu ===\n" 
+        cout << "--- Tree menu ---\n" 
         "1. Binary tree\n" 
         "2. Treap\n" 
         "3. Exit\n"
         "Enter your choice : " << endl;
 
-        int choice = -1;
-        cin >> choice;
+        int key = -1;
+        cin >> key;
         if (!cin)
         {
             cin.clear();
             cin.ignore(32767, '\n');
         }
 
-        switch (choice)
+        switch (key)
         {
         case 1:
         {
@@ -47,7 +61,7 @@ int main()
         }
         default:
         {
-            cout << "Invalid choice" << endl;
+            cout << "Invalid key" << endl;
             break;
         }
         }

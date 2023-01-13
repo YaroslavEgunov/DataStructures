@@ -12,7 +12,7 @@ void Menu::BinaryTreeMenu(BinaryTree* tree)
 {
     while (true)
     {
-        cout << "=== Binary tree menu ===\n" 
+        cout << "--- Binary tree menu ---\n" 
         "1. Add node\n" 
         "2. Get height\n" 
         "3. Get min value\n" 
@@ -22,14 +22,14 @@ void Menu::BinaryTreeMenu(BinaryTree* tree)
         "7. Print tree\n"
         "8. Exit" << endl;
 
-        int choice = -1;
-        cin >> choice;
+        int key = -1;
+        cin >> key;
         if (!cin)
         {
             Validate();
         }
 
-        switch (choice)
+        switch (key)
         {
         case 1:
         {
@@ -106,7 +106,7 @@ void Menu::TreapMenu(Treap* treap)
 {
     while (true)
     {
-        cout << "=== Treap menu ===\n" 
+        cout << "--- Treap menu ---\n" 
         "1. Add node (Optimized)\n"
         "2. Add node (Non-optimized)\n" 
         "3. Remove node (Optimized)\n" 
@@ -116,13 +116,13 @@ void Menu::TreapMenu(Treap* treap)
         "7. Print tree\n" 
     	"8. Exit" << endl;
 
-        int choice = -1;
-        cin >> choice;
+        int key = -1;
+        cin >> key;
         if (!cin)
         {
             Validate();
         }
-        switch (choice)
+        switch (key)
         {
         case 1:
         {
@@ -174,7 +174,13 @@ void Menu::TreapMenu(Treap* treap)
         }
         case 5:
         {
-            int value = InputInt("Enter value to find: ");
+            cout << "Enter value to find: " << endl;
+            int value = -1;
+            cin >> value;
+            if (!cin)
+            {
+                Validate();
+            }
             cout << "Node found: " << (treap->Find(value) ? "true" : "false") << endl;
             break;
         }
@@ -195,7 +201,7 @@ void Menu::TreapMenu(Treap* treap)
         }
         default:
         {
-            cout << "Invalid choice" << endl;
+            cout << "Invalid key" << endl;
             break;
         }
         }
