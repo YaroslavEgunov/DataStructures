@@ -1,5 +1,4 @@
 #pragma once
-#include <ostream>
 #include "HashTable.h"
 #include <string>
 using namespace std;

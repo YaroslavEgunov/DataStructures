@@ -19,14 +19,16 @@ int main()
             "2. Remove\n"
             "3. Find\n"
             "4. Print\n"
-            "5. Exit\n" << endl;
-        int menuKey;
-        cin >> menuKey;
+            "5. Exit" << endl;
+
+        int key;
+        cin >> key;
         if (!cin)
         {
             Validate();
         }
-        switch (menuKey)
+
+        switch (key)
         {
         case 1:
         {
@@ -70,7 +72,7 @@ int main()
         }
         default:
         {
-            cout << "Incorrect value" << endl;
+            cout << "Invalid value\n" << endl;
             break;
         }
         }
