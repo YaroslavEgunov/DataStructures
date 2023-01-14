@@ -16,11 +16,6 @@ bool RingBufferQueue::IsEmpty() const
     return _last == nullptr;
 }
 
-RingBufferQueue::~RingBufferQueue()
-{
-    Clear();
-}
-
 RingBufferQueue::RingBufferQueue()
 {
     _last = nullptr;
@@ -30,6 +25,7 @@ RingBufferQueue::RingBufferQueue()
 void RingBufferQueue::Enqueue(int value)
 {
     auto* node = new Node{ value, nullptr };
+
     if (_last == nullptr)
     {
         node->_next = node;
@@ -39,6 +35,7 @@ void RingBufferQueue::Enqueue(int value)
         node->_next = _last->_next;
         _last->_next = node;
     }
+
     _size++;
     _last = node;
 }
@@ -49,7 +46,9 @@ int RingBufferQueue::Dequeue()
     {
         return 0;
     }
+
     auto* node = _last->_next;
+
     if (node == _last)
     {
         _last = nullptr;
@@ -58,6 +57,7 @@ int RingBufferQueue::Dequeue()
     {
         _last->_next = node->_next;
     }
+
     _size--;
     int data = node->_value;
     delete node;
@@ -70,13 +70,16 @@ void RingBufferQueue::Clear()
     {
         return;
     }
+
     auto* node = _last->_next;
+
     while (node != _last)
     {
         auto* next = node->_next;
         delete node;
         node = next;
     }
+
     delete node;
     _last = nullptr;
 }
@@ -91,7 +94,8 @@ ostream& operator<<(std::ostream& os, const RingBufferQueue& queue)
     auto* node = queue.GetLast()->_next;
     cout << "Size: " << queue.GetSize() <<
         "\nElements: "
-		"\n[" << endl;
+		"\n[";
+
     do
     {
         cout << node->_value;
@@ -101,6 +105,7 @@ ostream& operator<<(std::ostream& os, const RingBufferQueue& queue)
             cout << ", ";
         }
     } while (node != queue.GetLast()->_next);
-    cout << "]\n" << endl;
+
+    cout << "]" << endl;
     return cout;
 }

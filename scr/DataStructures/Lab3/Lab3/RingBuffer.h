@@ -14,8 +14,6 @@ private:
 public:
     RingBuffer(int size);
 
-    ~RingBuffer();
-
     void Add(char* value);
 
     char* Get();

@@ -17,7 +17,6 @@ Stack* StackQueue::GetStackOut() const
     return _stackOut;
 }
 
-
 void StackQueue::Enqueue(int value)
 {
     _stackIn->Push(value);
@@ -37,6 +36,7 @@ int StackQueue::Dequeue()
     {
         return 0;
     }
+
     if (_stackOut->GetSize() == 0)
     {
         while (_stackIn->GetSize() > 0)

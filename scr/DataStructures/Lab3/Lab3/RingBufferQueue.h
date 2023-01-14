@@ -19,8 +19,6 @@ public:
 
     RingBufferQueue();
 
-    ~RingBufferQueue();
-
     void Enqueue(int value);
 
     int Dequeue();

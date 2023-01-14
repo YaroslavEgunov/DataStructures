@@ -12,7 +12,6 @@ void Validate()
 	cin.ignore(32767, '\n');
 }
 
-
 void Menu::MenuRingBufferQueue(RingBufferQueue* queue)
 {
     while (true)
@@ -25,9 +24,9 @@ void Menu::MenuRingBufferQueue(RingBufferQueue* queue)
         "5. Print\n" 
     	"6. Back\n"
     	"Enter key : " <<endl;
-
         int key = -1;
     	cin >> key;
+
         if (!cin)
         {
 			Validate();
@@ -40,17 +39,20 @@ void Menu::MenuRingBufferQueue(RingBufferQueue* queue)
 	            cout << "Enter _value: " << endl;
 	            int value = -1;
 	            cin >> value;
+
 	            if (!cin)
 	            {
 	                cin.clear();
 	                cin.ignore(32767, '\n');
 	            }
+
 	            queue->Enqueue(value);
 	            break;
 	        }
 	        case 2:
 	        {
 	            int value = queue->Dequeue();
+
 	            if (value == 0)
 	            {
 	                cout << "Queue is empty" << endl;
@@ -59,6 +61,7 @@ void Menu::MenuRingBufferQueue(RingBufferQueue* queue)
 	            {
 	                cout << "Dequeued _value: " << value << endl;
 	            }
+
 	            break;
 	        }
 	        case 3:
@@ -100,9 +103,9 @@ void Menu::MenuStackQueue(StackQueue* queue)
         "4. Print\n" 
         "5. Exit\n" 
     	"Enter key : " << endl;
-
         int key = -1;
         cin >> key;
+
 		if (!cin)
 		{
 			Validate();
@@ -115,17 +118,20 @@ void Menu::MenuStackQueue(StackQueue* queue)
 	            cout << "Enter value: " << endl;
 	            int value = -1;
 	            cin >> value;
+
 	            if (!cin)
 	            {
 	                cin.clear();
 	                cin.ignore(32767, '\n');
 	            }
+
 	            queue->Enqueue(value);
 	            break;
 	        }
 	        case 2:
 	        {
 	            int value = queue->Dequeue();
+
 	            if (value == 0)
 	            {
 	                cout << "Queue is empty" << endl;
@@ -134,6 +140,7 @@ void Menu::MenuStackQueue(StackQueue* queue)
 	            {
 	                cout << "Dequeued value: " << value << endl;
 	            }
+
 	            break;
 	        }
 	        case 3:
@@ -171,9 +178,9 @@ void Menu::MenuBuffer(RingBuffer* buffer)
         "5. Print\n" 
     	"6. Exit\n"
         "Enter key : " << endl;
-
         int key = -1;
         cin >> key;
+
 		if (!cin)
 		{
 			Validate();
@@ -186,16 +193,19 @@ void Menu::MenuBuffer(RingBuffer* buffer)
 	            cout << "Enter new size: " << endl;
 	            int size = -1;
 	            cin >> size;
+
 	            if (!cin)
 	            {
 	                cin.clear();
 	                cin.ignore(32767, '\n');
 	            }
+
 	            if (size < buffer->GetSize())
 	            {
 	                cout << "New size is less than current size" << endl;
 	                break;
 	            }
+
 	            buffer->Resize(size);
 	            break;
 	        }
@@ -210,6 +220,7 @@ void Menu::MenuBuffer(RingBuffer* buffer)
 	        case 3:
 	        {
 	            char* get = buffer->Get();
+
 	            if (get == nullptr)
 	            {
 	                cout << "Buffer is empty" << endl;
@@ -218,6 +229,7 @@ void Menu::MenuBuffer(RingBuffer* buffer)
 	            {
 	                cout << "Get _value: " << get << endl;
 	            }
+
 	            break;
 	        }
 	        case 4:
@@ -254,9 +266,9 @@ void Menu::MenuStack(Stack* stack)
         "4. Print\n" 
         "5. Back\n"
         "Enter key : " << endl;
-
         int key = -1;
         cin >> key;
+
 		if (!cin)
 		{
 			Validate();
@@ -269,17 +281,20 @@ void Menu::MenuStack(Stack* stack)
 	            cout << "Enter value: " << endl;
 	            int value = -1;
 	            cin >> value;
+
 	            if (!cin)
 	            {
 	                cin.clear();
 	                cin.ignore(32767, '\n');
 	            }
+
 	            stack->Push(value);
 	            break;
 	        }
 	        case 2:
 	        {
 	            int value = stack->Pop();
+
 	            if (value == 0)
 	            {
 	                cout << "Stack is empty" << endl;
@@ -288,6 +303,7 @@ void Menu::MenuStack(Stack* stack)
 	            {
 	                cout << "Popped value: " << value << endl;
 	            }
+
 	            break;
 	        }
 	        case 3:

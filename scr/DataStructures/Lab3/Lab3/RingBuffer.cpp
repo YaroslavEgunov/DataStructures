@@ -1,11 +1,6 @@
 ﻿#include <iostream>
 #include "RingBuffer.h"
 
-RingBuffer::~RingBuffer()
-{
-    delete[] _buffer;
-}
-
 char** RingBuffer::GetBuffer() const
 {
     return _buffer;
@@ -43,6 +38,7 @@ RingBuffer::RingBuffer(int size)
     _count = 0;
     _size = size;
     _buffer = new char* [_size];
+
     for (int i = 0; i < _size; i++)
     {
         _buffer[i] = nullptr;
@@ -58,6 +54,7 @@ void RingBuffer::Add(char* value)
         _lastIndex = (_lastIndex + 1) % _size;
         return;
     }
+
     _buffer[_lastIndex] = value;
     _lastIndex = (_lastIndex + 1) % _size;
     _count++;
@@ -69,6 +66,7 @@ char* RingBuffer::Get()
     {
         return nullptr;
     }
+
     char* value = _buffer[_firstIndex];
     _buffer[_firstIndex] = nullptr;
     _firstIndex = (_firstIndex + 1) % _size;
@@ -82,15 +80,19 @@ void RingBuffer::Resize(int size)
     {
         return;
     }
+
     char** newBuffer = new char* [size];
+
     for (int i = 0; i < size; i++)
     {
         newBuffer[i] = nullptr;
     }
+
     for (int i = 0; i < _count; i++)
     {
         newBuffer[i] = _buffer[(_firstIndex + i) % _size];
     }
+
     delete[] _buffer;
     _buffer = newBuffer;
     _size = size;
@@ -104,7 +106,8 @@ ostream& operator<<(ostream& os, const RingBuffer& buffer)
         "\nCount: " << buffer.GetCount() << 
         "\nFree size: " << buffer.GetFreeSize() << 
         "\nBuffer: "
-		"[" << endl;
+		"[";
+
     for (int i = 0; i < buffer.GetSize(); i++)
     {
         if (buffer.GetBuffer()[i] == nullptr)
@@ -115,11 +118,13 @@ ostream& operator<<(ostream& os, const RingBuffer& buffer)
         {
             cout << buffer.GetBuffer()[i];
         }
+
         if (i != buffer.GetSize() - 1)
         {
             cout << ", ";
         }
     }
+
     cout << "]\n" << endl;
     cout << endl;
     return cout;

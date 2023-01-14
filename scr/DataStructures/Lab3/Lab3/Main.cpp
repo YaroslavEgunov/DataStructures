@@ -21,9 +21,9 @@ int main()
 			"4. RingBufferQueue\n"
 			"5. Exit\n"
 			"Enter key :" << endl;
-
 		int key = -1;
 		cin >> key;
+
 		if (!cin)
 		{
 			cin.clear();
@@ -42,11 +42,13 @@ int main()
 				cout << "Enter buffer size: " << endl;
 	            int size = -1;
 				cin >> size;
+
 				if (!cin)
 				{
 					cin.clear();
 					cin.ignore(32767, '\n');
 				}
+
 	            auto* buffer = new RingBuffer(size);
 	            Menu::MenuBuffer(buffer);
 	            break;

@@ -39,7 +39,6 @@ void Stack::Clear()
     }
 }
 
-
 Node* Stack::Push(int value)
 {
     auto* node = new Node(value);
@@ -66,17 +65,20 @@ int Stack::Pop()
 ostream& operator<<(ostream& os, const Stack& stack)
 {
     cout << "Elements: " <<
-        "\n[" << endl;
+        "\n[";
     auto* node = stack._last;
+
     while (node != nullptr)
     {
         cout << node->GetData();
         node = node->GetNext();
+
         if (node != nullptr)
         {
             cout << ", ";
         }
     }
-    cout << "]\n" << endl;
+
+    cout << "]\n";
     return cout;
 }
